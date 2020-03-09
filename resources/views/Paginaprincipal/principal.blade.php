@@ -4,10 +4,10 @@
     <!--meta tags-->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="avalon is a Personal Portfolio Template">
+    <meta name="description" content="">
     <meta name="keywords"
-        content="mourithemes, onepage, developer, resume, cv, personal, portfolio, personal resume, clean, modern">
-    <meta name="author" content="MouriTheme">
+        content="iamfrancis98, onepage, developer, resume, cv, personal, portfolio, personal resume, clean, modern">
+    <meta name="author" content="FranciscoMarin">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Template name-->
     <title>Cooperativa TransLaSimpar</title>
@@ -65,7 +65,6 @@
     @include('Paginaprincipal.partials.personal')
     <!--Start Testimonial-->
     @include('Paginaprincipal.partials.testimonios')
-    <!--Start Blog-->
     <!--Start Contact-->
     @include('Paginaprincipal.partials.contacto')
     <!--Start Footer-->

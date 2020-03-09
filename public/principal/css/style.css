@@ -292,11 +292,12 @@ img {
 	color: #ffffff;
 	font-weight: 800;
 }
-.logo {
-	padding: 5px;
-	font-size: 32px;
-	letter-spacing: 3px;
+.logo img {
+    margin-top: 0px;
+    padding-bottom: 50px;
 }
+
+
 .navbar-brand:focus, .navbar-brand:hover {
 	text-decoration: none;
 	color: #ffffff;
