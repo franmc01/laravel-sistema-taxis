@@ -66,7 +66,6 @@
     <!--Start Testimonial-->
     @include('Paginaprincipal.partials.testimonios')
     <!--Start Blog-->
-    @include('Paginaprincipal.partials.blog')
     <!--Start Contact-->
     @include('Paginaprincipal.partials.contacto')
     <!--Start Footer-->
