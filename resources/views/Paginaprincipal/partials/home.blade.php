@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <section class="intro animate-scale">
-                                <h3>Cooperativa Trans "LASIMPAR"</h3>
+                                <h3>COMPAÑIA DE TAXIS TRANS LASIMPAR</h3>
                                 <h1 class="ah-headline">
                                     <span class="ah-words-wrapper">
                                         <b class="is-visible">COMODIDAD</b>
