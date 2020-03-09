@@ -109,6 +109,22 @@ img {
 	width: 50%;
 	margin: auto;
 }
+
+.section-title-5 h2 {
+	margin: 0;
+	padding: 0 0 20px;
+	font-weight: 600;
+	font-size: 25px;
+	display: inline-block;
+	z-index: 1;
+	color: #ffcc0f;
+}
+
+.section-title-5 p {
+	width: 50%;
+    margin: auto;
+    color: #fff;
+}
 /*=================
     2. PRELOADER
 ===================*/
@@ -806,7 +822,7 @@ ul.port-nav-list li a.active {
 	color: #111;
 }
 .contact-left h2 {
-	text-transform: capitalize;
+	text-transform: uppercase;
 	margin: 0;
 	padding: 0 0 20px;
 	font-size: 20px;

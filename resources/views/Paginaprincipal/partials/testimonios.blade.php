@@ -1,13 +1,14 @@
 <div class="row">
-    <div id="testimonial" class="section-title">
-        <h2>NUESTROS CLIENTES</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, temporibus consequuntur dicta ullam illo
-            facere.</p>
-    </div>
+
 </div>
 <div id="testimonial" class="testimonial-area section-padding">
     <div class="container text-center">
         <div class="row">
+            <div id="testimonial" class="section-title-5">
+                <h2>NUESTROS CLIENTES</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, temporibus consequuntur dicta ullam illo
+                    facere.</p>
+            </div>
             <div class="col-lg-offset-3 col-lg-6">
                 <div class="testimonial_box">
                     <div class="testimonial_container">

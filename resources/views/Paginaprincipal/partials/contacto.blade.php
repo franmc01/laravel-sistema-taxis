@@ -15,13 +15,13 @@
                 <p class="r-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ipsa officia in, at
                     inventore. Iste.</p>
                 <div class="connn-right xs-mb-30">
-                    <p><b><i class="fa fa-home"></i></b>127 , Brick Feild Road , London</p>
-                    <p><b><i class="fa fa-phone"></i></b>+124 579 963 , +578 496 333</p>
-                    <p><b><i class="fa fa-envelope"></i></b>youremail@yourdomain.com</p>
+                    <p><b><i class="fa fa-home"></i></b>Calle Salinas Y Granda Centeno Diagonal al TIA S.A</p>
+                    <p><b><i class="fa fa-phone"></i></b>+052 686 169 , +052 686 786</p>
+                    <p><b><i class="fa fa-envelope"></i></b>tejecutivo_translasinpar@hotmail.com</p>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6 contact-left">
-                <h2>say something</h2>
+                <h2>No dudes en escribirnos</h2>
                 <form action="contact.php" id="contact-form" method="post" name="contact-form">
                     <div class="messages"></div>
                     <!--you can change the message in contact.php file -->
@@ -30,7 +30,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <input class="form-control" data-error="Fullname is required." id="form_name"
-                                        name="name" placeholder="Enter your full name *" required="required"
+                                        name="name" placeholder="Escriba sus nombres completos *" required="required"
                                         type="text">
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -40,7 +40,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <input class="form-control" data-error="Valid email is required."
-                                        id="form_email" name="email" placeholder="Enter your email *"
+                                        id="form_email" name="email" placeholder="Escriba su email personal*"
                                         required="required" type="email">
                                     <div class="help-block with-errors"></div>
                                 </div>
@@ -50,7 +50,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <textarea class="form-control" data-error="Leave a message for me"
-                                        id="form_message" name="message" placeholder="Your Message *"
+                                        id="form_message" name="message" placeholder="Escriba su mensaje *"
                                         required="required" rows="4"></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
