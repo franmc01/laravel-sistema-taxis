@@ -31,7 +31,6 @@ Route::group([
 function () {
     //Here your routes
     Route::resource('usuarios', 'UsuariosController');
-
 });
 
 Route::group(['middleware' => ['role:usuario']], function () {
@@ -42,7 +41,7 @@ Route::group(['middleware' => ['role:moderador']], function () {
     //Here your routes
 });
 
-
+Route::view('login2', 'loginv2');
 
 
 

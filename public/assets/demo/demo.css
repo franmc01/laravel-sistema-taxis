@@ -1,0 +1,125 @@
+/*=================
+    2. PRELOADER
+===================*/
+
+.loader_bg {
+	position: fixed;
+	z-index: 9999999;
+	background: #fff;
+	width: 100%;
+	height: 100%;
+}
+.loader {
+	border: 0 solid transparent;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+	top: calc(50vh - 75px);
+	left: calc(50vw - 75px);
+}
+.loader:before, .loader:after {
+	content: '';
+	border: 1em solid #ffcc0f;
+	border-radius: 50%;
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	top: 0;
+	left: 0;
+	animation: loader 2s linear infinite;
+	opacity: 0;
+}
+.loader:before {
+	animation-delay: .5s;
+}
+@keyframes loader {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 0;
+	}
+}
+/*====================
+    3. MOUSE ANIMATION
+======================*/
+
+@-webkit-keyframes scroll-ani {
+	0% {
+		opacity: 1;
+		top: 29%;
+	}
+	15% {
+		opacity: 1;
+		top: 50%;
+	}
+	50% {
+		opacity: 0;
+		top: 50%;
+	}
+	100% {
+		opacity: 0;
+		top: 29%;
+	}
+}
+@keyframes scroll-ani {
+	0% {
+		opacity: 1;
+		top: 29%;
+	}
+	15% {
+		opacity: 1;
+		top: 50%;
+	}
+	50% {
+		opacity: 0;
+		top: 50%;
+	}
+	100% {
+		opacity: 0;
+		top: 29%;
+	}
+}
+.mouse-scroll {
+	position: absolute;
+	left: 48%;
+	display: inline-block;
+	line-height: 18px;
+	font-size: 13px;
+	font-weight: normal;
+	color: #ffffff;
+	letter-spacing: 2px;
+	margin-top: 10%;
+	text-decoration: none;
+	overflow: hidden;
+}
+.mouse-scroll .mouse {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 60px;
+	margin: 0 auto 20px;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 3px solid #ffffff;
+	border-radius: 23px;
+}
+.mouse-scroll .mouse .mouse-movement {
+	position: absolute;
+	display: block;
+	top: 29%;
+	left: 50%;
+	width: 8px;
+	height: 8px;
+	margin: -4px 0 0 -4px;
+	background: #ffffff;
+	border-radius: 50%;
+	-webkit-animation: scroll-ani 2s linear infinite;
+	animation: scroll-ani 2s linear infinite;
+}

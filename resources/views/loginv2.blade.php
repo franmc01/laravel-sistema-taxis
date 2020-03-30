@@ -17,7 +17,7 @@
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
-<body class="login-page">
+<body class="login-page sidebar-collapse">
   <div class="page-header header-filter" style="background-image: url('/img/login.jpg'); background-size: cover; background-position: bottom center;">
     <div class="container">
       <div class="row">
@@ -31,7 +31,7 @@
               </div>
               <p class="description text-center">Bienvenido</p>
               <div class="card-body">
-                <div class="input-group label-floating {{ $errors->has('cedula') ? ' has-error' : '' }}">
+                <div class="input-group {{ $errors->has('cedula') ? ' has-error' : '' }}">
                   <div class="input-group-prepend">
                     <span class="input-group-text">
                       <i class="fa fa-id-card" aria-hidden="true"></i>
@@ -40,9 +40,9 @@
                   <input id="cedula" type="text" minlength="1" class="form-control" name="cedula" value="{{ old('cedula') }}" placeholder="Cédula de identidad" required autofocus>
                   @if ($errors->has('cedula'))
                   <span class="help-block">
-                      <strong style="font-size:10px;">{{ $errors->first('cedula') }}</strong>
+                      <strong>{{ $errors->first('cedula') }}</strong>
                   </span>
-                   @endif
+              @endif
                 </div>
                 <div class="input-group {{ $errors->has('password') ? ' has-error' : '' }}">
                   <div class="input-group-prepend">
@@ -58,7 +58,7 @@
                   @endif
                 </div>
                 <div class="text-center">
-                    <button type="submit" class=" mt-5 mb-5 btn btn-warning btn-regular">Iniciar sesión</button>
+                    <button type="submit" class=" mt-5 btn btn-warning btn-regular">Iniciar sesión</button>
                 </div>
           </div>
             </form>
