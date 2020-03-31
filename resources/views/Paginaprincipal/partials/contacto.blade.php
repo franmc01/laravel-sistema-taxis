@@ -22,7 +22,8 @@
             </div>
             <div class="col-sm-6 col-md-6 contact-left">
                 <h2>No dudes en escribirnos</h2>
-                <form action="contact.php" id="contact-form" method="post" name="contact-form">
+                <form action="{{ route('correo.store') }}" id="contact-form" method="POST" name="contact-form">
+                    @csrf
                     <div class="messages"></div>
                     <!--you can change the message in contact.php file -->
                     <div class="controls">
@@ -56,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button class="btn btn-send custom-button-4">Enviar mensaje</button>
+                                <button  type="submit" class="btn btn-send custom-button-4">Enviar mensaje</button>
                             </div>
                         </div>
                     </div>

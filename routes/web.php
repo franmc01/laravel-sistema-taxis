@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::resource('correo', 'Correos\ContactController');
 Route::get('/', 'PaginaPrincipalController@index' );
 Route::get('/home','HomeController@index' )->name('administracion');
 
