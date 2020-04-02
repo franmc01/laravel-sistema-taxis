@@ -10,15 +10,16 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 class MensajeContacto extends Mailable
 {
     use Queueable, SerializesModels;
+    public $message;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($correo)
     {
-        //
+        $this->message=$correo;
     }
 
     /**

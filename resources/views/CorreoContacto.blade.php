@@ -1,10 +1,17 @@
 @component('mail::message')
-# Introduction
+# Mensaje de usuario
 
-The body of your message.
+##Nombres:
+{{ $message ->name}}
 
-@component('mail::button', ['url' => ''])
-Button Text
+##Email:
+{{ $message ->email}}
+
+##Mensaje:
+{{ $message ->message}}
+
+@component('mail::button', ['url' => '/'])
+Activar cuenta
 @endcomponent
 
 Thanks,<br>
