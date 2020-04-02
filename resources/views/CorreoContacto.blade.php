@@ -1,5 +1,5 @@
 @component('mail::message')
-# Mensaje de usuario
+#
 
 ##Nombres:
 {{ $message ->name}}

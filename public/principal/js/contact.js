@@ -7,4 +7,23 @@ $(function () {
 
     $('#contact-form').validator();
 
+    $.ajaxSetup({ headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}});
+    $(".btn-submit").click(function(e){
+        e.preventDefault();
+        var nombre=$("input[name=name]").val();
+        var email=$("input[name=email]").val();
+        var message=$("textarea[name=message]").val();
+        $.ajax({
+           type:'POST',
+           url:'/correo',
+           data:{name:nombre, email:email, message:message},
+           success:function(){
+            Swal.fire(
+                'Correo enviado!',
+                'Satisfactoriamente',
+                'success',
+              )
+           }
+        });
+	});
 });

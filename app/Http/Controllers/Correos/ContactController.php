@@ -8,6 +8,8 @@ use App\Mail\MensajeContacto;
 use Mail;
 
 
+
+
 class ContactController extends Controller
 {
     /**
@@ -39,7 +41,6 @@ class ContactController extends Controller
     public function store(Request $request)
     {
         $correo=request();
-        // Mail::to('francmarinc@gmail.com')->send(new MensajeContacto);
         Mail::to('francmarinc@gmail.com')->send(new MensajeContacto($correo));
     }
 

@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
-    <meta name="keywords"
-        content="iamfrancis98, onepage, developer, resume, cv, personal, portfolio, personal resume, clean, modern">
+    <meta name="keywords" content="iamfrancis98, onepage, developer, resume, cv, personal, portfolio, personal resume, clean, modern">
     <meta name="author" content="FranciscoMarin">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Template name-->
@@ -29,6 +28,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/principal/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <!--========== Theme Fonts ==========-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600,700,800" rel="stylesheet">
     <!--Font Awesome css-->
@@ -47,6 +47,7 @@
     <link rel="stylesheet" href="/principal/css/line-icons.min.css">
     <!--Theme css-->
     <link rel="stylesheet" href="/principal/css/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
 
 <body style="overflow-x:hidden;">
@@ -67,6 +68,8 @@
     @include('Paginaprincipal.partials.testimonios')
     <!--Start Contact-->
     @include('Paginaprincipal.partials.contacto')
+
+
     <!--Start Footer-->
     <div class="footer-area">
         <div class="container">
@@ -102,6 +105,8 @@
     <script src="/principal/js/wow.min.js"></script>
     <!--Main js-->
     <script src="/principal/js/main.js"></script>
+
+
 
 </body>
 
