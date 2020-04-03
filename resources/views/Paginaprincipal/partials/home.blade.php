@@ -5,7 +5,6 @@
                 <div class="main-menu">
                     <div class="navbar navbar-cus">
                         <div class="navbar-header">
-                            {{-- <a href="index.html" class="navbar-brand"><span class="logo"><img src="{{ asset('/principal/images/taxi1.png') }}" width="50px" height="50px"></span></a> --}}
                             <button type="button" class="navbar-toggle" data-toggle="collapse"
                                 data-target=".navbar-collapse">
                                 <span class="sr-only">Toggle navigation</span>
@@ -14,7 +13,6 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-
                         <div class="navbar-collapse collapse">
                             <nav>
                                 <ul class="nav navbar-nav navbar-right">

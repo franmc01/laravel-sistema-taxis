@@ -1,19 +1,10 @@
 @component('mail::message')
-#
-
-##Nombres:
-{{ $message ->name}}
-
-##Email:
-{{ $message ->email}}
+<center style="font-weight:bold; color:black;">Email de contacto</center>
+<br>
 
 ##Mensaje:
 {{ $message ->message}}
 
-@component('mail::button', ['url' => '/'])
-Activar cuenta
-@endcomponent
-
-Thanks,<br>
-{{ config('app.name') }}
+Atentamente,<br>
+{{ $message ->name}}
 @endcomponent
