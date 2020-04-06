@@ -41,7 +41,7 @@ Route::group(['middleware' => ['role:moderador']], function () {
     //Here your routes
 });
 
-Route::view('login2', 'loginv2');
+Route::view('welcome', 'welcome');
 
 
 

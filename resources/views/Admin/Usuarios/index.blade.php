@@ -12,12 +12,13 @@
 @endsection
 
 
+
 @section('content')
 <div class="col-md-12">
     <div class="box">
       <div class="box-header">
         <h3 class="box-title">Listado de usuarios</h3>
-        <button class="btn btn-primary pull-right">Crear usuario</button>
+        <a class="btn btn-primary pull-right" href="{{ route('usuarios.create') }}">Crear usuario</a>
       </div>
       <!-- /.box-header -->
       <div class="box-body">

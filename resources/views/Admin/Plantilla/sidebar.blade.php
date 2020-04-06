@@ -7,8 +7,7 @@
 
 
     @role('administrador')
-    <li class="treeview {{ request()->is('home/usuarios') ? 'active' : ''}}"><a href="#"><i class="fa fa-users"></i> <span>Usuarios</span><span class="pull-right-container"><i
-                    class="fa fa-angle-left pull-right"></i></span></a>
+    <li class="treeview {{ request()->is('home/usuarios') ? 'active' : ''}}"><a href="#"><i class="fa fa-users"></i> <span>Usuarios</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
         <ul class="treeview-menu">
             <li {{ request()->is('home/usuarios/activos') ? 'class=active' : ''}}><a href="{{ route('usuarios.index') }}"><i class="fa fa-address-book"></i><span>Listar usuarios activos</span></a></li>
             <li><a href="{{ route('usuarios.create') }}"><i class="fa fa-user-plus"></i><span>Registrar usuarios</span></a></li>
