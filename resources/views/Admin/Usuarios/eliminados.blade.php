@@ -34,14 +34,16 @@
                             <td>{{ $item->getRoleNames()->implode(',') }}</td>
                             <td>{{ $item->email }}</td>
                             <td>
-                                <a href="" class="btn btn-xs btn-info"><i class="fa fa-eye"></i></a>
-                                <a href="" class="btn btn-xs btn-warning"><i class="fa fa-pencil"></i></a>
-                                <form action="{{route("usuarios.destroy", $item)}}" method='POST'>
-                                    @csrf @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"> Inactivar </button>
-                                 </form>
-
-
+                                <form action="{{ route('usuarios.restore', $item) }}" method='POST'>
+                                    @csrf
+                                    @method('GET')
+                                    <button type="submit" class="btn btn-info btn-sm">Activar</button>
+                                </form>
+                                <form action="{{ route('usuarios.forceDelete', $item) }}" method='POST'>
+                                    @csrf
+                                    @method('GET')
+                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

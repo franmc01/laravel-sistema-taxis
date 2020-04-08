@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Administracion;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Events\UserWasCreated;
 use App\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class UsuariosController extends Controller
 {
@@ -19,7 +23,6 @@ class UsuariosController extends Controller
         $usuarios = User::all();
         return view('Admin.Usuarios.index', compact('usuarios'));
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -37,9 +40,19 @@ class UsuariosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        return $request;
+    public function store(Request $request){
+        $data=new User();
+        $data->nombres=$request->nombres;
+        $data->apellidos=$request->apellidos;
+        $data->foto_perfil=$request->file('imagen')->store('perfiles');
+        $data->cedula=$request->cedula;
+        $data->email=$request->correo;
+        $contraseña=str_random(8);
+        $data->password=Hash::make($contraseña);
+        $data->save();
+        $data->assignRole($request->roles);
+        UserWasCreated::dispatch($data,$contraseña);
+        return redirect()->route('usuarios.create');
     }
 
     /**
@@ -83,7 +96,31 @@ class UsuariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {       $user=User::find($id);
+            $user->delete();
+            return redirect()->route('usuarios.index');
+    }
+
+
+    /**Listado de metodos adicionales*/
+
+
+    /**Metodo de traer los registros inactivos */
+    public function eliminados()
     {
-        //
+        $usuarios = User::onlyTrashed()->get();
+        return view('Admin.Usuarios.eliminados', compact('usuarios'));
+    }
+
+    /**Metodo de resatura los registros inactivos */
+    public function user_restore($id){
+        User::withTrashed()->find($id)->restore();
+        return redirect()->route('usuarios.eliminados');
+    }
+
+    /**Metodo de elimina completamente los registros inactivos de la base de datos */
+    public function user_force($id){
+        User::withTrashed()->find($id)->forceDelete();
+        return redirect()->route('usuarios.eliminados');
     }
 }

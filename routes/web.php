@@ -14,24 +14,25 @@ Route::resource('correo', 'Correos\ContactController');
 Route::get('/', 'PaginaPrincipalController@index' );
 Route::get('/home','HomeController@index' )->name('administracion');
 
-
-
-
-
 // Route::group(['prefix' => 'home','namespace' => 'Administracion','middleware' => 'auth'],function () {
 //     Route::get('usuarios', 'UsuariosController@index' )->name('usuarios.index');
 // });
 
-
-
 Route::group([
-    'prefix' => 'home',
     'namespace' => 'Administracion',
     'middleware' => ['role:administrador']],
 function () {
     //Here your routes
     Route::resource('usuarios', 'UsuariosController');
+    Route::get('inactivos', 'UsuariosController@eliminados')->name('usuarios.eliminados');
+    Route::get('restaurar/{user}', 'UsuariosController@user_restore')->name('usuarios.restore');
+    Route::get('eliminar/{user}', 'UsuariosController@user_force')->name('usuarios.forceDelete');
 });
+
+
+
+
+
 
 Route::group(['middleware' => ['role:usuario']], function () {
     //Here your routes
@@ -42,7 +43,9 @@ Route::group(['middleware' => ['role:moderador']], function () {
 });
 
 Route::view('welcome', 'welcome');
-
+Route::get('mail', function () {
+    return new App\Mail\LoginCredentials(App\User::first(),'aldjad');
+});
 
 
 
