@@ -63,7 +63,7 @@ class UsuariosController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -72,9 +72,9 @@ class UsuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $usuarios)
     {
-        //
+        return view('Admin.Usuarios.edit')->with('usuarios', $usuarios);
     }
 
     /**
