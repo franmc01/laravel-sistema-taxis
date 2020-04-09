@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,11 +28,6 @@ function () {
     Route::get('restaurar/{user}', 'UsuariosController@user_restore')->name('usuarios.restore');
     Route::get('eliminar/{user}', 'UsuariosController@user_force')->name('usuarios.forceDelete');
 });
-
-
-
-
-
 
 Route::group(['middleware' => ['role:usuario']], function () {
     //Here your routes

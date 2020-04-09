@@ -7,13 +7,12 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Listado de usuarios</h3>
-            <a class="btn btn-primary pull-right" href="{{ route('usuarios.create') }}">Crear usuario</a>
+            <a class="btn btn-primary pull-right" href="{{ route('usuarios.create') }}"><span style="padding-right:5px"><i class="fa fa-plus" aria-hidden="true"></i></span> Crear usuario</a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
             <div class="table-responsive">
-                <table id="tablausuarios" class="table table-bordered table-striped table-hover" cellspacing="0"
-                    width="100%">
+                <table id="tablausuarios" class="table table-bordered table-striped table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -33,16 +32,17 @@
                             <td>{{ $item->getRoleNames()->implode(',') }}</td>
                             <td>{{ $item->email }}</td>
                             <td>
-                                <a type="button" data-toggle="modal" data-target="#exampleModal"
-                                    class="btn btn-xs btn-info"><i class="fa fa-eye"></i></a>
+                                <button type="button" data-toggle="modal" data-target="#exampleModal"
+                                    class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
 
-                                    <a href="{{ route('usuarios.edit', $item->id) }}"> Edi</a>
+                                    {{-- <a href="{{ route('usuarios.edit', $item->id) }}"> Edi</a> --}}
                                 <a class="btn btn-xs btn-warning" href="{{route('usuarios.edit',$item)}}"><i class="fa fa-pencil"></i></a>
 
                                 <form action="{{route("usuarios.destroy", $item)}}" method='POST'>
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm"> Inactivar</button>
+
+                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i></button>
                                 </form>
                             </td>
                         </tr>

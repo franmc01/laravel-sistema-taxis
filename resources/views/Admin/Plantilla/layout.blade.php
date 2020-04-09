@@ -18,6 +18,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/adminlte/bower_components/Ionicons/css/ionicons.min.css">
     <!-- DataTables -->
    <link rel="stylesheet" href="/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+   {{-- <link rel="stylesheet" href="/adminlte/dist/css/datab/dataTables.semanticui.min.css">
+   <link rel="stylesheet" href="/adminlte/dist/css/datab/semantic.min.css"> --}}
   <!-- Theme style -->
   <link rel="stylesheet" href="/adminlte/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
