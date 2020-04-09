@@ -36,8 +36,11 @@
                                 <a type="button" data-toggle="modal" data-target="#exampleModal"
                                     class="btn btn-xs btn-info"><i class="fa fa-eye"></i></a>
 
-                                <a class="btn btn-xs btn-warning" href="{{route('usuarios.edit',$item->id)}}"><i class="fa fa-pencil"></i></a>
-                                <form action="{{route("usuarios.destroy", $item)}}" method='POST'> @csrf
+                                    <a href="{{ route('usuarios.edit', $item->id) }}"> Edi</a>
+                                <a class="btn btn-xs btn-warning" href="{{route('usuarios.edit',$item)}}"><i class="fa fa-pencil"></i></a>
+
+                                <form action="{{route("usuarios.destroy", $item)}}" method='POST'>
+                                    @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm"> Inactivar</button>
                                 </form>

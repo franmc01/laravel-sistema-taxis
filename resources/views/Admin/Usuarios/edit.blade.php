@@ -18,7 +18,7 @@
     <br>
     <div class="col-md-12">
         <div class="box box-warning">
-            <form  method="POST" action="{{route('usuarios.update',$usuarios->id)}}" accept-charset="UTF-8" enctype="multipart/form-data">
+            <form  method="POST" action="{{route('usuarios.update',$datos->id)}}" accept-charset="UTF-8" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <div class="box-body">
@@ -26,21 +26,21 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="nombres">Nombres completos: </label>
-                            <input type="text" class="form-control"  name="nombres" placeholder="Ingrese los nombres " value="{{ old('nombres',$usuarios->nombres) }}">
+                            <input type="text" class="form-control"  name="nombres" placeholder="Ingrese los nombres " value="{{ old('nombres',$datos->nombres) }}">
                           </div>
                           <div class="form-group">
                             <label for="apellidos">Cedula: </label>
-                            <input type="text" min="1" minlength="10" maxlength="10" pattern="^[0-9]$+" class="form-control"  name="cedula" placeholder="Ingrese el numero de cédula " value="{{ old('cedula',$usuarios->cedula) }}">>
+                            <input type="text" min="1" minlength="10" maxlength="10" pattern="^[0-9]$+" class="form-control"  name="cedula" placeholder="Ingrese el numero de cédula " value="{{ old('cedula',$datos->cedula) }}">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="apellidos">Apellidos completos: </label>
-                            <input type="text" class="form-control"  name="apellidos" placeholder="Ingrese los apellidos" value="{{ old('apellidos',$usuarios->apellidos) }}">>
+                            <input type="text" class="form-control"  name="apellidos" placeholder="Ingrese los apellidos" value="{{ old('apellidos',$datos->apellidos) }}">
                           </div>
                         <div class="form-group">
                             <label for="email">Correo: </label>
-                            <input type="email" class="form-control" name="correo" placeholder="Ingrese el correo" required>
+                            <input type="email" class="form-control" name="correo" placeholder="Ingrese el correo" value="{{ old('cedula',$datos->email) }}">
                           </div>
                     </div>
                     <div class="col-md-12">

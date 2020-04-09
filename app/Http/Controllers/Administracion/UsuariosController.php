@@ -72,9 +72,11 @@ class UsuariosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $usuarios)
+    public function edit($id)
     {
-        return view('Admin.Usuarios.edit')->with('usuarios', $usuarios);
+        $datos=User::find($id);
+        // dd($datos);
+        return view('Admin.Usuarios.edit',compact('datos'));
     }
 
     /**
