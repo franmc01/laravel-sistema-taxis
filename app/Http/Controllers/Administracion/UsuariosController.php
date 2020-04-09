@@ -44,7 +44,7 @@ class UsuariosController extends Controller
         $data=new User();
         $data->nombres=$request->nombres;
         $data->apellidos=$request->apellidos;
-        $data->foto_perfil=$request->file('imagen')->store('perfiles');
+        $data->foto_perfil=$request->file('imagen')->store('perfiles','public');
         $data->cedula=$request->cedula;
         $data->email=$request->correo;
         $contraseña=str_random(8);

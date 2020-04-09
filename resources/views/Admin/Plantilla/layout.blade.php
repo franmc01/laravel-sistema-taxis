@@ -79,14 +79,14 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="/adminlte/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="/storage/{{ auth()->user()->foto_perfil }}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="/storage/{{ auth()->user()->foto_perfil }}" class="img-circle" alt="User Image">
 
                 <p>
                     {{ auth()->user()->nombres."".auth()->user()->apelllidos }} - Web Developer
@@ -126,17 +126,6 @@ desired effect
     <section class="sidebar">
 
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="/adminlte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info with-border">
-          <p>{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</p>
-          <!-- Status -->
-          <a href="#"><i class="fa fa-circle text-success"></i>En Línea</a>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
       @include('Admin.Plantilla.sidebar')
       <!-- /.sidebar-menu -->

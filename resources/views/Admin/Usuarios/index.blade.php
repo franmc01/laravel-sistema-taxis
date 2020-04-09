@@ -21,7 +21,9 @@
                             <th>Cedula</th>
                             <th>Roles</th>
                             <th>Correo personal</th>
-                            <th>Acciones</th>
+                            <th>Visualizar</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody> @foreach ($usuarios as $item) <tr>
@@ -32,17 +34,17 @@
                             <td>{{ $item->getRoleNames()->implode(',') }}</td>
                             <td>{{ $item->email }}</td>
                             <td>
-                                <button type="button" data-toggle="modal" data-target="#exampleModal"
-                                    class="btn btn-xs btn-info"><i class="fa fa-eye"></i></button>
-
-                                    {{-- <a href="{{ route('usuarios.edit', $item->id) }}"> Edi</a> --}}
-                                <a class="btn btn-xs btn-warning" href="{{route('usuarios.edit',$item)}}"><i class="fa fa-pencil"></i></a>
-
+                                <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-xs btn-info"><span style="padding-right:5px"><i class="fa fa-eye"></i></span>Ver perfil</button>
+                            </td>
+                            <td>
+                                {{-- <a href="{{ route('usuarios.edit', $item->id) }}"> Edi</a> --}}
+                                <a class="btn btn-xs btn-warning" href="{{route('usuarios.edit',$item)}}"><span style="padding-right:5px"><i class="fa fa-pencil"></i></span>Editar perfil</a>
+                            </td>
+                            <td>
                                 <form action="{{route("usuarios.destroy", $item)}}" method='POST'>
                                     @csrf
                                     @method('DELETE')
-
-                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i></button>
+                                    <button type="submit" class="btn btn-danger btn-xs"><span style="padding-right:5px"><i class="fa fa-ban"></i></span>Banear perfil</button>
                                 </form>
                             </td>
                         </tr>
