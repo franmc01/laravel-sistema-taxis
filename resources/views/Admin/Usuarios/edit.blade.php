@@ -59,15 +59,15 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            {{-- <div class="form-group">
+                            <div class="form-group">
                                 <label>Rol de usuario actual:</label>
                                 <div class="radio">
                                     @foreach ($roles as $item)
-                                    <label style="text-transform:capitalize"><input type="radio" name="roles[]" id="datos" value="{{ $item->id }}" unchecked>{{ $item->name }}</label>
+                                    <label style="text-transform:capitalize"><input type="radio" name="roles[]" id="datos" value="{{  $item->id }}" {{ $datos->roles->contains($item) ? 'checked':'' }} >{{ $item->name }}</label>
                                     <br>
                                     @endforeach
                                 </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                     <div class="box-footer">

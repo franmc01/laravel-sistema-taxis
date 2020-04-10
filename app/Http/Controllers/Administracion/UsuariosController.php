@@ -97,12 +97,14 @@ class UsuariosController extends Controller
             $datos->apellidos=$request->apellidos;
             $datos->cedula=$request->cedula;
             $datos->email=$request->email;
+            $datos->syncRoles($request->roles);
         } else {
             $datos->nombres=$request->nombres;
             $datos->apellidos=$request->apellidos;
             $datos->cedula=$request->cedula;
             $datos->email=$request->email;
             $datos->foto_perfil=$datos->foto_perfil;
+            $datos->syncRoles($request->roles);
         }
         $datos->save();
         return back();
