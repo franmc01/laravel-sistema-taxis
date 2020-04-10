@@ -37,7 +37,6 @@
                                 <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-xs btn-info"><span style="padding-right:5px"><i class="fa fa-eye"></i></span>Ver perfil</button>
                             </td>
                             <td>
-                                {{-- <a href="{{ route('usuarios.edit', $item->id) }}"> Edi</a> --}}
                                 <a class="btn btn-xs btn-warning" href="{{route('usuarios.edit',$item)}}"><span style="padding-right:5px"><i class="fa fa-pencil"></i></span>Editar perfil</a>
                             </td>
                             <td>

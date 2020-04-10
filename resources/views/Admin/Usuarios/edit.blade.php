@@ -40,30 +40,35 @@
                           </div>
                         <div class="form-group">
                             <label for="email">Correo: </label>
-                            <input type="email" class="form-control" name="correo" placeholder="Ingrese el correo" value="{{ old('cedula',$datos->email) }}">
+                            <input type="email" class="form-control" name="email" placeholder="Ingrese el correo" value="{{ old('cedula',$datos->email) }}">
                           </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="input-group">
-                            <label for="exampleInputFile">Foto de Perfil</label>
+                        <div class="col-md-6">
                             <div class="input-group">
-                                <div class="custom-file">
-                                  <input type="file" name="imagen" class="custom-file-input" id="inputGroupFile01"
-                                    aria-describedby="inputGroupFileAddon01">
-                                  <br>
+                                <label for="exampleInputFile">Foto de perfil actual</label>
+                                <br>
+                                <img src="/storage/{{ auth()->user()->foto_perfil }}" height="120px" width="120px" >
+                                <div class="input-group" style="margin-top:5%">
+                                    <div class="custom-file">
+                                      <input type="file" name="foto_perfil" class="custom-file-input" id="inputGroupFile01"
+                                        aria-describedby="inputGroupFileAddon01" value="{{ old('foto_perfil',$datos->foto_perfil) }}">
+                                      <br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="form-group">
-                            <label>Roles de usuario:</label>
-                            <div class="radio">
-                                @foreach ($roles as $item)
-                                <label style="text-transform:capitalize"><input type="radio" name="roles[]" id="datos" value="{{ $item->id }}" unchecked>{{ $item->name }}</label>
-                                <br>
-                                @endforeach
-                            </div>
-                        </div> --}}
-                        <span class="help-block">La contraseña será generada y enviada via email al nuevo usuario registrado en el sistema.</span>
+                        <div class="col-md-6">
+                            {{-- <div class="form-group">
+                                <label>Rol de usuario actual:</label>
+                                <div class="radio">
+                                    @foreach ($roles as $item)
+                                    <label style="text-transform:capitalize"><input type="radio" name="roles[]" id="datos" value="{{ $item->id }}" unchecked>{{ $item->name }}</label>
+                                    <br>
+                                    @endforeach
+                                </div>
+                            </div> --}}
+                        </div>
                     </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary btn-block">Guardar</button>

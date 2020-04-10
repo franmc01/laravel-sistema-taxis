@@ -26,13 +26,11 @@ $(document).ready(function() {
         },
         "lengthMenu":		[[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
         'paging'      : true,
-        'autoFill'    : true,
-        'lengthChange': true,
-        'searching'   : true,
+        'lengthChange': false,
+        'searching'   : false,
         'ordering'    : true,
         'info'        : true,
         'autoWidth'   : false,
-
   });
 
   $('.js-multiple').select2({

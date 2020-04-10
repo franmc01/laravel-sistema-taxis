@@ -10,6 +10,7 @@ use Spatie\Permission\Models\Role;
 use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rule;
 
 class UsuariosController extends Controller
 {
@@ -75,8 +76,8 @@ class UsuariosController extends Controller
     public function edit($id)
     {
         $datos=User::find($id);
-        // dd($datos);
-        return view('Admin.Usuarios.edit',compact('datos'));
+        $roles=Role::all();
+        return view('Admin.Usuarios.edit',compact('datos','roles'));
     }
 
     /**
@@ -88,7 +89,23 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datos=User::find($id);
+        if ($request->hasFile('foto_perfil')) {
+            Storage::delete($datos->foto_perfil);
+            $datos->foto_perfil=$request->file('foto_perfil')->store('perfiles','public');
+            $datos->nombres=$request->nombres;
+            $datos->apellidos=$request->apellidos;
+            $datos->cedula=$request->cedula;
+            $datos->email=$request->email;
+        } else {
+            $datos->nombres=$request->nombres;
+            $datos->apellidos=$request->apellidos;
+            $datos->cedula=$request->cedula;
+            $datos->email=$request->email;
+            $datos->foto_perfil=$datos->foto_perfil;
+        }
+        $datos->save();
+        return back();
     }
 
     /**
