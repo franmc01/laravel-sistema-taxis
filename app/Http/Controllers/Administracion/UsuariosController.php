@@ -106,6 +106,10 @@ class UsuariosController extends Controller
             $datos->foto_perfil=$datos->foto_perfil;
             $datos->syncRoles($request->roles);
         }
+
+        if ($request->filled('password')) {
+            $datos->password=Hash::make($request->password);
+        }
         $datos->save();
         return back();
     }
