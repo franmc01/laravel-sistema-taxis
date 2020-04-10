@@ -48,7 +48,7 @@
                             <div class="input-group">
                                 <label for="exampleInputFile">Foto de perfil actual</label>
                                 <br>
-                                <img src="/storage/{{ auth()->user()->foto_perfil }}" height="120px" width="120px" >
+                                <img src="/storage/{{ $datos->foto_perfil }}" height="120px" width="120px" >
                                 <div class="input-group" style="margin-top:5%">
                                     <div class="custom-file">
                                       <input type="file" name="foto_perfil" class="custom-file-input" id="inputGroupFile01"
