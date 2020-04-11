@@ -14,6 +14,12 @@
             <li><a href="{{ route('usuarios.eliminados') }}"><i class="fa fa-address-book"></i><span>Listar registros inactivos</span></a></li>
         </ul>
     </li>
+    <li class="treeview {{ request()->is('home/vehiculos') ? 'active' : ''}}"><a href="#"><i class="fa fa-car"></i> <span>Vehiculos</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+            <li><a href="{{ route('vehiculos.create') }}"><i class="fa fa-taxi"></i><span>Registrar Vehículo</span></a></li>
+            <li {{ request()->is('home/vehiculos/activos') ? 'class=active' : ''}}><a href="{{ route('vehiculos.index') }}"><i class="fa fa-address-book"></i><span>Listar registros activos</span></a></li>
+        </ul>
+    </li>
     @endrole
 
   </ul>

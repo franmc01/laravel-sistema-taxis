@@ -23,10 +23,14 @@ Route::group([
     'middleware' => ['role:administrador']],
 function () {
     //Here your routes
+    //rutas de usuario
     Route::resource('usuarios', 'UsuariosController');
     Route::get('inactivos', 'UsuariosController@eliminados')->name('usuarios.eliminados');
     Route::get('restaurar/{user}', 'UsuariosController@user_restore')->name('usuarios.restore');
     Route::get('eliminar/{user}', 'UsuariosController@user_force')->name('usuarios.forceDelete');
+    //rutas de vehiculo
+    Route::resource('vehiculos', 'VehiculosController');
+
 });
 
 
