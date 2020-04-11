@@ -16,9 +16,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="/adminlte/bower_components/Ionicons/css/ionicons.min.css">
-    <!-- DataTables -->
-   <link rel="stylesheet" href="/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-   {{-- <link rel="stylesheet" href="/adminlte/dist/css/datab/dataTables.semanticui.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  {{-- <link rel="stylesheet" href="/adminlte/dist/css/datab/dataTables.semanticui.min.css">
    <link rel="stylesheet" href="/adminlte/dist/css/datab/semantic.min.css"> --}}
   <!-- Theme style -->
   <link rel="stylesheet" href="/adminlte/dist/css/AdminLTE.min.css">
@@ -51,221 +51,349 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
+
 <body class="hold-transition skin-yellow sidebar-mini">
-<div class="wrapper">
+  <div class="wrapper">
 
-  <!-- Main Header -->
-  <header class="main-header">
+    <!-- Main Header -->
+    <header class="main-header">
 
-    <!-- Logo -->
-    <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>C</b>T</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>BIENVENIDO</b></span>
-    </a>
-
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+      <!-- Logo -->
+      <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>C</b>T</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>BIENVENIDO</b></span>
       </a>
-      <!-- Navbar Right Menu -->
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- User Account Menu -->
-          <li class="dropdown user user-menu">
-            <!-- Menu Toggle Button -->
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- The user image in the navbar-->
-              <img src="/storage/{{ auth()->user()->foto_perfil }}" class="user-image" alt="User Image">
-              <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- The user image in the menu -->
-              <li class="user-header">
-                <img src="/storage/{{ auth()->user()->foto_perfil }}" class="img-circle" alt="User Image">
 
-                <p>
+      <!-- Header Navbar -->
+      <nav class="navbar navbar-static-top" role="navigation">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account Menu -->
+            <li class="dropdown user user-menu">
+              <!-- Menu Toggle Button -->
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <!-- The user image in the navbar-->
+                <img src="/storage/{{ auth()->user()->foto_perfil }}" class="user-image" alt="User Image">
+                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                <span class="hidden-xs">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- The user image in the menu -->
+                <li class="user-header">
+                  <img src="/storage/{{ auth()->user()->foto_perfil }}" class="img-circle" alt="User Image">
+
+                  <p>
                     {{ auth()->user()->nombres."".auth()->user()->apelllidos }} - Web Developer
-                  <small>Member since Feb. 2020</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                </div>
-                <div class="pull-right">
-                  <a href="{{ route('logout') }}" class="btn btn-default btn-flat" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión
-               </a>
+                    <small>Member since Feb. 2020</small>
+                  </p>
+                </li>
+                <!-- Menu Body -->
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="{{ route('logout') }}" class="btn btn-default btn-flat"
+                      onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión
+                    </a>
 
-               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                   {{ csrf_field() }}
-                   <input type="submit" value="logout" style="display: none;">
-               </form>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                      <input type="submit" value="logout" style="display: none;">
+                    </form>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <!-- Control Sidebar Toggle Button -->
+            <li>
+              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
 
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
 
-      <!-- Sidebar user panel (optional) -->
-      <!-- Sidebar Menu -->
-      @include('Admin.Plantilla.sidebar')
-      <!-- /.sidebar-menu -->
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+        <!-- Sidebar user panel (optional) -->
+        <!-- Sidebar Menu -->
+        @include('Admin.Plantilla.sidebar')
+        <!-- /.sidebar-menu -->
+      </section>
+      <!-- /.sidebar -->
+    </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
         @yield('header')
-    </section>
+      </section>
 
-    <!-- Main content -->
-    <section class="content container-fluid">
+      <!-- Main content -->
+      <section class="content container-fluid">
 
-      <!--------------------------
+        <!--------------------------
         | Your Page Content Here |
         -------------------------->
-            @yield('content')
+        @yield('content')
 
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Main Footer -->
-  <footer class="main-footer">
-    <!-- To the right -->
-    <div class="pull-right hidden-xs">
-        Octavo Semestre
+      </section>
+      <!-- /.content -->
     </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2020 <strong href="#">Computacion Espam MFL</strong>.</strong>
-  </footer>
+    <!-- /.content-wrapper -->
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <!-- Home tab content -->
-      <div class="tab-pane active" id="control-sidebar-home-tab">
-        <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <!-- To the right -->
+      <div class="pull-right hidden-xs">
+        Octavo Semestre
+      </div>
+      <!-- Default to the left -->
+      <strong>Copyright &copy; 2020 <strong href="#">Computacion Espam MFL</strong>.</strong>
+    </footer>
 
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Create the tabs -->
+      <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+      </ul>
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <!-- Home tab content -->
+        <div class="tab-pane active" id="control-sidebar-home-tab">
+          <h3 class="control-sidebar-heading">Recent Activity</h3>
+          <ul class="control-sidebar-menu">
+            <li>
+              <a href="javascript:;">
+                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
 
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
+                <div class="menu-info">
+                  <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
 
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:;">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="pull-right-container">
+                  <p>Will be 23 on April 24th</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <!-- /.control-sidebar-menu -->
+
+          <h3 class="control-sidebar-heading">Tasks Progress</h3>
+          <ul class="control-sidebar-menu">
+            <li>
+              <a href="javascript:;">
+                <h4 class="control-sidebar-subheading">
+                  Custom Template Design
+                  <span class="pull-right-container">
                     <span class="label label-danger pull-right">70%</span>
                   </span>
-              </h4>
+                </h4>
 
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
+                <div class="progress progress-xxs">
+                  <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                </div>
+              </a>
+            </li>
+          </ul>
+          <!-- /.control-sidebar-menu -->
 
+        </div>
+        <!-- /.tab-pane -->
+        <!-- Stats tab content -->
+        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+        <!-- /.tab-pane -->
+        <!-- Settings tab content -->
+        <div class="tab-pane" id="control-sidebar-settings-tab">
+          <form method="post">
+            <h3 class="control-sidebar-heading">General Settings</h3>
+
+            <div class="form-group">
+              <label class="control-sidebar-subheading">
+                Report panel usage
+                <input type="checkbox" class="pull-right" checked>
+              </label>
+
+              <p>
+                Some information about this general settings option
+              </p>
+            </div>
+            <!-- /.form-group -->
+          </form>
+        </div>
+        <!-- /.tab-pane -->
       </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
+    </aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
   immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
+    <div class="control-sidebar-bg"></div>
+  </div>
+  <!-- ./wrapper -->
 
-<!-- REQUIRED JS SCRIPTS -->
-<!-- jQuery 3 -->
+  <!-- REQUIRED JS SCRIPTS -->
+  <!-- jQuery 3 -->
+  <!-- ajax necesitado -->
+  <script>
+    $(document).ready(function(){
+      $('#vehicle_table').DataTable({
+          processing:true,
+          serverSide:true,
+          ajax:{
+              url:"{{ route('vehiculos.index') }}"
+          },
+          columns:[
+              {
+                  data: 'marca',
+                  name: 'marca'
+              },
+              {
+                  data: 'tipoVehiculo',
+                  name: 'tipoVehiculo'
+              },
+              {
+                  data: 'placa',
+                  name: 'placa'
+              },
+              {
+                  data: 'anio',
+                  name: 'anio'
+              },
+              {
+                  data: 'idUser',
+                  name: 'idUser'
+              },
+              {
+                  data: 'action',
+                  name: 'action',
+                  orderable: false
+              }
+          ]
+      });
 
-<script src="{{ asset('js/user.js') }}"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- datatables JS -->
-<script src="/adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- para usar botones en datatables JS -->
-<script src="/Prueba/datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>
-<script src="/Prueba/datatables/JSZip-2.5.0/jszip.min.js"></script>
-<script src="/Prueba/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
-<script src="/Prueba/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
-<script src="/Prueba/datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
-<script src="/adminlte/bower_components/select2/dist/js/select2.full.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/i18n/es.js"></script>
-<script type="text/javascript" src="/Prueba/main.js"></script>
-<!-- AdminLTE App -->
-<script src="/adminlte/dist/js/adminlte.min.js"></script>
-<!-- Optionally, you can add Slimscroll and FastClick plugins.
+      $('#create_record').click(function(){
+          $('#formModal').modal('show');
+      });
+      $('#create_record').click(function(){
+      $('.modal-title').text("Add New Record");
+      $('#action_button').val("Add");
+      $('#action').val("Add");
+      $('#formModal').modal('show');
+});
+
+$('#sample_form').on('submit', function(event){
+event.preventDefault();
+if($('#action').val() == 'Add')
+{
+ $.ajax({
+  url:"{{ route('vehiculos.store') }}",
+  method:"POST",
+  data: new FormData(this),
+  contentType: false,
+  cache:false,
+  processData: false,
+  dataType:"json",
+  success:function(data)
+  {
+   var html = '';
+   if(data.errors)
+   {
+    html = '<div class="alert alert-danger">';
+    for(var count = 0; count < data.errors.length; count++)
+    {
+     html += '<p>' + data.errors[count] + '</p>';
+    }
+    html += '</div>';
+   }
+   if(data.success)
+   {
+    html = '<div class="alert alert-success">' + data.success + '</div>';
+    $('#sample_form')[0].reset();
+    $('#vehicle_table').DataTable().ajax.reload();
+   }
+   $('#form_result').html(html);
+  }
+ })
+}
+
+
+      });
+      $(document).on('click','.edit', function(){
+          var id = $(this).attr('id');
+          $('#form_result').html('');
+          $.ajax({
+              url:"/ajax-crud/"+id+"/edit",
+              dataType:"json",
+              success:function(html){
+                  $('#first_name').val(html.data.first_name);
+                  $('#last_name').val(html.data.last_name);
+                  $('#store_image').html("<img src= {{ URL::to('/') }}/images/" + html.data.image + " width='70' class='img-thumbnail' />");
+                  $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.image+"' />");
+                  $('#hidden_id').val(html.data.id);
+                  $('.modal-title').text("Edit New Record");
+                  $('#action_button').val("Edit");
+                  $('#action').val("Edit");
+                  $('#formModal').modal('show');
+              }
+          })
+      });
+      var user_id;
+      $(document).on('click','.delete',function(){
+          user_id = $(this).attr('id');
+          $('#confirmModal').modal('show');
+      });
+
+      $('#ok_button').click(function(){
+          $.ajax({
+              url:"ajax-crud/destroy/"+user_id, beforeSend:function(){
+                  $('#ok_button').text('Deleting...');
+              },
+              success:function(data)
+              {
+                  setTimeout(function(){
+                      $('#confirmModal').modal('hide');
+                      $('#vehicle_table').DataTable().ajax.reload();
+                  },2000);
+              }
+          })
+      });
+  });
+  </script>
+  <script src="{{ asset('js/user.js') }}"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- datatables JS -->
+  <script src="/adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <!-- para usar botones en datatables JS -->
+  <script src="/Prueba/datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>
+  <script src="/Prueba/datatables/JSZip-2.5.0/jszip.min.js"></script>
+  <script src="/Prueba/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
+  <script src="/Prueba/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+  <script src="/Prueba/datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+  <script src="/adminlte/bower_components/select2/dist/js/select2.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/i18n/es.js"></script>
+  <script type="text/javascript" src="/Prueba/main.js"></script>
+  <!-- AdminLTE App -->
+  <script src="/adminlte/dist/js/adminlte.min.js"></script>
+  <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. -->
 
 </body>
+
 </html>

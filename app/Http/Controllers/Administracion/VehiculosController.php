@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Administracion;
-
+use \Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Vehiculo;
+use Validator;
 
 class VehiculosController extends Controller
 {
@@ -15,7 +16,26 @@ class VehiculosController extends Controller
      */
     public function index()
     {
-        //
+        if(request()->ajax())
+        {
+            return datatables()->of(Vehiculo::latest()->get())
+            ->addColumn('action', function($data){
+                $button = '<button type="button"
+                    name="edit" id="'.$data->id.'"
+                    class="edit btn btn-primary btn-sm">
+                    Edit</button>';
+                $button .='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+                $button .= '<button type="button"
+                    name="delete" id="'.$data->id.'"
+                    class="delete btn btn-danger btn-sm">
+                    Delete</button>';
+                return $button;
+            })
+            ->rawColumns(['action'])
+            ->make(true);
+        }
+
+        return view('Admin.Vehiculos.index');
     }
 
     /**
@@ -36,7 +56,29 @@ class VehiculosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $rules = array(
+            'marca'    =>  'required',
+            'tipoVehiculo'     =>  'required',
+            'placa'         =>  'required',
+            'anio'         =>  'required',
+            'idUser'         =>  'required'
+        );
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
+        {
+            return response()->json(['errors'=>$error->errors()->all()]);
+        }
+
+        $vehiculo = array(
+            'marca'=>$request->marca,
+            'tipoVehiculo'=>$request->tipoVehiculo,
+            'placa'=>$request->placa,
+            'anio'=>$request->anio,
+            'idUser'=>$request->idUser,
+        );
+        Vehiculo::create($vehiculo);
+        return response()->json(['success'=>'Data added successfully. ']);
     }
 
     /**
