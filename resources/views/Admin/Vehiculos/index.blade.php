@@ -21,7 +21,8 @@
                             <th>Tipo de Vehículo</th>
                             <th>Placa</th>
                             <th>Año</th>
-                            <th>ID Dueño</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
                             <th>Action</th>
                         </tr>
                     </thead>

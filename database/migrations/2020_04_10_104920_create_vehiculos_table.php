@@ -19,8 +19,8 @@ class CreateVehiculosTable extends Migration
             $table->string('tipoVehiculo');
             $table->string('placa',8)->unique();
             $table->string('anio',4);
-            $table->unsignedBigInteger('idUser');
-            $table->foreign('idUser')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });

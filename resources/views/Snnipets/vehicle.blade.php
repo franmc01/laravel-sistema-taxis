@@ -1,5 +1,5 @@
-  <!-- Modal de agregar-->
-  <div id="formModal" class="modal fade" role="dialog">
+<!-- Modal de agregar-->
+<div id="formModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -39,9 +39,16 @@
                     </div>
                     <br />
                     <div class="form-group">
-                        <label class="control-label col-md-4">Id Usuario : </label>
+                        <label class="control-label col-md-4">Socio : </label>
                         <div class="col-md-8">
-                            <input type="text" name="idUser" id="idUser" class="form-control" />
+                            <select name="user_id" id="user_id" class="form-control">
+                                <option>Seleccione a un socio</option>
+                                @foreach ($users as $item)
+                                    <option value="{{ $item->id }}">{{ $item->nombres }} {{ $item->apellidos }}</option>
+                                @endforeach
+                            </select>
+
+                            <span id="store_image"></span>
                         </div>
                     </div>
                     <br />
@@ -56,5 +63,21 @@
         </div>
     </div>
 </div>
-
-
+<!-- Modal de confirmacion de eliminar-->
+<div id="confirmModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title">Confirmation</h2>
+            </div>
+            <div class="modal-body">
+                <h4 align="center" style="margin:0;">Are you sure you want to remove this data?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

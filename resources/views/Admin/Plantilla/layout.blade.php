@@ -274,8 +274,12 @@ desired effect
                   name: 'anio'
               },
               {
-                  data: 'idUser',
-                  name: 'idUser'
+                  data: 'users.nombres',
+                  name: 'users.nombres',
+              },
+              {
+                  data: 'users.apellidos',
+                  name: 'users.apellidos',
               },
               {
                   data: 'action',
@@ -330,19 +334,54 @@ if($('#action').val() == 'Add')
  })
 }
 
+if($('#action').val()=="Edit")
+  {
+      $.ajax({
+          url:"{{ route('vehiculos.update') }}",
+          method:"POST",
+          data:new FormData(this),
+          contentType: false,
+          cache: false,
+          processData: false,
+          dataType: "json",
+          success:function(data)
+          {
+              var html ='';
+              if(data.errors){
+                  html = '<div class"alert alert-danger">';
+                  for(var count = 0; count < data.errors.length; count ++)
+                  {
+                      html+='<p>' + data.errors[count] +'</p>';
+                  }
+                  html +='</div>';
+              }
+              if(data.success)
+              {
+                    html='<div class="alert alert-success">' + data.success + '</div>';
+                    $('#sample_form')[0].reset();
+                    $('#store_image').html('');
+                    $('#vehicle_table').DataTable().ajax.reload();
+              }
+              $('#form_result').html(html);
+          }
+      });
+  }
 
       });
       $(document).on('click','.edit', function(){
           var id = $(this).attr('id');
           $('#form_result').html('');
           $.ajax({
-              url:"/ajax-crud/"+id+"/edit",
+              url:"/vehiculos/"+id+"/edit",
               dataType:"json",
               success:function(html){
-                  $('#first_name').val(html.data.first_name);
-                  $('#last_name').val(html.data.last_name);
-                  $('#store_image').html("<img src= {{ URL::to('/') }}/images/" + html.data.image + " width='70' class='img-thumbnail' />");
-                  $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.image+"' />");
+                  $('#marca').val(html.data.marca);
+                  $('#tipoVehiculo').val(html.data.tipoVehiculo);
+                  $('#placa').val(html.data.placa);
+                  $('#anio').val(html.data.anio);
+                  $('#user_id').val(html.data.user_id);
+//                  $('#store_image').html("<img src= {{ URL::to('/') }}/images/" + html.data.image + " width='70' class='img-thumbnail' />");
+//                  $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.image+"' />");
                   $('#hidden_id').val(html.data.id);
                   $('.modal-title').text("Edit New Record");
                   $('#action_button').val("Edit");
@@ -359,7 +398,7 @@ if($('#action').val() == 'Add')
 
       $('#ok_button').click(function(){
           $.ajax({
-              url:"ajax-crud/destroy/"+user_id, beforeSend:function(){
+              url:"vehiculos/destroy/"+user_id, beforeSend:function(){
                   $('#ok_button').text('Deleting...');
               },
               success:function(data)

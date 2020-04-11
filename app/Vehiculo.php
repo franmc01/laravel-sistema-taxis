@@ -10,10 +10,13 @@ class Vehiculo extends Model
 {
     use Notifiable;
     use SoftDeletes;
-
+    public function users()
+    {
+        return $this->belongsTo('App\User','user_id','id');
+    }
     protected $fillable = [
         'marca', 'tipoVehiculo',
         'placa', 'anio',
-        'idUser',
+        'user_id',
     ];
 }

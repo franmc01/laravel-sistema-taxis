@@ -30,7 +30,8 @@ function () {
     Route::get('eliminar/{user}', 'UsuariosController@user_force')->name('usuarios.forceDelete');
     //rutas de vehiculo
     Route::resource('vehiculos', 'VehiculosController');
-
+    Route::post('vehiculos/update', 'VehiculosController@update')->name('vehiculos.update');
+    Route::get('vehiculos/destroy/{id}', 'VehiculosController@destroy');    
 });
 
 Route::group(['middleware' => ['role:usuario']], function () {

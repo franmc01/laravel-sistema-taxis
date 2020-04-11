@@ -17,6 +17,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+    public function vehiculos()
+    {
+        return $this->hasOne('App\Vehiculo');
+    }
     protected $fillable = [
         'foto_perfil', 'nombres',
         'apellidos', 'cedula',

@@ -5,6 +5,7 @@ use \Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Vehiculo;
+use App\User;
 use Validator;
 
 class VehiculosController extends Controller
@@ -16,18 +17,28 @@ class VehiculosController extends Controller
      */
     public function index()
     {
+        $users=User::all();
+        //return $a=Vehiculo::with('users')->latest()->get();
+
         if(request()->ajax())
         {
-            return datatables()->of(Vehiculo::latest()->get())
+            $data=Vehiculo::with('users')->latest()->get();
+            
+            return datatables()->of($data)
             ->addColumn('action', function($data){
                 $button = '<button type="button"
+                    name="view" id="'.$data->id.'"
+                    class="btn btn-xs btn-info"><span style="padding-right:5px"><i class="fa fa-eye"></i></span>
+                    View</button>';
+                $button .='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+                $button .= '<button type="button"
                     name="edit" id="'.$data->id.'"
-                    class="edit btn btn-primary btn-sm">
+                    class="edit btn btn-xs btn-warning"><span style="padding-right:5px"><i class="fa fa-pencil"></i></span>
                     Edit</button>';
                 $button .='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                 $button .= '<button type="button"
                     name="delete" id="'.$data->id.'"
-                    class="delete btn btn-danger btn-sm">
+                    class="delete btn btn-danger btn-xs"><span style="padding-right:5px"><i class="fa fa-ban"></i></span>
                     Delete</button>';
                 return $button;
             })
@@ -35,7 +46,7 @@ class VehiculosController extends Controller
             ->make(true);
         }
 
-        return view('Admin.Vehiculos.index');
+        return view('Admin.Vehiculos.index',compact('users'));
     }
 
     /**
@@ -61,7 +72,7 @@ class VehiculosController extends Controller
             'tipoVehiculo'     =>  'required',
             'placa'         =>  'required',
             'anio'         =>  'required',
-            'idUser'         =>  'required'
+            'user_id'         =>  'required'
         );
         $error = Validator::make($request->all(), $rules);
 
@@ -75,7 +86,7 @@ class VehiculosController extends Controller
             'tipoVehiculo'=>$request->tipoVehiculo,
             'placa'=>$request->placa,
             'anio'=>$request->anio,
-            'idUser'=>$request->idUser,
+            'user_id'=>$request->user_id,
         );
         Vehiculo::create($vehiculo);
         return response()->json(['success'=>'Data added successfully. ']);
@@ -100,7 +111,11 @@ class VehiculosController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(request()->ajax())
+        {
+            $data=Vehiculo::findOrFail($id);
+            return response()->json(['data'=>$data]);
+        }
     }
 
     /**
@@ -110,9 +125,33 @@ class VehiculosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        
+        $rules = array(
+            'marca'    =>  'required',
+            'tipoVehiculo'     =>  'required',
+            'placa'         =>  'required',
+            'anio'         =>  'required',
+            'user_id'         =>  'required'
+        );
+        $error = Validator::make($request->all(), $rules);
+
+        if($error->fails())
+        {
+            return response()->json(['errors'=>$error->errors()->all()]);
+
+        }
+    
+        $form_data=array(
+            'marca'=>$request->marca,
+            'tipoVehiculo'=>$request->tipoVehiculo,
+            'placa'=>$request->placa,
+            'anio'=>$request->anio,
+            'user_id'=>$request->user_id,
+        );
+        Vehiculo::whereId($request->hidden_id)->update($form_data);
+        return response()->json(['success'=>'Data is successfully updated']);
     }
 
     /**
@@ -123,6 +162,7 @@ class VehiculosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Vehiculo::findOrFail($id);
+        $data->delete();
     }
 }
