@@ -30,7 +30,7 @@
                           </div>
                           <div class="form-group">
                             <label for="apellidos">Cedula: </label>
-                            <input type="text" min="1" minlength="10" maxlength="10" pattern="^[0-9]$+" class="form-control"  name="cedula" placeholder="Ingrese el numero de cédula " value="{{ old('cedula',$datos->cedula) }}">
+                            <input type="number" min="1" minlength="10" maxlength="10"  class="form-control"  name="cedula" placeholder="Ingrese el numero de cédula " value="{{ old('cedula',$datos->cedula) }}">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -40,30 +40,47 @@
                           </div>
                         <div class="form-group">
                             <label for="email">Correo: </label>
-                            <input type="email" class="form-control" name="correo" placeholder="Ingrese el correo" value="{{ old('cedula',$datos->email) }}">
+                            <input type="email" class="form-control" name="email" placeholder="Ingrese el correo" value="{{ old('cedula',$datos->email) }}">
                           </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="input-group">
-                            <label for="exampleInputFile">Foto de Perfil</label>
+                        <div class="col-md-6">
                             <div class="input-group">
-                                <div class="custom-file">
-                                  <input type="file" name="imagen" class="custom-file-input" id="inputGroupFile01"
-                                    aria-describedby="inputGroupFileAddon01">
-                                  <br>
+                                <label for="exampleInputFile">Foto de perfil actual</label>
+                                <br>
+                                <img src="/storage/{{ $datos->foto_perfil }}" height="120px" width="120px" >
+                                <div class="input-group" style="margin-top:5%">
+                                    <div class="custom-file">
+                                      <input type="file" name="foto_perfil" class="custom-file-input" id="inputGroupFile01"
+                                        aria-describedby="inputGroupFileAddon01" value="{{ old('foto_perfil',$datos->foto_perfil) }}">
+                                      <br>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="form-group">
-                            <label>Roles de usuario:</label>
-                            <div class="radio">
-                                @foreach ($roles as $item)
-                                <label style="text-transform:capitalize"><input type="radio" name="roles[]" id="datos" value="{{ $item->id }}" unchecked>{{ $item->name }}</label>
-                                <br>
-                                @endforeach
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Rol de usuario actual:</label>
+                                <div class="radio">
+                                    @foreach ($roles as $item)
+                                    <label style="text-transform:capitalize"><input type="radio" name="roles[]" id="datos" value="{{  $item->id }}" {{ $datos->roles->contains($item) ? 'checked':'' }} >{{ $item->name }}</label>
+                                    <br>
+                                    @endforeach
+                                </div>
                             </div>
-                        </div> --}}
-                        <span class="help-block">La contraseña será generada y enviada via email al nuevo usuario registrado en el sistema.</span>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                            <span class="help-block">Dejar en blanco si no desea cambiar la contraseña</span>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="password_confirmation">Confirmar contraseña</label>
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="Repite la contraseña">
+                        </div>
                     </div>
                     <div class="box-footer">
                         <button type="submit" class="btn btn-primary btn-block">Guardar</button>

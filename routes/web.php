@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,11 +32,6 @@ function () {
     Route::resource('vehiculos', 'VehiculosController');
 
 });
-
-
-
-
-
 
 Route::group(['middleware' => ['role:usuario']], function () {
     //Here your routes
