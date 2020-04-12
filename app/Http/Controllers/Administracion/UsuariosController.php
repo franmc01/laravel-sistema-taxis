@@ -80,8 +80,9 @@ class UsuariosController extends Controller
         return view('Admin.Usuarios.edit',compact('datos','roles'));
     }
 
+
     /**
-     * Update the specified resource in storage.
+     *  Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -110,6 +111,7 @@ class UsuariosController extends Controller
         if ($request->filled('password')) {
             $datos->password=Hash::make($request->password);
         }
+
         $datos->save();
         return back();
     }
@@ -127,17 +129,15 @@ class UsuariosController extends Controller
     }
 
 
-    /**Listado de metodos adicionales*/
-
-
-    /**Metodo de traer los registros inactivos */
+    /**Listado de metodos adicionales
+    Metodo de traer los registros inactivos */
     public function eliminados()
     {
         $usuarios = User::onlyTrashed()->get();
         return view('Admin.Usuarios.eliminados', compact('usuarios'));
     }
 
-    /**Metodo de resatura los registros inactivos */
+    /**Metodo de restaura los registros inactivos */
     public function user_restore($id){
         User::withTrashed()->find($id)->restore();
         return redirect()->route('usuarios.eliminados');
