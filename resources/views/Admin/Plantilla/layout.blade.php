@@ -381,7 +381,6 @@ if($('#action').val()=="Edit")
                   $('#anio').val(html.data.anio);
                   $('#user_id').val(html.data.user_id);
 //                  $('#store_image').html("<img src= {{ URL::to('/') }}/images/" + html.data.image + " width='70' class='img-thumbnail' />");
-//                  $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.image+"' />");
                   $('#hidden_id').val(html.data.id);
                   $('.modal-title').text("Edit New Record");
                   $('#action_button').val("Edit");
@@ -390,6 +389,30 @@ if($('#action').val()=="Edit")
               }
           })
       });
+      //inicia el desmadre
+      $(document).on('click','.view', function(){
+          var id = $(this).attr('id');
+          $('#form_result').html('');
+          $.ajax({
+              url:"/vehiculos/"+id,
+              dataType:"json",
+              success:function(html){
+                  $('#vmarca').text(html.data.marca);
+                  $('#vtipoVehiculo').text(html.data.tipoVehiculo);
+                  $('#vplaca').text(html.data.placa);
+                  $('#vanio').text(html.data.anio);
+                  $('#vuser_id').text(html.data.user_id);
+                  $('#vusernombres').text(html.data.users.nombres);
+                  $('#vuserapellidos').text(html.data.users.apellidos);
+                  $('#vstore_image').html("<img src= {{ URL::to('storage') }}/" + html.data.users.foto_perfil + " style='text-align:center' class='img-rounded img-fill' height='220' width='220'/>");
+                  $('#exampleModal').modal('show');
+              }
+          })
+      });
+      //termina el desmadre
+
+
+
       var user_id;
       $(document).on('click','.delete',function(){
           user_id = $(this).attr('id');

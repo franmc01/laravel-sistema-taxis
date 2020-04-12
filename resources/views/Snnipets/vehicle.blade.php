@@ -44,7 +44,7 @@
                             <select name="user_id" id="user_id" class="form-control">
                                 <option>Seleccione a un socio</option>
                                 @foreach ($users as $item)
-                                    <option value="{{ $item->id }}">{{ $item->nombres }} {{ $item->apellidos }}</option>
+                                <option value="{{ $item->id }}">{{ $item->nombres }} {{ $item->apellidos }}</option>
                                 @endforeach
                             </select>
 
@@ -77,6 +77,47 @@
             <div class="modal-footer">
                 <button type="button" name="ok_button" id="ok_button" class="btn btn-danger">OK</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" style="font-weight:bold">Datos del Vehículo</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div id="vstore_image" class="col-md-6">
+                    </div>
+                    <div class="col-md-6" style="border-left:3px solid #ded4da;">
+                        <blockquote>
+                            <h4 style="font-weight:bold">Marca</h4>
+                            <h5 name="vmarca" id="vmarca"></h5>
+                            <h4 style="font-weight:bold">Tipo de Vehículo</h4>
+                            <h5 name="vtipoVehiculo" id="vtipoVehiculo"></h5>
+                            <h4 style="font-weight:bold">Placa</h4>
+                            <h5 name="vplaca" id="vplaca"></h5>
+                            <h4 style="font-weight:bold">Año de Fabricación</h4>
+                            <h5 name="vanio" id="vanio"></h5>
+                            <h4 style="font-weight:bold">User Id</h4>
+                            <h5 name="vuser_id" id="vuser_id"></h5>
+                            <h4 style="font-weight:bold">Nombre de Socio</h4>
+                            <h5 name="vusernombres" id="vusernombres"></h5>
+                            <h4 style="font-weight:bold">Apellidos de Socio</h4>
+                            <h5 name="vuserapellidos" id="vuserapellidos"></h5>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
             </div>
         </div>
     </div>

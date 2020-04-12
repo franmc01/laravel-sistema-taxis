@@ -28,7 +28,7 @@ class VehiculosController extends Controller
             ->addColumn('action', function($data){
                 $button = '<button type="button"
                     name="view" id="'.$data->id.'"
-                    class="btn btn-xs btn-info"><span style="padding-right:5px"><i class="fa fa-eye"></i></span>
+                    class="view btn btn-xs btn-info"><span style="padding-right:5px"><i class="fa fa-eye"></i></span>
                     View</button>';
                 $button .='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                 $button .= '<button type="button"
@@ -100,7 +100,11 @@ class VehiculosController extends Controller
      */
     public function show($id)
     {
-        //
+        if(request()->ajax())
+        {
+            $data=Vehiculo::with('users')->findOrFail($id);
+            return response()->json(['data'=>$data]);
+        }
     }
 
     /**
