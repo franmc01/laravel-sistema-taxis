@@ -289,51 +289,9 @@ desired effect
           ]
       });
 
-      $('#create_record').click(function(){
-          $('#formModal').modal('show');
-      });
-      $('#create_record').click(function(){
-      $('.modal-title').text("Add New Record");
-      $('#action_button').val("Add");
-      $('#action').val("Add");
-      $('#formModal').modal('show');
-});
 
 $('#sample_form').on('submit', function(event){
 event.preventDefault();
-if($('#action').val() == 'Add')
-{
- $.ajax({
-  url:"{{ route('vehiculos.store') }}",
-  method:"POST",
-  data: new FormData(this),
-  contentType: false,
-  cache:false,
-  processData: false,
-  dataType:"json",
-  success:function(data)
-  {
-   var html = '';
-   if(data.errors)
-   {
-    html = '<div class="alert alert-danger">';
-    for(var count = 0; count < data.errors.length; count++)
-    {
-     html += '<p>' + data.errors[count] + '</p>';
-    }
-    html += '</div>';
-   }
-   if(data.success)
-   {
-    html = '<div class="alert alert-success">' + data.success + '</div>';
-    $('#sample_form')[0].reset();
-    $('#vehicle_table').DataTable().ajax.reload();
-   }
-   $('#form_result').html(html);
-  }
- })
-}
-
 if($('#action').val()=="Edit")
   {
       $.ajax({
@@ -348,11 +306,13 @@ if($('#action').val()=="Edit")
           {
               var html ='';
               if(data.errors){
-                  html = '<div class"alert alert-danger">';
-                  for(var count = 0; count < data.errors.length; count ++)
+                  html = '<div class="alert alert-danger alert-dismissible">';
+                  html +='<ul>';
+                  for(var count = 0; count < 1; count ++)
                   {
-                      html+='<p>' + data.errors[count] +'</p>';
+                      html+='<li>' + data.errors[count] +'</li>';
                   }
+                  html +='</ul';
                   html +='</div>';
               }
               if(data.success)

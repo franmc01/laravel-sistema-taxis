@@ -56,7 +56,8 @@ class VehiculosController extends Controller
      */
     public function create()
     {
-        //
+        $users=User::all();
+        return view('Admin.Vehiculos.create',compact('users'));
     }
 
     /**
@@ -67,19 +68,28 @@ class VehiculosController extends Controller
      */
     public function store(Request $request)
     {
+        $messages = [
+            'marca.required' => 'Debe ingresar el nombre de la marca',  
+            'tipoVehiculo.required' => 'Debe ingresar el tipo de vehículo',  
+            'placa.required' => 'Debe ingresar el número de placa',  
+            'placa.unique' => 'El número de placa debe ser único',  
+            'anio.required' => 'Debe ingresar el año de fabricación del vehículo',  
+            'user_id.required' => 'Debe ingresar el nombre del socio dueño del vehículo',  
+        ];
         $rules = array(
             'marca'    =>  'required',
             'tipoVehiculo'     =>  'required',
-            'placa'         =>  'required',
+            'placa'         =>  'required|unique:vehiculos,placa',
             'anio'         =>  'required',
             'user_id'         =>  'required'
         );
-        $error = Validator::make($request->all(), $rules);
+        $this->validate($request, $rules, $messages);
+//        $error = Validator::make($request->all(), $rules);
 
-        if($error->fails())
-        {
-            return response()->json(['errors'=>$error->errors()->all()]);
-        }
+//        if($error->fails())
+//        {
+//            return response()->json(['errors'=>$error->errors()->all()]);
+//        }
 
         $vehiculo = array(
             'marca'=>$request->marca,
@@ -89,7 +99,8 @@ class VehiculosController extends Controller
             'user_id'=>$request->user_id,
         );
         Vehiculo::create($vehiculo);
-        return response()->json(['success'=>'Data added successfully. ']);
+//        return response()->json(['success'=>'Data added successfully. ']);
+        return redirect('vehiculos/create')->with('creado','El uso de tierra ha sido creado');
     }
 
     /**
@@ -155,7 +166,7 @@ class VehiculosController extends Controller
             'user_id'=>$request->user_id,
         );
         Vehiculo::whereId($request->hidden_id)->update($form_data);
-        return response()->json(['success'=>'Data is successfully updated']);
+        return response()->json(['success'=>'Datos actualizados correctamente']);
     }
 
     /**

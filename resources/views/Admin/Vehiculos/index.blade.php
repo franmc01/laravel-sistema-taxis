@@ -7,8 +7,7 @@
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Listado de vehiculos</h3>
-            <button type="button" name="create_record" id="create_record" class="btn btn-primary pull-right"><span
-                    style="padding-right:5px"><i class="fa fa-plus" aria-hidden="true"></i></span> Crear Vehículo</button>
+            <a class="btn btn-primary pull-right" href="{{ route('vehiculos.create') }}"><span style="padding-right:5px"><i class="fa fa-plus" aria-hidden="true"></i></span> Crear usuario</a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
