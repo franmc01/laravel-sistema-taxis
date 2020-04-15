@@ -8,7 +8,7 @@ use App\Mail\LoginCredentials;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SendLoginCredentials
+class SendLoginCredentials implements ShouldQueue
 {
     /**
      * Handle the event.

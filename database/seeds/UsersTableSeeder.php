@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         $admin=new User();
         $admin->nombres="Limberth Esneider";
         $admin->apellidos="Santander Alcivar";
-        $admin->cedula="1315311009";
+        $admin->cedula="1315311019";
         $admin->email="admin@admin.com";
         $admin->password=bcrypt('admin123');
         $admin->save();
