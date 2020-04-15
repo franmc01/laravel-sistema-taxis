@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         $admin=new User();
         $admin->nombres="Limberth Esneider";
         $admin->apellidos="Santander Alcivar";
-        $admin->cedula="1314555267";
+        $admin->cedula="1315311009";
         $admin->email="admin@admin.com";
         $admin->password=bcrypt('admin123');
         $admin->save();
@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
         $socio=new User();
         $socio->nombres="Francisco Joel";
         $socio->apellidos="Marin Calderón";
-        $socio->cedula="1234567890";
+        $socio->cedula="1315311009";
         $socio->email="socio@socio.com";
         $socio->password=bcrypt('socio123');
         $socio->save();
@@ -37,7 +37,7 @@ class UsersTableSeeder extends Seeder
         $moderador->save();
 
         $admin->assignRole('administrador');
-        $socio->assignRole('socio');
+        $socio->assignRole('administrador');
         $moderador->assignRole('moderador');
 
     }
