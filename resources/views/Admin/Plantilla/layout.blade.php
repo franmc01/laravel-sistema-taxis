@@ -29,6 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="/adminlte/bower_components/select2/dist/css/select2.min.css">
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="/adminlte/bower_components/jquery/dist/jquery.min.js"></script>
 </head>
 <!--
@@ -394,6 +395,29 @@ if($('#action').val()=="Edit")
           })
       });
   });
+
+
+$("#resetear").on('submit', function(e) {
+    e.preventDefault(); // prevent the form submit
+    var url = "{{ route('usuarios.store') }}";
+    var formData = new FormData(document.getElementById("resetear"));
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: formData,
+        dataType: "json",
+        contentType: false,
+        enctype: 'multipart/form-data',
+        cache: false,
+        processData: false,
+        success: function(response) {
+            $('#resetear').trigger("reset");
+            Swal.fire('Genial', 'La información ha sido guardada correctamente', 'success');
+        }
+    });
+});
+
+
   </script>
   <script src="{{ asset('js/user.js') }}"></script>
   <!-- Bootstrap 3.3.7 -->
