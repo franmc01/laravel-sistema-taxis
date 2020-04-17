@@ -1,10 +1,7 @@
 @extends('Admin.Plantilla.layout')
 
 @section('header')
-<h1>
-    Usuarios
-    <small>Formulario de edición</small>
-</h1>
+<h1>Usuarios<small>Formulario de edición</small></h1>
 <ol class="breadcrumb">
     <li><a href="{{ route('administracion') }}"><i class="fa fa-dashboard"></i>Inicio</a></li>
     <li><a href="{{ route('usuarios.index') }}"><i class="fa fa-list"></i>Usuarios</a></li>
@@ -18,7 +15,7 @@
     <br>
     <div class="col-md-12">
         <div class="box box-warning">
-            <form  method="POST" action="{{route('usuarios.update',$datos->id)}}" accept-charset="UTF-8" enctype="multipart/form-data">
+            <form  id="actualizar" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <div class="box-body">
@@ -90,5 +87,30 @@
         </div>
     </div>
 </div>
+
+
+<script>
+$("#actualizar").on('submit', function (e) {
+    var url = "{{ route('usuarios.update', $datos->id) }}";
+    var formData = new FormData(this);
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: url,
+        cache: false,
+        data: formData,
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        enctype: 'multipart/form-data',
+        success: function(response) {
+            Swal.fire('Genial', 'La información ha sido actualizada correctamente', 'success');
+        }
+    });
+});
+</script>
+
+
+
 @endsection
 

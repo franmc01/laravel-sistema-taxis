@@ -400,28 +400,6 @@ if($('#action').val()=="Edit")
       });
   });
 
-
-$("#resetear").on('submit', function(e) {
-    e.preventDefault(); // prevent the form submit
-    var url = "{{ route('usuarios.store') }}";
-    var formData = new FormData(document.getElementById("resetear"));
-    $.ajax({
-        type: 'POST',
-        url: url,
-        data: formData,
-        dataType: "json",
-        contentType: false,
-        enctype: 'multipart/form-data',
-        cache: false,
-        processData: false,
-        success: function(response) {
-            $('#resetear').trigger("reset");
-            Swal.fire('Genial', 'La información ha sido guardada correctamente', 'success');
-        }
-    });
-});
-
-
   </script>
   <script src="{{ asset('/js/app.js') }}"></script>
   <script src="{{ asset('js/user.js') }}"></script>

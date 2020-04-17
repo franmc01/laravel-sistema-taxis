@@ -58,10 +58,33 @@
                             registrado en el sistema.</span>
                     </div>
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary btn-block enviar">Guardar</button>
+                        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-</div> @endsection
+</div>
+
+<script>
+    $("#resetear").on('submit', function(e) {
+    e.preventDefault();
+    var url = "{{ route('usuarios.store') }}";
+    var formData = new FormData(document.getElementById("resetear"));
+    $.ajax({
+        type: 'POST',
+        url: url,
+        cache: false,
+        data: formData,
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        enctype: 'multipart/form-data',
+        success: function(response) {
+            $('#resetear').trigger("reset");
+            Swal.fire('Genial', 'La información ha sido guardada correctamente', 'success');
+        }
+    });
+});
+</script>
+@endsection

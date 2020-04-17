@@ -92,6 +92,8 @@ class UsuariosController extends Controller
      */
     public function update(Request $request, $id)
     {
+        if(request()->ajax())
+        {
         $datos = User::find($id);
         if ($request->hasFile('foto_perfil')) {
             Storage::delete($datos->foto_perfil);
@@ -115,7 +117,8 @@ class UsuariosController extends Controller
         }
 
         $datos->save();
-        return back();
+        return response()->json(['success'=>'Data successfully. ']);
+        }
     }
 
     /**
