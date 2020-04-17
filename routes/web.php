@@ -31,7 +31,9 @@ function () {
     //rutas de vehiculo
     Route::resource('vehiculos', 'VehiculosController');
     Route::post('vehiculos/update', 'VehiculosController@update')->name('vehiculos.update');
-    Route::get('vehiculos/destroy/{id}', 'VehiculosController@destroy');    
+    Route::get('vehiculos/destroy/{id}', 'VehiculosController@destroy');
+    //rutas de cuotas
+    Route::resource('cuotas', 'CuotasController');    
 });
 
 Route::group(['middleware' => ['role:usuario']], function () {

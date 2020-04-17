@@ -11,6 +11,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>TransLaSinPar | Inicio</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Este es importante y necesario para el datepicker -->
+  <link href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+  <!-- Este es importante y necesario para algunos iconos que estoy usando y que no se quieren mostrar sin esta referencia -->
+  <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet"/>
   <link rel="stylesheet" href="/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
@@ -419,6 +423,7 @@ $("#resetear").on('submit', function(e) {
 
 
   </script>
+  <script src="{{ asset('/js/app.js') }}"></script>
   <script src="{{ asset('js/user.js') }}"></script>
   <!-- Bootstrap 3.3.7 -->
   <script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>

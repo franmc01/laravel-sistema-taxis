@@ -20,6 +20,10 @@
             <li {{ request()->is('home/vehiculos/activos') ? 'class=active' : ''}}><a href="{{ route('vehiculos.index') }}"><i class="fa fa-address-book"></i><span>Listar registros activos</span></a></li>
         </ul>
     </li>
+    <li class="treeview {{ request()->is('home/cuotas') ? 'active' : ''}}"><a href="#"><i class="fas fa-wallet"></i> <span>Money</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+        <ul class="treeview-menu">
+            <li><a href="{{ route('cuotas.index') }}"><i class="fas fa-file-invoice-dollar"></i><span>Control de Cuotas</span></a></li>
+        </ul>
+    </li>
     @endrole
-
   </ul>
