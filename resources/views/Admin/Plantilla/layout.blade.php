@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="/plugins/select2/css/select2.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="/dist/css/adminlte.min.css">
   <!-- overlayScrollbars -->
@@ -307,6 +309,8 @@ if($('#action').val()=="Edit")
   <script src="{{ asset('js/user.js') }}"></script>
   <!-- Bootstrap 4 -->
   <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Select2 -->
+  <script src="/plugins/select2/js/select2.full.min.js"></script>
   <!-- ChartJS -->
   <script src="/plugins/chart.js/Chart.min.js"></script>
   <!-- Sparkline -->
