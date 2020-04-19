@@ -18,15 +18,17 @@
 @endsection
 @section('content')
 <div class="col-md-12">
-    <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Listado de usuarios</h3>
-            <a class="btn btn-primary pull-right" href="{{ route('usuarios.create') }}">Crear usuario</a>
+    <div class="card">
+        <div class="card-header text-center">
+            <a class="btn btn-primary pull-right" href="{{ route('usuarios.create') }}">
+                <span style="padding-right:5px"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+                Crear usuario
+            </a>
         </div>
-        <!-- /.box-header -->
-        <div class="box-body">
+        <!-- /.card-header -->
+        <div class="card-body">
             <div class="table-responsive">
-                <table id="tablausuarios" class="table table-bordered table-striped table-hover" cellspacing="0"
+                <table id="eliminados" class="table table-bordered table-striped table-hover" cellspacing="0"
                     width="100%">
                     <thead>
                         <tr>
@@ -36,7 +38,8 @@
                             <th>Cedula</th>
                             <th>Roles</th>
                             <th>Correo personal</th>
-                            <th>Acciones</th>
+                            <th>Reactivar</th>
+                            <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody> @foreach ($usuarios as $item)
@@ -51,35 +54,35 @@
                                 <form action="{{ route('usuarios.restore', $item) }}" method='POST'>
                                     @csrf
                                     @method('GET')
-                                    <button type="submit" class="btn btn-info btn-sm">Activar</button>
+                                    <button type="submit" class="btn btn-info btn-xs"><i class="fa fa-user-check" aria-hidden="true"></i> Activar</button>
                                 </form>
+                            </td>
+                            <td>
                                 <form action="{{ route('usuarios.forceDelete', $item) }}" method='POST'>
                                     @csrf
                                     @method('GET')
-                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                    <button type="submit" class="btn btn-danger btn-xs"> <i class="fa fa-user-alt-slash" aria-hidden="true"></i> Eliminar</button>
                                 </form>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombres</th>
-                            <th>Apellidos</th>
-                            <th>Cedula</th>
-                            <th>Roles</th>
-                            <th>Correo personal</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </tfoot>
                 </table>
             </div>
 
 
 
         </div>
-        <!-- /.box-body -->
+        <!-- /.card-body -->
     </div>
-    <!-- /.box -->
-</div> @endsection
+    <!-- /.card -->
+</div>
+
+<script>
+        $(document).ready(function() {
+        $('#eliminados').DataTable();
+    } );
+</script>
+
+
+@endsection
