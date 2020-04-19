@@ -1,9 +1,23 @@
-@extends('Admin.Plantilla.layout') @section('header') <h1> Registros activos <small>Lista de registros</small>
-</h1>
-<ol class="breadcrumb">
-    <li><a href="{{ route('administracion') }}"><i class="fa fa-dashboard"></i>Inicio</a></li>
-    <li class="active">Usuarios</li>
-</ol> @endsection @section('content') <div class="col-md-12">
+@extends('Admin.Plantilla.layout')
+@section('header')
+
+<div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">Usuarios <small> - Registros inactivos</small></h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="{{ route('administracion') }}">Inicio</a></li>
+          <li class="breadcrumb-item active">Usuarios inactivos</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.container-fluid -->
+
+@endsection
+@section('content')
+<div class="col-md-12">
     <div class="box">
         <div class="box-header">
             <h3 class="box-title">Listado de usuarios</h3>
