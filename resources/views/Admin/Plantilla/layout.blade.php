@@ -1,257 +1,151 @@
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html>
+<html lang="es">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>TransLaSinPar | Inicio</title>
   <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Este es importante y necesario para el datepicker -->
-  <link href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
-  <!-- Este es importante y necesario para algunos iconos que estoy usando y que no se quieren mostrar sin esta referencia -->
-  <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="/adminlte/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="/adminlte/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- DataTables -->
-  <link rel="stylesheet" href="/adminlte/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  {{-- <link rel="stylesheet" href="/adminlte/dist/css/datab/dataTables.semanticui.min.css">
-   <link rel="stylesheet" href="/adminlte/dist/css/datab/semantic.min.css"> --}}
+  <link rel="stylesheet" href="/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link rel="stylesheet" href="/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/adminlte/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
-        page. However, you can choose any other skin. Make sure you
-        apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="/adminlte/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="/adminlte/bower_components/select2/dist/css/select2.min.css">
-  <!-- Google Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="/plugins/summernote/summernote-bs4.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link
+  href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
+    <!-- jQuery -->
+    <script src="/plugins/jquery/jquery.min.js"></script>
+  <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-  <script src="/adminlte/bower_components/jquery/dist/jquery.min.js"></script>
 </head>
-<!--
-BODY TAG OPTIONS:
-=================
-Apply one or more of the following classes to get the
-desired effect
-|---------------------------------------------------------|
-| SKINS         | skin-blue                               |
-|               | skin-black                              |
-|               | skin-purple                             |
-|               | skin-yellow                             |
-|               | skin-red                                |
-|               | skin-green                              |
-|---------------------------------------------------------|
-|LAYOUT OPTIONS | fixed                                   |
-|               | layout-boxed                            |
-|               | layout-top-nav                          |
-|               | sidebar-collapse                        |
-|               | sidebar-mini                            |
-|---------------------------------------------------------|
--->
 
-<body class="hold-transition skin-yellow sidebar-mini">
+<body class="sidebar-mini layout-fixed control-sidebar-slide-open text-sm">
   <div class="wrapper">
-
-    <!-- Main Header -->
-    <header class="main-header">
-
-      <!-- Logo -->
-      <a href="index2.html" class="logo">
-        <!-- mini logo for sidebar mini 50x50 pixels -->
-        <span class="logo-mini"><b>C</b>T</span>
-        <!-- logo for regular state and mobile devices -->
-        <span class="logo-lg"><b>BIENVENIDO</b></span>
-      </a>
-
-      <!-- Header Navbar -->
-      <nav class="navbar navbar-static-top" role="navigation">
-        <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-          <span class="sr-only">Toggle navigation</span>
-        </a>
-        <!-- Navbar Right Menu -->
-        <div class="navbar-custom-menu">
-          <ul class="nav navbar-nav">
-            <!-- User Account Menu -->
-            <li class="dropdown user user-menu">
-              <!-- Menu Toggle Button -->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <!-- The user image in the navbar-->
-                <img src="/storage/{{ auth()->user()->foto_perfil }}" class="user-image" alt="User Image">
-                <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                <span class="hidden-xs">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</span>
-              </a>
-              <ul class="dropdown-menu">
-                <!-- The user image in the menu -->
-                <li class="user-header">
-                  <img src="/storage/{{ auth()->user()->foto_perfil }}" class="img-circle" alt="User Image">
-
-                  <p>
-                    {{ auth()->user()->nombres."".auth()->user()->apelllidos }} - Web Developer
-                    <small>Member since Feb. 2020</small>
-                  </p>
-                </li>
-                <!-- Menu Body -->
-                <!-- Menu Footer-->
-                <li class="user-footer">
-                  <div class="pull-left">
-                    <a href="#" class="btn btn-default btn-flat">Perfil</a>
-                  </div>
-                  <div class="pull-right">
-                    <a href="{{ route('logout') }}" class="btn btn-default btn-flat"
-                      onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      {{ csrf_field() }}
-                      <input type="submit" value="logout" style="display: none;">
-                    </form>
-                  </div>
-                </li>
-              </ul>
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-dark navbar-gray-dark tex-sm">
+      <!-- Left navbar links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+        </li>
+      </ul>
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown user-menu">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+            <img src="/storage/{{ auth()->user()->foto_perfil }}" class="user-image img-circle elevation-2" alt="User Image">
+            <span class="d-none d-md-inline">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <!-- User image -->
+            <li class="user-header bg-dark">
+              <img src="/storage/{{ auth()->user()->foto_perfil }}" class="img-circle elevation-2" alt="User Image">
+              <p> {{ auth()->user()->nombres."".auth()->user()->apelllidos }} - Web Developer <small>Member since Nov. 2020</small>
+              </p>
             </li>
-            <!-- Control Sidebar Toggle Button -->
-            <li>
-              <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+            <!-- Menu Body -->
+            <li class="user-body">
+              <div class="row">
+                <div class="col-4 text-center">
+                  <a href="#">Followers</a>
+                </div>
+                <div class="col-4 text-center">
+                  <a href="#">Sales</a>
+                </div>
+                <div class="col-4 text-center">
+                  <a href="#">Friends</a>
+                </div>
+              </div>
+              <!-- /.row -->
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <a href="#" class="btn btn-default btn-flat">Perfil</a>
+              <a href="{{ route('logout') }}" class="btn btn-default btn-flat float-right" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+                <input type="submit" value="logout" style="display: none;">
+              </form>
             </li>
           </ul>
-        </div>
-      </nav>
-    </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-
-      <!-- sidebar: style can be found in sidebar.less -->
-      <section class="sidebar">
-
+        </li>
+      </ul>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-warning elevation-1">
+      <!-- Brand Logo -->
+      <a href="index3.html" class="brand-link">
+        <img src="/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+          style="opacity: .8">
+        <span class="brand-text font-weight-light">Compañia TransLaSinpar S.A</span>
+      </a>
+      <!-- Sidebar -->
+      <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="/storage/{{ auth()->user()->foto_perfil }}" class="img-circle elevation-2" alt="User Image">
+          </div>
+          <div class="info">
+            <a href="#" class="d-block">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</a>
+          </div>
+        </div>
         <!-- Sidebar Menu -->
-        @include('Admin.Plantilla.sidebar')
+        <nav class="mt-2">
+            @include('Admin.Plantilla.sidebar')
+        </nav>
         <!-- /.sidebar-menu -->
-      </section>
+      </div>
       <!-- /.sidebar -->
     </aside>
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
-      <section class="content-header">
+      <div class="content-header">
+
         @yield('header')
-      </section>
 
+      </div>
+      <!-- /.content-header -->
       <!-- Main content -->
-      <section class="content container-fluid">
-
-        <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
-        @yield('content')
-
-
-      </section>
+      <div class="content">
+        <div class="container-fluid">
+          @yield('content')
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-
     <!-- Main Footer -->
-    <footer class="main-footer">
+    <footer class="main-footer text-sm">
       <!-- To the right -->
-      <div class="pull-right hidden-xs">
-        Octavo Semestre
-      </div>
+      <div class="float-right d-none d-sm-inline"> Version 1.0.1 </div>
       <!-- Default to the left -->
-      <strong>Copyright &copy; 2020 <strong href="#">Computacion Espam MFL</strong>.</strong>
+      <strong>Copyright &copy; 2019-2020 <a href="">Computación Espam Mfl</a>.</strong>Todos los derechos reservados.
     </footer>
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <!-- Create the tabs -->
-      <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-        <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-        <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-      </ul>
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <!-- Home tab content -->
-        <div class="tab-pane active" id="control-sidebar-home-tab">
-          <h3 class="control-sidebar-heading">Recent Activity</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:;">
-                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                  <p>Will be 23 on April 24th</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
-
-          <h3 class="control-sidebar-heading">Tasks Progress</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:;">
-                <h4 class="control-sidebar-subheading">
-                  Custom Template Design
-                  <span class="pull-right-container">
-                    <span class="label label-danger pull-right">70%</span>
-                  </span>
-                </h4>
-
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
-
-        </div>
-        <!-- /.tab-pane -->
-        <!-- Stats tab content -->
-        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-        <!-- /.tab-pane -->
-        <!-- Settings tab content -->
-        <div class="tab-pane" id="control-sidebar-settings-tab">
-          <form method="post">
-            <h3 class="control-sidebar-heading">General Settings</h3>
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Report panel usage
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-
-              <p>
-                Some information about this general settings option
-              </p>
-            </div>
-            <!-- /.form-group -->
-          </form>
-        </div>
-        <!-- /.tab-pane -->
-      </div>
-    </aside>
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-  immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
   </div>
   <!-- ./wrapper -->
 
-  <!-- REQUIRED JS SCRIPTS -->
-  <!-- jQuery 3 -->
   <!-- ajax necesitado -->
   <script>
     $(document).ready(function(){
@@ -401,28 +295,40 @@ if($('#action').val()=="Edit")
   });
 
   </script>
+
+
+
+
+
+
+  <!-- REQUIRED SCRIPTS -->
+  {{-- Scripts nuestros --}}
   <script src="{{ asset('/js/app.js') }}"></script>
   <script src="{{ asset('js/user.js') }}"></script>
-  <!-- Bootstrap 3.3.7 -->
-  <script src="/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- datatables JS -->
-  <script src="/adminlte/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="/adminlte/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-  <!-- para usar botones en datatables JS -->
-  <script src="/Prueba/datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>
-  <script src="/Prueba/datatables/JSZip-2.5.0/jszip.min.js"></script>
-  <script src="/Prueba/datatables/pdfmake-0.1.36/pdfmake.min.js"></script>
-  <script src="/Prueba/datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
-  <script src="/Prueba/datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
-  <script src="/adminlte/bower_components/select2/dist/js/select2.full.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/i18n/es.js"></script>
-  <script type="text/javascript" src="/Prueba/main.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="/plugins/chart.js/Chart.min.js"></script>
+  <!-- Sparkline -->
+  <script src="/plugins/sparklines/sparkline.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="/plugins/jquery-knob/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="/plugins/moment/moment.min.js"></script>
+  <script src="/plugins/daterangepicker/daterangepicker.js"></script>
+  <!-- Tempusdominus Bootstrap 4 -->
+  <script src="/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <!-- Summernote -->
+  <script src="/plugins/summernote/summernote-bs4.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="/adminlte/dist/js/adminlte.min.js"></script>
-  <!-- Optionally, you can add Slimscroll and FastClick plugins.
-     Both of these plugins are recommended to enhance the
-     user experience. -->
-
+  <script src="/dist/js/adminlte.js"></script>
+  <!-- DataTables -->
+  <script src="/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 </body>
 
 </html>
