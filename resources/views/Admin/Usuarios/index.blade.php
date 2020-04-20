@@ -28,10 +28,9 @@
         <!-- /.box-header -->
         <div class="card-body">
             <div class="table-responsive">
-                <table id="tablausuarios" class="table table-bordered table-hover" cellspacing="0" width="100%">
+                <table id="tablausuarios" class="table table-bordered table-hover" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Nombres</th>
                             <th>Apellidos</th>
                             <th>Cedula</th>
@@ -45,7 +44,6 @@
                     <tbody>
                         @foreach ($usuarios as $item)
                          <tr>
-                            <td>{{ $item->id }}</td>
                             <td>{{ $item->nombres }}</td>
                             <td>{{ $item->apellidos }}</td>
                             <td>{{ $item->cedula }}</td>

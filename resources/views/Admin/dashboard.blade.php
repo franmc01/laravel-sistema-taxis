@@ -1,8 +1,73 @@
 @extends('Admin.Plantilla.layout')
-
 @section('content')
-<h1>Dashboard</h1>
-<p><strong>Usuario autenticado:</strong> {{ auth()->user()->nombres ." ".auth()->user()->apellidos  }}</p>
-<p><strong>Cedula:</strong> {{ auth()->user()->cedula}}</p>
-<p><strong>Correo:</strong> {{ auth()->user()->email}}</p>
+<div class="container-fluid">
+    <div class="row">
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>{{ $u }}</h3>
+                    <p>Usuarios registrados</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-user-friends"></i>
+                </div>
+                <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>{{ $v }}</h3>
+                    <p>Vehiculos asociados</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-car"></i>
+                </div>
+                <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>0<sup style="font-size: 20px">%</sup></h3>
+                    <p>Cuotas de usuarios</p>
+                </div>
+                <div class="icon">
+                    <i class="ion ion-stats-bars"></i>
+                </div>
+                <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-purple">
+                        <div class="inner">
+                            <h3>44</h3>
+                            <p>Para el futuro</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fab fa-mailchimp"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+    </div>
+</div>
+
+<div class="container-fluid">
+    <h1>Dashboard</h1>
+    <p><strong>Usuario autenticado:</strong> {{ auth()->user()->nombres ." ".auth()->user()->apellidos  }}</p>
+    <p><strong>Cedula:</strong> {{ auth()->user()->cedula}}</p>
+    <p><strong>Correo:</strong> {{ auth()->user()->email}}</p>
+</div>
+
 @endsection
