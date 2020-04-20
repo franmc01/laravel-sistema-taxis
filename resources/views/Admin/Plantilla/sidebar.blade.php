@@ -94,4 +94,28 @@
         </li>
 
     @endrole
+
+
+    <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon  fa fa-user-circle"></i>
+                <p>Mi perfil<i class="right fas fa-angle-left"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="fa fa-infinity nav-icon"></i>
+                    <p>Informacion personal</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="fa fa-fingerprint nav-icon"></i>
+                    <p>Cambiar contraseña</p>
+                    </a>
+                </li>
+
+            </ul>
+    </li>
 </ul>

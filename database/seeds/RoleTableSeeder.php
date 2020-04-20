@@ -16,8 +16,8 @@ class RoleTableSeeder extends Seeder
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
         //Create role
-        Role::create(['name' => 'administrador']);
-        Role::create(['name' => 'socio']);
-        Role::create(['name' => 'moderador']);
+        Role::create(['name' => 'Administrador']);
+        Role::create(['name' => 'Socio']);
+        Role::create(['name' => 'Moderador']);
     }
 }

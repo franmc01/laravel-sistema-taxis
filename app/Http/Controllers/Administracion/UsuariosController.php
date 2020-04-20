@@ -21,8 +21,17 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-        $usuarios = User::all();
-        return view('Admin.Usuarios.index', compact('usuarios'));
+        if(request()->ajax()){
+            return datatables()
+                    ->eloquent(User::query())
+                    ->addColumn('role', function ($query) { $user = User::find($query->id); return  $user->getRoleNames()->implode(',');})
+                    ->addColumn('btnshow','Snnipets.show_user')
+                    ->addColumn('btnedit','Snnipets.edit_user')
+                    ->addColumn('btndelete','Snnipets.delete_user')
+                    ->rawColumns(['btnshow','btnedit','btndelete'])
+                    ->toJson();
+        }
+        return view('Admin.Usuarios.index');
     }
     /**
      * Show the form for creating a new resource.

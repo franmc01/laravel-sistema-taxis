@@ -18,11 +18,7 @@ $(function () {
            url:'/correo',
            data:{name:nombre, email:email, message:message},
            success:function(){
-            Swal.fire(
-                'Correo enviado!',
-                'Satisfactoriamente',
-                'success',
-              )
+            notie.alert({ type: 'success', text: 'Success!', time: 2 });
            }
         });
 	});

@@ -47,9 +47,14 @@
     <link rel="stylesheet" href="/principal/css/line-icons.min.css">
     <!--Theme css-->
     <link rel="stylesheet" href="/principal/css/style.css">
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
 </head>
-
+<style>
+    /* After notie styles are applied to DOM: */
+.notie-container {
+  box-shadow: none;
+}
+</style>
 <body style="overflow-x:hidden;">
 
     <!--Start Loader-->
@@ -80,6 +85,7 @@
             </div>
         </div>
     </div>
+
     <!--Start Scripts-->
     <!--Latest version JQuery-->
     <script src="/principal/js/jquery-3.4.1.min.js"></script>
@@ -105,7 +111,8 @@
     <script src="/principal/js/wow.min.js"></script>
     <!--Main js-->
     <script src="/principal/js/main.js"></script>
-
+    <!--Notify js-->
+    <script src="https://unpkg.com/notie"></script>
 
 
 </body>

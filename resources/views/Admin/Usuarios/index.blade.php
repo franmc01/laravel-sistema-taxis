@@ -28,67 +28,19 @@
         <!-- /.box-header -->
         <div class="card-body">
             <div class="table-responsive">
-                <table id="tablausuarios" class="table table-bordered table-hover" cellspacing="0">
+                <table id="tablausuarios" class="table table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Nombres</th>
                             <th>Apellidos</th>
                             <th>Cedula</th>
-                            <th>Roles</th>
-                            <th>Correo personal</th>
-                            <th>Visualizar</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
+                            <th>Email</th>
+                            <th>Rol</th>
+                            <th>Accion 1</th>
+                            <th>Accion 2</th>
+                            <th>Accion 3</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        @foreach ($usuarios as $item)
-                         <tr>
-                            <td>{{ $item->nombres }}</td>
-                            <td>{{ $item->apellidos }}</td>
-                            <td>{{ $item->cedula }}</td>
-                            <td>{{ $item->getRoleNames()->implode(',') }}</td>
-                            <td>{{ $item->email }}</td>
-                            <td>
-                                <button type="button" data-toggle="modal" data-target="#exampleModal" class="btn btn-xs btn-info"><span style="padding-right:5px"><i class="fa fa-eye"></i></span>Ver perfil</button>
-                            </td>
-                            <td>
-                                <a class="btn btn-xs btn-warning text-white" href="{{route('usuarios.edit',$item)}}"><span style="padding-right:5px"><i class="fa fa-user-edit"></i></span>Editar perfil</a>
-                            </td>
-                            <td>
-                                <form action="{{route("usuarios.destroy", $item)}}" method='POST'>
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-xs"><span style="padding-right:5px"><i class="fa fa-user-lock"></i></span>Banear perfil</button>
-                                </form>
-                            </td>
-                        </tr>
-                        @extends('Snnipets.profile')
-                        @section('profile_body')
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img style="text-align:center"
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvzOpl3-kqfNbPcA_u_qEZcSuvu5Je4Ce_FkTMMjxhB-J1wWin-Q"
-                                    alt="" class="img-rounded img-fill">
-                            </div>
-                            <div class="col-md-6" style="border-left:3px solid #ded4da;">
-                                <blockquote>
-                                    <h4 style="font-weight:bold">Nombres y apellidos</h4>
-                                    <h5>{{ $item->nombres }} {{ $item->apellidos }}</h5>
-                                    <h4 style="font-weight:bold">Cedula</h4>
-                                    <h5>{{ $item->cedula }}</h5>
-                                    <h4 style="font-weight:bold">Correo personal</h4>
-                                    <h5>{{ $item->email }}</h5>
-                                    <h4 style="font-weight:bold">Rol de usuario</h4>
-                                    <h5 style="text-transform:capitalize"> {{ $item->getRoleNames()->implode(',') }}
-                                    </h5>
-                                </blockquote>
-                            </div>
-                        </div>
-            </div>
-            @endsection
-            @endforeach
-        </tbody>
             </table>
         </div>
     </div>
@@ -99,12 +51,47 @@
 
 <script>
     $(document).ready(function() {
-        $('#tablausuarios').DataTable();
-    } );
+        $('#tablausuarios').DataTable({
+			language: {
+				"emptyTable":			"No hay datos disponibles en la tabla.",
+				"info":		   			"Del _START_ al _END_ de _TOTAL_ ",
+				"infoEmpty":			"Mostrando 0 registros de un total de 0.",
+				"infoFiltered":			"(filtrados de un total de _MAX_ registros)",
+				"infoPostFix":			"(actualizados)",
+				"lengthMenu":			"Ver _MENU_ registros",
+				"loadingRecords":		"Cargando...",
+				"processing":			"Procesando...",
+				"search":				"Buscar:",
+				"searchPlaceholder":	"",
+				"zeroRecords":			"No se han encontrado coincidencias.",
+				"paginate": {
+					"first":			"Primera",
+					"last":				"Última",
+					"next":				"Siguiente",
+					"previous":			"Anterior"
+				},
+				"aria": {
+					"sortAscending":	"Ordenación ascendente",
+					"sortDescending":	"Ordenación descendente"
+				}
+			},
+            processing:true,
+            serverSide:true,
+            ajax:"{{ route('usuarios.index') }}",
+            columns:[
+                {data: 'nombres'},
+                {data: 'apellidos'},
+                {data: 'cedula'},
+                {data: 'email'},
+                {data: 'role'},
+                {data: 'btnshow'},
+                {data: 'btnedit'},
+                {data: 'btndelete'}
+            ],
+            "lengthMenu":				[[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
+            "iDisplayLength":			10,
+
+        });
+    });
 </script>
-
-
-
-
-
 @endsection
