@@ -28,7 +28,7 @@ class UsuariosController extends Controller
                     ->addColumn('role', function ($query) { $user = User::find($query->id); return  $user->getRoleNames()->implode(',');})
                     ->addColumn('btnshow', function(User $user) { return view('Snnipets\show_user', compact('user'));})
                     ->addColumn('btnedit','Snnipets.edit_user')
-                    ->addColumn('btndelete','Snnipets.delete_user')
+                    ->addColumn('btndelete', function(User $user) { return view('Snnipets\delete_user', compact('user'));})
                     ->rawColumns(['btnshow','btnedit','btndelete'])
                     ->toJson();
         }
@@ -146,9 +146,11 @@ class UsuariosController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        return redirect()->route('usuarios.index');
+            $user = User::find($id);
+            $user->delete();
+            return response()->json([
+                'success' => 'Record deleted successfully!'
+            ]);
     }
 
 

@@ -94,7 +94,14 @@
 
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a  href="{{ route('usuarios.index') }}" class="btn btn-danger btn-block">Regresar</a>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                            </div>
+                        </div>
                     </div>
             </form>
           </div>

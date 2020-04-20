@@ -19,12 +19,12 @@
 @section('content')
 <div class="col-md-12">
     <div class="card">
-        <div class="card-header text-center">
+        {{-- <div class="card-header text-center">
             <a class="btn btn-primary pull-right" href="{{ route('usuarios.create') }}">
                 <span style="padding-right:5px"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
                 Crear usuario
             </a>
-        </div>
+        </div> --}}
         <!-- /.card-header -->
         <div class="card-body">
             <div class="table-responsive">
