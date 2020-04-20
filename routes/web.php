@@ -20,7 +20,7 @@ Route::get('/home','HomeController@index' )->name('administracion');
 
 Route::group([
     'namespace' => 'Administracion',
-    'middleware' => ['role:administrador']],
+    'middleware' => ['role:Administrador']],
 function () {
     //Here your routes
     //rutas de usuario
@@ -36,11 +36,11 @@ function () {
     Route::resource('cuotas', 'CuotasController');    
 });
 
-Route::group(['middleware' => ['role:usuario']], function () {
+Route::group(['middleware' => ['role:Usuario']], function () {
     //Here your routes
 });
 
-Route::group(['middleware' => ['role:moderador']], function () {
+Route::group(['middleware' => ['role:Moderador']], function () {
     //Here your routes
 });
 

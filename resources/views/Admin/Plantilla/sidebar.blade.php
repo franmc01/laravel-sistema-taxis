@@ -7,7 +7,7 @@
             </a>
         </li>
 
-    @role('administrador')
+    @role('Administrador')
 
         <li class="nav-item has-treeview">
             <a href="#" class="nav-link">

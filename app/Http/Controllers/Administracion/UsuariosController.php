@@ -22,10 +22,11 @@ class UsuariosController extends Controller
     public function index()
     {
         if(request()->ajax()){
+
             return datatables()
                     ->eloquent(User::query())
                     ->addColumn('role', function ($query) { $user = User::find($query->id); return  $user->getRoleNames()->implode(',');})
-                    ->addColumn('btnshow','Snnipets.show_user')
+                    ->addColumn('btnshow', function(User $user) { return view('Snnipets\show_user', compact('user'));})
                     ->addColumn('btnedit','Snnipets.edit_user')
                     ->addColumn('btndelete','Snnipets.delete_user')
                     ->rawColumns(['btnshow','btnedit','btndelete'])
@@ -76,7 +77,14 @@ class UsuariosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    { }
+    {
+        if(request()->ajax())
+        {
+            $data=User::findOrFail($id);
+            return response()->json(['data'=>$data]);
+            // return view('Snnipets\show_user',compact('data'));
+        }
+    }
 
     /**
      * Show the form for editing the specified resource.
