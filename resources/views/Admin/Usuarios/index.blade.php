@@ -1,28 +1,20 @@
-@extends('Admin.Plantilla.layout')
-@section('header')
-
-<div class="container-fluid">
+@extends('Admin.Plantilla.layout') @section('header') <div class="container-fluid">
     <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Usuarios <small> - Registros activos</small></h1>
-      </div><!-- /.col -->
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="{{ route('administracion') }}">Inicio</a></li>
-          <li class="breadcrumb-item active">Usuarios activos</li>
-        </ol>
-      </div><!-- /.col -->
+        <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Usuarios <small> - Registros activos</small></h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="{{ route('administracion') }}">Inicio</a></li>
+                <li class="breadcrumb-item active">Usuarios activos</li>
+            </ol>
+        </div><!-- /.col -->
     </div><!-- /.row -->
-</div><!-- /.container-fluid -->
-
-@endsection
-@section('content')
-<div class="col-md-12">
+</div><!-- /.container-fluid --> @endsection @section('content') <div class="col-md-12">
     <div class="card card-outline card-gray">
         <div class="card-header text-center">
             <a class="btn btn-primary pull-right" href="{{ route('usuarios.create') }}">
-                <span style="padding-right:5px"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
-                Crear usuario
+                <span style="padding-right:5px"><i class="fa fa-user-plus" aria-hidden="true"></i></span> Crear usuario
             </a>
         </div>
         <!-- /.box-header -->
@@ -41,14 +33,13 @@
                             <th>Accion 3</th>
                         </tr>
                     </thead>
-            </table>
+                </table>
+            </div>
         </div>
+        <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
+    <!-- /.card -->
 </div>
-<!-- /.card -->
-</div>
-
 <script>
     $(document).ready(function() {
         $('#tablausuarios').DataTable({
@@ -94,4 +85,6 @@
         });
     });
 </script>
+
+
 @endsection

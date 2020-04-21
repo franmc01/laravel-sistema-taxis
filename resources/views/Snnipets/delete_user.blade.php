@@ -5,10 +5,10 @@
 
 
     <script>
+
      $(document).on('click', '.adios' ,function () {
         var id = $(this).attr('id');
         var token = $("meta[name='csrf-token']").attr("content");
-        console.log(id);
         Swal.fire({
         title: 'Está seguro que desea banear la cuenta?',
         text: "Las cuentas baneadas, no tendrán acceso al sistema",

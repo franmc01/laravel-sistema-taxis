@@ -5,11 +5,9 @@ namespace App\Http\Controllers\Administracion;
 use App\User;
 use Illuminate\Http\Request;
 use App\Events\UserWasCreated;
-use Illuminate\Validation\Rule;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
 class UsuariosController extends Controller
@@ -53,8 +51,7 @@ class UsuariosController extends Controller
      */
     public function store(Request $request)
     {
-        if(request()->ajax())
-        {
+        if(request()->ajax()){
         $data = new User();
         $data->nombres = $request->nombres;
         $data->apellidos = $request->apellidos;
@@ -82,7 +79,6 @@ class UsuariosController extends Controller
         {
             $data=User::findOrFail($id);
             return response()->json(['data'=>$data]);
-            // return view('Snnipets\show_user',compact('data'));
         }
     }
 
@@ -158,9 +154,18 @@ class UsuariosController extends Controller
     Metodo de traer los registros inactivos */
     public function eliminados()
     {
-        $usuarios = User::onlyTrashed()->get();
-        return view('Admin.Usuarios.eliminados', compact('usuarios'));
+        if (request()->ajax()) {
+            return datatables()
+                ->eloquent(User::onlyTrashed())
+                ->addColumn('role', function ($query) { $user = User::onlyTrashed()->find($query->id); return  $user->getRoleNames()->implode(','); })
+                ->addColumn('btnrestore', function(User $user){ return view('Snnipets.restore_user',compact('user')); })
+                ->addColumn('btndestroy', function(User $user){ return view('Snnipets.destroy_user',compact('user')); })
+                ->rawColumns(['btnrestore', 'btndestroy'])
+                ->toJson();
+        }
+        return view('Admin.Usuarios.eliminados');
     }
+
 
     /**Metodo de restaura los registros inactivos */
     public function user_restore($id)
@@ -168,6 +173,7 @@ class UsuariosController extends Controller
         User::withTrashed()->find($id)->restore();
         return redirect()->route('usuarios.eliminados');
     }
+
 
     /**Metodo de elimina completamente los registros inactivos de la base de datos */
     public function user_force($id)
