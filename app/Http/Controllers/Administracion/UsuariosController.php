@@ -143,6 +143,7 @@ class UsuariosController extends Controller
     public function destroy($id)
     {
             $user = User::find($id);
+            $user->vehiculos()->delete();
             $user->delete();
             return response()->json([
                 'success' => 'Record deleted successfully!'
