@@ -63,21 +63,7 @@
               <p> {{ auth()->user()->nombres."".auth()->user()->apelllidos }} - Web Developer <small>Member since Nov. 2020</small>
               </p>
             </li>
-            <!-- Menu Body -->
-            {{-- <li class="user-body">
-              <div class="row">
-                <div class="col-4 text-center">
-                  <a href="#">Followers</a>
-                </div>
-                <div class="col-4 text-center">
-                  <a href="#">Sales</a>
-                </div>
-                <div class="col-4 text-center">
-                  <a href="#">Friends</a>
-                </div>
-              </div>
-              <!-- /.row -->
-            </li> --}}
+
             <!-- Menu Footer-->
             <li class="user-footer">
               <a href="#" class="btn btn-default btn-flat">Perfil</a>
@@ -266,7 +252,7 @@ if($('#action').val()=="Edit")
                   $('#vuser_id').text(html.data.user_id);
                   $('#vusernombres').text(html.data.users.nombres);
                   $('#vuserapellidos').text(html.data.users.apellidos);
-                  $('#vstore_image').html("<img src= {{ URL::to('storage') }}/" + html.data.users.foto_perfil + " style='text-align:center' class='img-rounded img-fill' height='220' width='220'/>");
+                  $('#vstore_image').html("<img src= {{ URL::to('storage') }}/" + html.data.users.foto_perfil + " style='padding:0px' class='img-fluid text-center' height='220' width='220'/>");
                   $('#exampleModal').modal('show');
               }
           })

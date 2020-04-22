@@ -1,4 +1,8 @@
-<button type="submit" class="btn btn-danger btn-xs eliminar" id={{ $user->id }}> <i class="fa fa-user-alt-slash" aria-hidden="true"></i> Eliminar{{ $user->id }} </button>
+<button type="submit" class="btn btn-danger btn-xs eliminar" id={{ $user->id }}>
+    <span style="padding-right:5px">
+        <i class="fa fa-user-alt-slash" aria-hidden="true"></i>
+    </span> Eliminar cuenta
+</button>
 
 <script>
     $(document).on('click','.eliminar',function () {

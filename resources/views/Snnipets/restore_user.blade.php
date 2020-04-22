@@ -1,7 +1,7 @@
 <button type="submit" class="btn btn-info btn-xs activar" id="{{ $user->id }}">
     <span style="padding-right:5px">
         <i class="fa fa-user-check" aria-hidden="true"></i>
-    </span> Reactivar cuenta
+    </span> Activar cuenta
 </button>
 
 <script>
