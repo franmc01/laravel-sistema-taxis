@@ -23,23 +23,23 @@ class VehiculosController extends Controller
         if(request()->ajax())
         {
             $data=Vehiculo::with('users')->latest()->get();
-            
+
             return datatables()->of($data)
             ->addColumn('action', function($data){
                 $button = '<button type="button"
                     name="view" id="'.$data->id.'"
                     class="view btn btn-xs btn-info"><span style="padding-right:5px"><i class="fa fa-eye"></i></span>
-                    View</button>';
+                    Visualizar</button>';
                 $button .='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                 $button .= '<button type="button"
                     name="edit" id="'.$data->id.'"
-                    class="edit btn btn-xs btn-warning"><span style="padding-right:5px"><i class="fa fa-pencil"></i></span>
-                    Edit</button>';
+                    class="edit btn btn-xs btn-warning text-white"><span style="padding-right:5px"><i class="fa fa-wrench"></i></span>
+                    Editar</button>';
                 $button .='&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
                 $button .= '<button type="button"
                     name="delete" id="'.$data->id.'"
                     class="delete btn btn-danger btn-xs"><span style="padding-right:5px"><i class="fa fa-ban"></i></span>
-                    Delete</button>';
+                    Banear</button>';
                 return $button;
             })
             ->rawColumns(['action'])
@@ -69,12 +69,12 @@ class VehiculosController extends Controller
     public function store(Request $request)
     {
         $messages = [
-            'marca.required' => 'Debe ingresar el nombre de la marca',  
-            'tipoVehiculo.required' => 'Debe ingresar el tipo de vehículo',  
-            'placa.required' => 'Debe ingresar el número de placa',  
-            'placa.unique' => 'El número de placa debe ser único',  
-            'anio.required' => 'Debe ingresar el año de fabricación del vehículo',  
-            'user_id.required' => 'Debe ingresar el nombre del socio dueño del vehículo',  
+            'marca.required' => 'Debe ingresar el nombre de la marca',
+            'tipoVehiculo.required' => 'Debe ingresar el tipo de vehículo',
+            'placa.required' => 'Debe ingresar el número de placa',
+            'placa.unique' => 'El número de placa debe ser único',
+            'anio.required' => 'Debe ingresar el año de fabricación del vehículo',
+            'user_id.required' => 'Debe ingresar el nombre del socio dueño del vehículo',
         ];
         $rules = array(
             'marca'    =>  'required',
@@ -142,7 +142,7 @@ class VehiculosController extends Controller
      */
     public function update(Request $request)
     {
-        
+
         $rules = array(
             'marca'    =>  'required',
             'tipoVehiculo'     =>  'required',
@@ -157,7 +157,7 @@ class VehiculosController extends Controller
             return response()->json(['errors'=>$error->errors()->all()]);
 
         }
-    
+
         $form_data=array(
             'marca'=>$request->marca,
             'tipoVehiculo'=>$request->tipoVehiculo,

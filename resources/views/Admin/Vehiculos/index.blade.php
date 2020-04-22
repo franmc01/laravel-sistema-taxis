@@ -1,18 +1,31 @@
-@extends('Admin.Plantilla.layout') @section('header') <h1> Registros activos <small>Lista de registros</small>
-</h1>
-<ol class="breadcrumb">
-    <li><a href="{{ route('administracion') }}"><i class="fa fa-dashboard"></i>Inicio</a></li>
-    <li class="active">Vehiculos</li>
-</ol> @endsection @section('content') <div class="col-md-12">
-    <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Listado de vehiculos</h3>
-            <a class="btn btn-primary pull-right" href="{{ route('vehiculos.create') }}"><span style="padding-right:5px"><i class="fa fa-plus" aria-hidden="true"></i></span> Crear usuario</a>
+@extends('Admin.Plantilla.layout')
+@section('header')
+
+<div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">Vehiculos <small> - Lista de vehiculos asociados</small></h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <li class="breadcrumb-item"><a href="{{ route('administracion') }}">Inicio</a></li>
+          <li class="breadcrumb-item active">Vehiculos</li>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+</div><!-- /.container-fluid -->
+
+@endsection
+@section('content')
+<div class="col-md-12">
+    <div class="card card-outline card-gray">
+        <div class="card-header text-center">
+            <a class="btn btn-primary pull-left" href="{{ route('vehiculos.create') }}"><span style="padding-right:5px">              <i class="fa fa-plus" aria-hidden="true"></i></span> Registrar vehiculo</a>
         </div>
         <!-- /.box-header -->
-        <div class="box-body">
+        <div class="card-body">
             <div class="table-responsive">
-                <table id="vehicle_table" class="table table-bordered table-striped table-hover" cellspacing="0" width="100%">
+                <table id="vehicle_table" class="table table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Marca</th>

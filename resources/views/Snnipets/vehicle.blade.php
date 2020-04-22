@@ -83,21 +83,19 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+{{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" style="font-weight:bold">Datos del Vehículo</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div id="vstore_image" class="col-md-6">
+                    <div id="vstore_image" class="col-md-4">
                     </div>
-                    <div class="col-md-6" style="border-left:3px solid #ded4da;">
-                        <blockquote>
+                    <div class="col-md-8" style="border-left:3px solid #ded4da;">
+
                             <h4 style="font-weight:bold">Marca</h4>
                             <h5 name="vmarca" id="vmarca"></h5>
                             <h4 style="font-weight:bold">Tipo de Vehículo</h4>
@@ -112,13 +110,56 @@
                             <h5 name="vusernombres" id="vusernombres"></h5>
                             <h4 style="font-weight:bold">Apellidos de Socio</h4>
                             <h5 name="vuserapellidos" id="vuserapellidos"></h5>
-                        </blockquote>
+
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary btn-block" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
+
+<div class="modal fade" id="exampleModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Información del vehículo</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div id="vstore_image" class="col-md-8">
+                </div>
+
+                    <div class="col-md-4">
+                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Marca:</h6>
+                        <h5 style="font-size: 10px; " name="vmarca" id="vmarca"></h5>
+                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Tipo de Vehículo:</h6>
+                        <h5 style="font-size: 10px; " name="vtipoVehiculo" id="vtipoVehiculo"></h5>
+                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Placa:</h6>
+                        <h5 style="font-size: 10px; " name="vplaca" id="vplaca"></h5>
+                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Año de Fabricación:</h6>
+                        <h5 style="font-size: 10px; " name="vanio" id="vanio"></h5>
+                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">User Id:</h6>
+                        <h5 style="font-size: 10px; " name="vuser_id" id="vuser_id"></h5>
+                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Nombre de Socio:</h6>
+                        <h5 style="font-size: 10px; " name="vusernombres" id="vusernombres"></h5>
+                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Apellidos de Socio:</h6>
+                        <h5 style="font-size: 10px; " name="vuserapellidos" id="vuserapellidos"></h5>
+                    </div>
+            </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->

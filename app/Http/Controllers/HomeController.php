@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Vehiculo;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Admin.dashboard');
+
+        $u = User::all()->count();
+        $v = Vehiculo::all()->count();
+        return view('Admin.dashboard',compact('u','v'));
     }
+
 }

@@ -36,9 +36,9 @@ class UsersTableSeeder extends Seeder
         $moderador->password=bcrypt('moderador');
         $moderador->save();
 
-        $admin->assignRole('administrador');
-        $socio->assignRole('administrador');
-        $moderador->assignRole('moderador');
+        $admin->assignRole('Administrador');
+        $socio->assignRole('Administrador');
+        $moderador->assignRole('Moderador');
 
     }
 }

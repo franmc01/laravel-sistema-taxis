@@ -1,29 +1,121 @@
-<ul class="sidebar-menu" data-widget="tree">
-   <br>
-    <!-- Optionally, you can add icons to the links -->
-    <li {{ request()->is('home') ? 'class=active' : ''}}><a href="{{ route('administracion') }}"><i class="fa fa-home"></i> <span>Inicio</span></a></li>
-    {{-- <li><a href="#"><i class="fa fa-users"></i> <span>Usuarios</span></a></li> --}}
+  <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-legacy text-sm nav-compact" data-widget="treeview" role="menu" data-accordion="false">
+
+        <li class="nav-item">
+            <a href="{{ route('administracion') }}" class="nav-link {{ request()->is('home') ? 'class=active' : ''}}">
+            <i class="nav-icon fa fa-home"></i>
+            <p>Inicio</p>
+            </a>
+        </li>
+
+    @role('Administrador')
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-users"></i>
+                <p> Usuarios <i class="right fas fa-angle-left"></i> </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                    <a href="{{ route('usuarios.create') }}" class="nav-link">
+                    <i class="fa fa-user nav-icon"></i>
+                    <p>Registrar usuario</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('usuarios.index') }}" class="nav-link">
+                    <i class="fa fa-address-book nav-icon" style="regular"></i>
+                    <p>Usuarios activos</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('usuarios.eliminados') }}" class="nav-link">
+                    <i class="fa fa-book-dead nav-icon"></i>
+                    <p>Usuarios inactivos</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-car"></i>
+                <p> Vehiculos <i class="right fas fa-angle-left"></i> </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                    <a href="{{ route('vehiculos.create') }}" class="nav-link">
+                    <i class="fa fa-taxi nav-icon"></i>
+                    <p>Registrar vehiculo</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('vehiculos.index') }}" class="nav-link">
+                    <i class="fa fa-list-alt nav-icon"></i>
+                    <p>Vehiculos activos</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="fa fa-book-dead nav-icon"></i>
+                    <p>Vehiculos inactivos</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="nav-item has-treeview">
 
 
+            <a href="#" class="nav-link">
+                <i class="nav-icon fa fa-money-bill-alt"></i>
+                <p> Cuotas de socios <i class="right fas fa-angle-left"></i> </p>
+            </a>
 
-    @role('administrador')
-    <li class="treeview {{ request()->is('home/usuarios') ? 'active' : ''}}"><a href="#"><i class="fa fa-users"></i> <span>Usuarios</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-        <ul class="treeview-menu">
-            <li><a href="{{ route('usuarios.create') }}"><i class="fa fa-user-plus"></i><span>Registrar usuario</span></a></li>
-            <li {{ request()->is('home/usuarios/activos') ? 'class=active' : ''}}><a href="{{ route('usuarios.index') }}"><i class="fa fa-address-book"></i><span>Listar registros activos</span></a></li>
-            <li><a href="{{ route('usuarios.eliminados') }}"><i class="fa fa-address-book"></i><span>Listar registros inactivos</span></a></li>
-        </ul>
-    </li>
-    <li class="treeview {{ request()->is('home/vehiculos') ? 'active' : ''}}"><a href="#"><i class="fa fa-car"></i> <span>Vehiculos</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-        <ul class="treeview-menu">
-            <li><a href="{{ route('vehiculos.create') }}"><i class="fa fa-taxi"></i><span>Registrar Vehículo</span></a></li>
-            <li {{ request()->is('home/vehiculos/activos') ? 'class=active' : ''}}><a href="{{ route('vehiculos.index') }}"><i class="fa fa-address-book"></i><span>Listar registros activos</span></a></li>
-        </ul>
-    </li>
-    <li class="treeview {{ request()->is('home/cuotas') ? 'active' : ''}}"><a href="#"><i class="fas fa-wallet"></i> <span>Money</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
-        <ul class="treeview-menu">
-            <li><a href="{{ route('cuotas.index') }}"><i class="fas fa-file-invoice-dollar"></i><span>Control de Cuotas</span></a></li>
-        </ul>
-    </li>
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                    <a href="{{ route('cuotas.index') }}" class="nav-link">
+                    <i class="fas fa-dollar-sign nav-icon"></i>
+                    <p>Control de cuotas</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+
     @endrole
-  </ul>
+
+
+    <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+                <i class="nav-icon  fa fa-user-circle"></i>
+                <p>Mi perfil<i class="right fas fa-angle-left"></i></p>
+            </a>
+            <ul class="nav nav-treeview">
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="fa fa-infinity nav-icon"></i>
+                    <p>Informacion personal</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                    <i class="fa fa-fingerprint nav-icon"></i>
+                    <p>Cambiar contraseña</p>
+                    </a>
+                </li>
+
+            </ul>
+    </li>
+</ul>
