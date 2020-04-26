@@ -110,7 +110,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('perfil.cambio') }}" class="nav-link">
                     <i class="fa fa-fingerprint nav-icon"></i>
                     <p>Cambiar contraseña</p>
                     </a>

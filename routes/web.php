@@ -32,8 +32,14 @@ Route::group(
     }
 );
 
-Route::group(['middleware' => ['role:Usuario']], function () {
-    //Here your routes
+Route::group(
+    [
+    'namespace' => 'Usuarios',
+    'middleware' => ['role:Administrador']
+    // 'middleware' => ['role:Socio']
+    ], function () {
+    Route::get('mi-perfil/nueva-contraseña', 'PerfilController@index')->name('perfil.cambio');
+    Route::patch('mi-perfil/contrasena/{id}', 'PerfilController@Cambiocontrasena')->name('perfil.nueva');
 });
 
 Route::group(['middleware' => ['role:Moderador']], function () {
