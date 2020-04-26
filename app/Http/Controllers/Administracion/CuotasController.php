@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Vehiculo;
 use App\User;
+use App\Cuota;
+use Illuminate\Support\Facades\DB;
 use Validator;
 
 class CuotasController extends Controller
@@ -16,10 +18,21 @@ class CuotasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function mostrar(Request $request)
+    {  
+        $x = $request->all();
+        if(request()->ajax())
+        { 
+            $fecha= Cuota::with('users')
+            ->where('fecha', $x)
+            ->get();
+//            $data= Cuota::all();
+            return response()->json(['data'=>$fecha]);
+        }
+    }
     public function index()
     {
         return view('Admin.Cuotas.index');
-
     }
 
     /**

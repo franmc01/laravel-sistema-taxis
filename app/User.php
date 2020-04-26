@@ -21,6 +21,10 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Vehiculo');
     }
+    public function cuotas()
+    {
+        return $this->hasMany('App\Cuota');
+    }
     protected $fillable = [
         'foto_perfil', 'nombres',
         'apellidos', 'cedula',

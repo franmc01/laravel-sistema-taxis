@@ -23,7 +23,7 @@ $.datepicker.regional['es'] = {
     dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
     dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
     weekHeader: 'Sm',
-    dateFormat: 'dd/mm/yy',
+    dateFormat: 'yy/mm/dd',
     firstDay: 1,
     isRTL: false,
     showMonthAfterYear: false,
@@ -33,7 +33,7 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 $('#datepicker').datepicker({
     onSelect: function(dateText) {
         $("#datepicker2").datepicker();
-        $('#datepicker2').datepicker("setDate", $(this).datepicker("getDate"));
+//        $('#datepicker2').datepicker("setDate", $(this).datepicker("getDate"));
     }
 });
 
