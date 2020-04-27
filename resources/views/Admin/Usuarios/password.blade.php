@@ -1,6 +1,6 @@
-@extends('Admin.Plantilla.layout')
-@section('header')
+@extends('Admin.Plantilla.layout') 
 
+@section('header') 
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
@@ -13,63 +13,56 @@
             </ol>
         </div><!-- /.col -->
     </div><!-- /.row -->
-</div><!-- /.container-fluid -->
+</div><!-- /.container-fluid --> 
+@endsection 
 
-@endsection
 
-
-@section('content')
+@section('content') 
 
 <div class="row">
     <div class="col-md-12">
         <div class="card card-outline card-gray">
             <div class="card-header">
-                <h4 class="card-title">
-                    Formulario
-                  </h4>
+                <h4 class="card-title"> Formulario </h4>
             </div>
             <div class="card-body">
-                <form  id="actualiza2">
-                    @csrf
-                    @method('PATCH')
+                <form id="actualiza2"> 
+                    @csrf 
+                    @method('PATCH') 
+                    <div class="row">
+                        <div class="col-md-12"> 
+                            @include('Snnipets.password_change') 
+                        </div>
+                    </div>
+                    <div class="card-footer">
                         <div class="row">
-                            <div class="col-md-12">
-                                @include('Snnipets.password_change')
-                            </div>
-
+                            <button type="submit" class="btn btn-primary btn-block cambio">Guardar</button>
                         </div>
-                        <div class="card-footer">
-                            <div class="row">
-                                    <button type="submit" class="btn btn-primary btn-block cambio">Guardar</button>
-                                </div>
-                            </div>
-                        </div>
-                </form>
+                    </div>
             </div>
+            </form>
         </div>
     </div>
 </div>
-
+</div>
 <script>
-    $(document).on('click','.cambio', function (e) {
+    $(document).on('click', '.cambio', function(e) {
         e.preventDefault();
         var url = "{{ route('perfil.nueva', $info->id) }}";
-        var formData =  new FormData(document.getElementById("actualiza2"));
+        var formData = new FormData(document.getElementById("actualiza2"));
         $.ajax({
-        method: 'POST',
-        url: url,
-        cache: false,
-        data: formData,
-        dataType: "json",
-        contentType: false,
-        processData: false,
-        success: function(response) {
-            Swal.fire('Genial', 'La información ha sido actualizada correctamente', 'success');
-        }
+            method: 'POST',
+            url: url,
+            cache: false,
+            data: formData,
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                Swal.fire('Genial', 'La información ha sido actualizada correctamente', 'success');
+            }
+        });
     });
-    });
-</script>
+
+</script> 
 @endsection
-
-
-
