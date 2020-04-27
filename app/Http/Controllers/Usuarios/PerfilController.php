@@ -10,7 +10,17 @@ use Illuminate\Support\Facades\Hash;
 
 class PerfilController extends Controller
 {
+
     public function index(){
+        return view('Admin\Usuarios\profile');
+    }
+
+
+
+
+
+
+    public function contrasena(){
         $info=User::find(auth()->user()->id);
         return view('Admin\Usuarios\password', compact('info'));
     }

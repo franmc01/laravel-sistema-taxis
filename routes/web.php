@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('correo', 'Correos\ContactController');
 Route::get('/', 'PaginaPrincipalController@index');
-Route::get('/home', 'HomeController@index')->name('administracion');
+Route::get('inicio', 'HomeController@index')->name('administracion');
 
 
 Route::group(
@@ -38,7 +38,8 @@ Route::group(
     'middleware' => ['role:Administrador']
     // 'middleware' => ['role:Socio']
     ], function () {
-    Route::get('mi-perfil/nueva-contraseña', 'PerfilController@index')->name('perfil.cambio');
+    Route::get('mi-perfil', 'PerfilController@index')->name('perfil.info');
+    Route::get('mi-perfil/nueva-contraseña', 'PerfilController@contrasena')->name('perfil.cambio');
     Route::patch('mi-perfil/contrasena/{id}', 'PerfilController@Cambiocontrasena')->name('perfil.nueva');
 });
 
