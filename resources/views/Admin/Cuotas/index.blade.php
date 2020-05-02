@@ -40,18 +40,23 @@
     <!-- /.box-header -->
     <div class="box-body">
       <div class="table-responsive">
-        <table id="tablacuotas" class="table table-bordered table-striped table-hover" cellspacing="0" width="100%">
-          <thead>
-            <tr>
-              <th>Fecha</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Pago</th>
-              <th>Monto</th>
-              <th>Observacion</th>
-            </tr>
-          </thead>
-        </table>
+        <form method="POST" name="formGuardar" id="formGuardar" data-route="{{ route('cuotas.guardar') }}">
+          @csrf
+          <table id="tablacuotas" class="table table-bordered table-striped table-hover" cellspacing="0" width="100%">
+            <thead>
+              <tr>
+                <th class="hidden-xs">ID</th>
+                <th>Fecha</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Pago</th>
+                <th>Monto</th>
+                <th>Observacion</th>
+              </tr>
+            </thead>
+          </table>
+          <button type="submit" name="guardar" id="guardar" class="btn btn-primary">Guardar</button>
+        </form>
       </div>
     </div>
     <!-- /.box-body -->
@@ -64,6 +69,7 @@
 
 <script>
   $(document).ready(function() {
+    var table;
       $('#sample_form').submit(function(event){
             var route = $('#sample_form').data('route');
             var formData = document.getElementById('datepicker');
@@ -74,7 +80,7 @@
                 data: {fecha:fecha},
                 success: function(Response)
                 {
-                  $('#tablacuotas').DataTable({
+                  table = $('#tablacuotas').DataTable({
                       destroy: true,
                       paging: false,
                       searching: false,
@@ -104,6 +110,10 @@
                       data: Response.data,
                       columns:[
                           {
+                              data: 'id',
+                              name: 'id',
+                          },
+                          {
                               data: 'fecha',
                               name: 'fecha'
                           },
@@ -132,9 +142,44 @@
                       "iDisplayLength":			10,
 
                   });
+
+
+
+                  
                 }
             });
             event.preventDefault();  
+        });
+        $('#formGuardar').on('submit', function(e){
+          var myRows = { myRows: [] };
+          var pagos = table.$('select').serializeArray();
+          var monto = table.$('input').serializeArray();
+          var $th = $('#tablacuotas th');
+          $('#tablacuotas tbody tr').each(function(i, tr){
+            var obj = {}, $tds = $(tr).find('td');
+            $th.each(function(index, th){
+                obj[$(th).text()] = $tds.eq(index).text();
+                if ($(th).text()=="Pago") {
+                  obj[$(th).text()] = pagos[i].value;
+                }
+                if ($(th).text()=="Monto") {
+                  obj[$(th).text()] = monto[i].value;
+                }
+            });
+            myRows.myRows.push(obj);
+          });
+          console.log(JSON.stringify(myRows));
+          //alert(JSON.stringify(myRows));
+          var url = $('#formGuardar').data('route');
+          $.ajax({
+            type: 'POST',
+            url: url,
+            data: myRows,
+            success: function(res) {
+              console.log(res.data);
+            }
+          });
+          event.preventDefault();  
         });
   });
 </script>

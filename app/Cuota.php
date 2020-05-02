@@ -13,6 +13,6 @@ class Cuota extends Model
     protected $fillable = [
         'pago', 'monto',
         'user_id', 'observacion',
-        'created_at', 'updated_at',
+        'fecha'
     ];
 }

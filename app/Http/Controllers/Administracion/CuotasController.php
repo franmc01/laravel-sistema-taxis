@@ -27,7 +27,12 @@ class CuotasController extends Controller
             ->where('fecha', $x)
             ->get();
 //            $data= Cuota::all();
-            return response()->json(['data'=>$fecha]);
+            return datatables()->of($fecha)
+            ->addColumn('pago','Snnipets.selectpago')
+            ->addColumn('monto','Snnipets.inputmonto')
+            ->rawColumns(['pago','monto'])
+            ->toJson();
+//            return response()->json(['data'=>$fecha]);
         }
     }
     public function index()
@@ -85,9 +90,26 @@ class CuotasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function guardar(Request $request)
     {
-        //
+        $params_array = $request->myRows; 
+        foreach ($params_array AS $param => $paramdata){
+            /* Cuota::where('id', $paramdata['ID'])
+            ->update(['pago'=>$paramdata['Pago'],'monto'=>$paramdata['Monto']]); */             
+            $datos = Cuota::find($paramdata['ID']);
+            $datos->monto = $paramdata['Monto'];
+            $datos->pago = $paramdata['Pago'];
+            $datos->save();
+
+            /* Cuota::create([
+                'pago'   => $paramdata['Pago'],
+                'monto'     => $paramdata['Monto'],   
+                'fecha'     => $paramdata['Fecha'],   
+                'user_id'     => '1',   
+                'observacion'     => 'ninguna',   
+            ]); */
+        } 
+        return response()->json(['data'=> 'Datos Agregados exitosamente']);
     }
 
     /**
