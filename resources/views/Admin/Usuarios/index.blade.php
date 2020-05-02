@@ -1,4 +1,5 @@
-@extends('Admin.Plantilla.layout') @section('header') <div class="container-fluid">
+@extends('Admin.Plantilla.layout')
+@section('header') <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
             <h1 class="m-0 text-dark">Usuarios <small> - Registros activos</small></h1>
@@ -10,7 +11,11 @@
             </ol>
         </div><!-- /.col -->
     </div><!-- /.row -->
-</div><!-- /.container-fluid --> @endsection @section('content') <div class="col-md-12">
+</div><!-- /.container-fluid -->
+@endsection
+
+@section('content')
+<div class="col-md-12">
     <div class="card card-outline card-gray">
         <div class="card-header text-center">
             <a class="btn btn-primary pull-right" href="{{ route('usuarios.create') }}">
