@@ -12,6 +12,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "nesbot/carbon": "^2.33",
         "spatie/laravel-permission": "^3.9",
         "yajra/laravel-datatables-oracle": "^9.9"
     },
