@@ -136,15 +136,48 @@
                       "lengthMenu":				[[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
                       "iDisplayLength":			10,
 
-                  });                  
+                  });  
+
+
+                //NO SÉ POR QUÉ ESTO FUNCIONA AQUÍ PERO NO EN OTRA PARTE DEL CODIGO
+                //OSEA SI TENGO LA IDEA BÁSICA DEL POR QUE 
+                //PERO ME ESTRESÉ UNA HORA TRATANDO DE DARLE SENTIDO
+                //PORQUE SI LO COLOCABA EN OTRO LADO NO CORRIA
+                //Y SI LO COLOCABA EN EL BOTON DE LA COLUMNA SE REPETÍA
+                //EN FIN..
+                //TODO BIEN 
+                //TODO CORRECTO
+                //Y YO QUE ME ALEGRO
+                //SI LEES ESTO Y NO TE LO HE DICHO PONLE ESTILOS BONITOS A ESTOS BOTONES
+                //SALUDOS
+                //XD
+                  $('button[name=pago]').on('click', function () {
+                      var id = $(this).attr('id');
+                      if ($('input[name=pago][id='+id+']').val() === "1") {
+                          $('input[name=monto][id='+id+']').val("0.00");
+                          $('input[name=pago][id='+id+']').val("0");
+                          $('button[name=pago][id='+id+']').text("No pagado");
+                      } else {
+                          $('input[name=monto][id='+id+']').val("2.00");                        
+                          $('input[name=pago][id='+id+']').val("1");
+                          $('button[name=pago][id='+id+']').text("Pagado");
+                      }
+                  });
+
+
+
+
                 }
             });
             event.preventDefault();
         });
         $('#formGuardar').on('submit', function(e){
           var myRows = { myRows: [] };
-          var pagos = table.$('select').serializeArray();
-          var monto = table.$('input').serializeArray();
+          var pagos = table.$('input[name=pago]').serializeArray();
+          var monto = table.$('input[name=monto]').serializeArray();
+          console.log(pagos);
+          console.log(monto);
+          
           var $th = $('#tablacuotas th');
           $('#tablacuotas tbody tr').each(function(i, tr){
             var obj = {}, $tds = $(tr).find('td');
