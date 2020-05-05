@@ -15,4 +15,22 @@ class Cuota extends Model
         'user_id', 'observacion',
         'fecha'
     ];
+
+    //Query Scope
+
+    public function scopeFecha1($query, $fecha1)
+    {
+        if($fecha1)
+            return $query->where('fecha','>=',$fecha1);
+    }
+    public function scopeFecha2($query, $fecha2)
+    {
+        if($fecha2)
+            return $query->where('fecha','<=',$fecha2);
+    }
+    public function scopeUser($query, $user)
+    {
+        if($user)
+            return $query->where('user_id',$user);
+    }
 }

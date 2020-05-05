@@ -9,6 +9,8 @@ use App\Vehiculo;
 use App\User;
 use App\Cuota;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use SebastianBergmann\Environment\Console;
 use Validator;
 
 class CuotasController extends Controller
@@ -35,9 +37,37 @@ class CuotasController extends Controller
 //            return response()->json(['data'=>$fecha]);
         }
     }
+    public function consultar(Request $request)
+    {  
+        $fecha1=$request->get('fecha1');
+        Log::info($fecha1);        
+        $fecha2=$request->get('fecha2');
+        Log::info($fecha2);        
+        $user=$request->get('user');
+        Log::info($user);        
+        if(request()->ajax())
+        { 
+            $fecha= Cuota::with('users')
+            ->Fecha1($fecha1)
+            ->Fecha2($fecha2)
+            ->User($user)
+            ->get();
+            Log::info($fecha);
+//            $data= Cuota::all();
+            return datatables()->of($fecha)
+            ->addColumn('pago','Snnipets.selectpago')
+            ->addColumn('monto','Snnipets.inputmonto')
+            ->rawColumns(['pago','monto'])
+            ->toJson();
+//            return response()->json(['data'=>$fecha]);
+        }
+    }
     public function index()
     {
-        return view('Admin.Cuotas.index');
+        $users = User::select('id','nombres','apellidos')->get();
+        //return response()->json(['data'=> $users]);
+        Log::info($users);
+        return view('Admin.Cuotas.index', compact('users'));
     }
 
     /**
@@ -100,14 +130,6 @@ class CuotasController extends Controller
             $datos->monto = $paramdata['Monto'];
             $datos->pago = $paramdata['Pago'];
             $datos->save();
-
-            /* Cuota::create([
-                'pago'   => $paramdata['Pago'],
-                'monto'     => $paramdata['Monto'],   
-                'fecha'     => $paramdata['Fecha'],   
-                'user_id'     => '1',   
-                'observacion'     => 'ninguna',   
-            ]); */
         } 
         return response()->json(['data'=> 'Datos Agregados exitosamente']);
     }

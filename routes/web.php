@@ -29,6 +29,7 @@ Route::group(
         //rutas de cuotas
         Route::resource('cuotas', 'CuotasController');
         Route::post('cuotas/mostrar','CuotasController@mostrar')->name('cuotas.mostrar');
+        Route::post('cuotas/consultar','CuotasController@consultar')->name('cuotas.consultar');
         Route::post('cuotas/guardar', 'CuotasController@guardar')->name('cuotas.guardar');
     }
 );

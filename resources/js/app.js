@@ -32,7 +32,7 @@ $.datepicker.regional['es'] = {
 $.datepicker.setDefaults($.datepicker.regional['es']);
 $('#datepicker').datepicker({
     onSelect: function(dateText) {
-        $("#datepicker2").datepicker();
+//        $("#datepicker2").datepicker();
 //        $('#datepicker2').datepicker("setDate", $(this).datepicker("getDate"));
     }
 });
