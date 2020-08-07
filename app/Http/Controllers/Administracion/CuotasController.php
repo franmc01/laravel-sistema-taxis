@@ -21,52 +21,51 @@ class CuotasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function mostrar(Request $request)
-    {  
+    {
         $x = $request->all();
-        if(request()->ajax())
-        { 
-            $fecha= Cuota::with('users')
-            ->where('fecha', $x)
-            ->get();
-//            $data= Cuota::all();
+        if (request()->ajax()) {
+            $fecha = Cuota::with('users')
+                ->where('fecha', $x)
+                ->get();
             return datatables()->of($fecha)
-            ->addColumn('pago','Snnipets.selectpago')
-            ->addColumn('monto','Snnipets.inputmonto')
-            ->rawColumns(['pago','monto'])
-            ->toJson();
-//            return response()->json(['data'=>$fecha]);
+                ->addColumn('pago', 'Snnipets.selectpago')
+                ->addColumn('monto', 'Snnipets.inputmonto')
+                ->rawColumns(['pago', 'monto'])
+                ->toJson();
         }
     }
+    public function fetch(Request $request)
+    {
+        $search = strtoupper($request->term);
+        $data = User::select('id', 'nombres', 'apellidos')
+            ->where([[DB::raw("UPPER(nombres)"), 'like', "%$search%"]])
+            ->get()->take(10);
+            Log::info($data);
+        return response($data);
+    }
+
     public function consultar(Request $request)
-    {  
-        $fecha1=$request->get('fecha1');
-        Log::info($fecha1);        
-        $fecha2=$request->get('fecha2');
-        Log::info($fecha2);        
-        $user=$request->get('user');
-        Log::info($user);        
-        if(request()->ajax())
-        { 
-            $fecha= Cuota::with('users')
-            ->Fecha1($fecha1)
-            ->Fecha2($fecha2)
-            ->User($user)
-            ->get();
-            Log::info($fecha);
-//            $data= Cuota::all();
+    {
+        $fecha1 = $request->get('fecha1');
+        $fecha2 = $request->get('fecha2');
+        $user = $request->get('user');
+        if (request()->ajax()) {
+            $fecha = Cuota::with('users')
+                ->Fecha1($fecha1)
+                ->Fecha2($fecha2)
+                ->User($user)
+                ->get();
             return datatables()->of($fecha)
-            ->addColumn('pago','Snnipets.selectpago')
-            ->addColumn('monto','Snnipets.inputmonto')
-            ->rawColumns(['pago','monto'])
-            ->toJson();
-//            return response()->json(['data'=>$fecha]);
+                ->addColumn('pago', 'Snnipets.selectpago')
+                ->addColumn('monto', 'Snnipets.inputmonto')
+                ->rawColumns(['pago', 'monto'])
+                ->toJson();
+            //            return response()->json(['data'=>$fecha]);
         }
     }
     public function index()
     {
-        $users = User::select('id','nombres','apellidos')->get();
-        //return response()->json(['data'=> $users]);
-        Log::info($users);
+        $users = User::select('id', 'nombres', 'apellidos')->get();
         return view('Admin.Cuotas.index', compact('users'));
     }
 
@@ -122,16 +121,16 @@ class CuotasController extends Controller
      */
     public function guardar(Request $request)
     {
-        $params_array = $request->myRows; 
-        foreach ($params_array AS $param => $paramdata){
+        $params_array = $request->myRows;
+        foreach ($params_array as $param => $paramdata) {
             /* Cuota::where('id', $paramdata['ID'])
-            ->update(['pago'=>$paramdata['Pago'],'monto'=>$paramdata['Monto']]); */             
+            ->update(['pago'=>$paramdata['Pago'],'monto'=>$paramdata['Monto']]); */
             $datos = Cuota::find($paramdata['ID']);
             $datos->monto = $paramdata['Monto'];
             $datos->pago = $paramdata['Pago'];
             $datos->save();
-        } 
-        return response()->json(['data'=> 'Datos Agregados exitosamente']);
+        }
+        return response()->json(['data' => 'Datos Agregados exitosamente']);
     }
 
     /**
