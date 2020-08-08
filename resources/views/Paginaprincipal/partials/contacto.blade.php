@@ -15,9 +15,9 @@
                 <p class="r-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ipsa officia in, at
                     inventore. Iste.</p>
                 <div class="connn-right xs-mb-30">
-                    <p><b><i class="fa fa-home"></i></b>Calle Salinas Y Granda Centeno Diagonal al TIA S.A</p>
-                    <p><b><i class="fa fa-phone"></i></b>+052 686 169 , +052 686 786</p>
-                    <p><b><i class="fa fa-envelope"></i></b>tejecutivo_translasinpar@hotmail.com</p>
+                    <p><b><i class="fa fa-home"></i></b>{{ $info_pagina[0]->direccion }}</p>
+                    <p><b><i class="fa fa-phone"></i></b>+{{ $info_pagina[0]->telefono1 }} , +{{ $info_pagina[0]->telefono2 }}</p>
+                    <p><b><i class="fa fa-envelope"></i></b>{{ $info_pagina[0]->correo_contacto }}</p>
                 </div>
             </div>
             <div class="col-sm-6 col-md-6 contact-left">

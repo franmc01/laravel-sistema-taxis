@@ -2,16 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::resource('correo', 'Correos\ContactController');
 Route::get('/', 'PaginaPrincipalController@index');
 Route::get('inicio', 'HomeController@index')->name('administracion');
 
-
 Route::group(
     [
         'namespace' => 'Administracion',
-        'middleware' => ['role:Administrador']
+        'middleware' => ['role:Administrador'],
     ],
     function () {
 
@@ -28,8 +26,8 @@ Route::group(
 
         //rutas de cuotas
         Route::resource('cuotas', 'CuotasController');
-        Route::post('cuotas/mostrar','CuotasController@mostrar')->name('cuotas.mostrar');
-        Route::post('cuotas/consultar','CuotasController@consultar')->name('cuotas.consultar');
+        Route::post('cuotas/mostrar', 'CuotasController@mostrar')->name('cuotas.mostrar');
+        Route::post('cuotas/consultar', 'CuotasController@consultar')->name('cuotas.consultar');
         Route::post('cuotas/guardar', 'CuotasController@guardar')->name('cuotas.guardar');
         Route::post('cuotas/socios/fetch', 'CuotasController@fetch')->name('cuotas.socios.fetch');
 
@@ -38,14 +36,14 @@ Route::group(
 
 Route::group(
     [
-    'namespace' => 'Usuarios',
-    'middleware' => ['role:Administrador']
-    // 'middleware' => ['role:Socio']
+        'namespace' => 'Usuarios',
+        'middleware' => ['role:Administrador'],
+        // 'middleware' => ['role:Socio']
     ], function () {
-    Route::get('mi-perfil', 'PerfilController@index')->name('perfil.info');
-    Route::get('mi-perfil/nueva-contraseña', 'PerfilController@contrasena')->name('perfil.cambio');
-    Route::patch('mi-perfil/contrasena/{id}', 'PerfilController@Cambiocontrasena')->name('perfil.nueva');
-});
+        Route::get('mi-perfil', 'PerfilController@index')->name('perfil.info');
+        Route::get('mi-perfil/nueva-contraseña', 'PerfilController@contrasena')->name('perfil.cambio');
+        Route::patch('mi-perfil/contrasena/{id}', 'PerfilController@Cambiocontrasena')->name('perfil.nueva');
+    });
 
 Route::group(['middleware' => ['role:Moderador']], function () {
     //Here your routes
@@ -64,4 +62,8 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 
 // Rutas de prueba
 Route::view('welcome', 'welcome');
-Route::get('mail', function () { return new App\Mail\LoginCredentials(App\User::first(), 'aldjad'); });
+Route::get('mail', function () {return new App\Mail\LoginCredentials(App\User::first(), 'aldjad');});
+
+//No tocar
+Route::get('actualizar-informacion', 'PaginaPrincipalController@edit')->name('Paginaprincipal.crud.edit');
+Route::patch('confirmar-informacion/{id}', 'PaginaPrincipalController@update')->name('pagina_principal.info.update');
