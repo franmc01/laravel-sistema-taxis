@@ -30,19 +30,23 @@
         <div class="mb-0">
           <div class="row">
             <div class="col-md-6">
-{{--               <h1>Cunsulta por día</h1> --}}
+              {{--               <h1>Cunsulta por día</h1> --}}
               <form id="mostrar" method="POST" data-route="{{ route('cuotas.mostrar') }}" class="form-horizontal">
                 @csrf
                 <div class="form-group">
-                  <div class="datepicker" id="datepicker"></div>
-                  <input type="hidden" name="fecha" id="fecha">
+                  <div class="row">
+                    <div class="table-responsive">
+                      <div class="datepicker" id="datepicker"></div>
+                      <input type="hidden" name="fecha" id="fecha">
+                    </div>
+                  </div>
                 </div>
                 <div class="form-group">
                 </div>
               </form>
             </div>
             <div class="col-md-6">
-{{--               <h1>Consulta socios por fecha</h1> --}}
+              {{--               <h1>Consulta socios por fecha</h1> --}}
               <form id="consultar" method="POST" data-route="{{ route('cuotas.consultar') }}" class="form-horizontal">
                 @csrf
                 <hr>
@@ -103,7 +107,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <div class="">
+          <div class="table-responsive">
             <form method="POST" name="formGuardar" id="formGuardar" data-route="{{ route('cuotas.guardar') }}">
               @csrf
               <table id="tablacuotas" class="table table-bordered table-striped table-hover" cellspacing="0"

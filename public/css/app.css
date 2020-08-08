@@ -316,7 +316,7 @@ button.ui-button::-moz-focus-inner {
 }
 
 .ui-datepicker {
-	width: 510px;
+	width: 85%;
 	height: auto;
 	margin: 3px auto 0;
 	font: 14pt Arial, sans-serif;
@@ -336,7 +336,9 @@ button.ui-button::-moz-focus-inner {
 	text-shadow: 1px -1px 0px #000;
 	-webkit-filter: dropshadow(color=#000, offx=1, offy=-1);
 	        filter: dropshadow(color=#000, offx=1, offy=-1);
+	max-height: 62px;
 	line-height: 62px;
+	overflow: hidden;
 	border-width: 1px 0 0 0;
 	border-style: solid;
 	border-color: #111;
@@ -347,7 +349,7 @@ button.ui-button::-moz-focus-inner {
   .ui-datepicker-prev, .ui-datepicker-next {
 	background: #343A40;
 	display: inline-block;
-	width: 150px;
+	width: 25%;
 	height: 61px;
 	text-align: center;
 	cursor: pointer;
@@ -399,7 +401,7 @@ button.ui-button::-moz-focus-inner {
 	display: inline-block;
 	font-weight: bold;
 	text-align: center;
-	width: 72px;
+	width: 100%;
 	height: 55px;
 	line-height: 55px;
 	color: #666666;
@@ -429,7 +431,6 @@ button.ui-button::-moz-focus-inner {
 	        filter: dropshadow(color=#4d7a85, offx=0, offy=1);
 	border: 1px solid #55838f;
 	position: relative;
-	margin: -1px;
   }/*!
  * jQuery UI Dialog 1.12.1
  * http://jqueryui.com
