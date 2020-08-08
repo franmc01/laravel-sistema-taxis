@@ -88,4 +88,27 @@
     </div>
     <!-- /.col-->
 </div>
+
+<script>
+    $("#update").on('submit', function (e) {
+        console.log('Llegamos');
+        var url = "{{ route('pagina_principal.info.update', $info_pagina[0]->id) }}";
+        var formData = new FormData(this);
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: url,
+            cache: false,
+            data: formData,
+            dataType: "json",
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                Swal.fire('Genial', 'La información ha sido actualizada correctamente', 'success');
+            }
+        });
+    });
+    </script>
+
+
 @endsection

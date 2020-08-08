@@ -38,6 +38,17 @@ class PaginaPrincipalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if (request()->ajax()) {
+            $datos = PaginaPrincipal::find($id);
+            $datos->historia=$request->historia;
+            $datos->mision=$request->mision;
+            $datos->vision=$request->vision;
+            $datos->direccion=$request->direccion;
+            $datos->telefono1=$request->telefono1;
+            $datos->telefono2=$request->telefono2;
+            $datos->correo_contacto=$request->correo_contacto;
+            $datos->save();
+            return response()->json(['success' => 'Data update successfully. ']);
+        }
     }
 }
