@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-class CreateEmpresasTable extends Migration
+class CreatePaginaPrincipalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateEmpresasTable extends Migration
      */
     public function up()
     {
-        Schema::create('empresas', function (Blueprint $table) {
+        Schema::create('pagina_principals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('historia');
             $table->string('mision');
             $table->string('vision');
-            $table->timestamps();
+            $table->string('direccion');
+            $table->string('telefono');
+            $table->string('correo_contacto');
+            // $table->timestamps();
         });
     }
 
@@ -29,6 +32,6 @@ class CreateEmpresasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('pagina_principals');
     }
 }

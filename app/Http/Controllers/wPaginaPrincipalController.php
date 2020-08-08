@@ -23,7 +23,8 @@ class PaginaPrincipalController extends Controller
      */
     public function create()
     {
-        //
+        return view('Paginaprincipal.crud.edit');
+
     }
 
     /**
