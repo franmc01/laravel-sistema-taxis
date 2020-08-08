@@ -45,7 +45,6 @@ Route::group(
         Route::patch('mi-perfil/contrasena/{id}', 'PerfilController@Cambiocontrasena')->name('perfil.nueva');
     });
 
-    Route::get('actualizar-informacion', 'PaginaPrincipalController@create')->name('Paginaprincipal.crud.edit');
 Route::group(['middleware' => ['role:Moderador']], function () {
     //Here your routes
 });
@@ -64,3 +63,6 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 // Rutas de prueba
 Route::view('welcome', 'welcome');
 Route::get('mail', function () {return new App\Mail\LoginCredentials(App\User::first(), 'aldjad');});
+
+//No tocar
+Route::get('actualizar-informacion', 'PaginaPrincipalController@create')->name('Paginaprincipal.crud.edit');
