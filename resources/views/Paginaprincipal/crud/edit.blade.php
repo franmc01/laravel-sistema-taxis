@@ -38,19 +38,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="historia">Historia</label>
-                                    <textarea type="text" class="form-control" name="historia" cols="30" rows="5">
+                                    <textarea type="text" class="form-control" name="historia"rows="5">
                                         {{ old('historia', $info_pagina[0]->historia) }}
                                     </textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="mision">Misión</label>
-                                    <textarea type="text" class="form-control"  name="mision" cols="30" rows="5">
+                                    <textarea type="text" class="form-control"  name="mision" rows="5">
                                         {{ old('mision', $info_pagina[0]->mision) }}
                                     </textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="historia">Visión</label>
-                                    <textarea type="text" class="form-control"  name="vision" cols="30" rows="5">
+                                    <textarea type="text" class="form-control"  name="vision" rows="5">
                                         {{ old('vision', $info_pagina[0]->vision) }}
                                     </textarea>
                                 </div>

@@ -10,63 +10,23 @@
                     <h2>HISTORIA</h2>
                 </div>
                 <div class="about-text-right">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ad unde eaque. Rem
-                        numquam cumque, voluptate, dolor iure, repudiandae officiis voluptates aspernatur sapiente
-                        quisquam fugit!</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse assumenda officia placeat
-                        provident, odio magnam magni, obcaecati adipisci nemo. Ipsum.</p>
+                    <p>Aqui va la historia {{ $info_pagina[0]->historia }}</p>
                     <div id="skills">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="section-title-1">
                                     <h2>MISIÓN</h2>
                                 </div>
-                                <div class="skillbar" data-percent="95%">
-                                    <h6 class="skillbar-title">Designing</h6>
-                                    <h6 class="skillbar-percent">95%</h6>
-                                    <div class="skillbar-bar">
-                                        <div class="skillbar-child"></div>
-                                    </div>
-                                </div>
-                                <div class="skillbar" data-percent="95%">
-                                    <h6 class="skillbar-title">Designing</h6>
-                                    <h6 class="skillbar-percent">95%</h6>
-                                    <div class="skillbar-bar">
-                                        <div class="skillbar-child"></div>
-                                    </div>
-                                </div>
-                                <div class="skillbar" data-percent="95%">
-                                    <h6 class="skillbar-title">Designing</h6>
-                                    <h6 class="skillbar-percent">95%</h6>
-                                    <div class="skillbar-bar">
-                                        <div class="skillbar-child"></div>
-                                    </div>
+                                <div class="skillbar" data-percent="95%" style="text-align: justify">
+                                    <p>Aqui va la mision {{ $info_pagina[0]->mision }}</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="section-title-1">
                                     <h2>VISIÓN</h2>
                                 </div>
-                                <div class="skillbar" data-percent="95%">
-                                    <h6 class="skillbar-title">Designing</h6>
-                                    <h6 class="skillbar-percent">95%</h6>
-                                    <div class="skillbar-bar">
-                                        <div class="skillbar-child"></div>
-                                    </div>
-                                </div>
-                                <div class="skillbar" data-percent="95%">
-                                    <h6 class="skillbar-title">Designing</h6>
-                                    <h6 class="skillbar-percent">95%</h6>
-                                    <div class="skillbar-bar">
-                                        <div class="skillbar-child"></div>
-                                    </div>
-                                </div>
-                                <div class="skillbar" data-percent="95%">
-                                    <h6 class="skillbar-title">Designing</h6>
-                                    <h6 class="skillbar-percent">95%</h6>
-                                    <div class="skillbar-bar">
-                                        <div class="skillbar-child"></div>
-                                    </div>
+                                <div class="skillbar" data-percent="95%" style="text-align: justify">
+                                    <p>Aqui va la vision {{ $info_pagina[0]->vision }}</p>
                                 </div>
                             </div>
                         </div>

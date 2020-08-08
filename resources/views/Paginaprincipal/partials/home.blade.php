@@ -16,12 +16,12 @@
                         <div class="navbar-collapse collapse">
                             <nav>
                                 <ul class="nav navbar-nav navbar-right">
-                                    <li class="active"><a class="smooth-menu" href="#home">Home</a></li>
-                                    <li><a class="smooth-menu" href="#about">About</a></li>
-                                    <li><a class="smooth-menu" href="#services">Services</a></li>
+                                    <li class="active"><a class="smooth-menu" href="#home">Inicio</a></li>
+                                    <li><a class="smooth-menu" href="#about">Nosotros</a></li>
+                                    <li><a class="smooth-menu" href="#services">Servicios</a></li>
                                     <li><a class="smooth-menu" href="#portfolio">Personal</a></li>
-                                    <li><a class="smooth-menu" href="#testimonial">Testimonial</a></li>
-                                    <li><a class="smooth-menu" href="#contact">Contact</a></li>
+                                    <li><a class="smooth-menu" href="#testimonial">Testimonios de clientes</a></li>
+                                    <li><a class="smooth-menu" href="#contact">Contacto</a></li>
                                     <li><a style="border: 1px solid #fff;" href="{{ route('login') }}">Sistema</a></li>
                                 </ul>
                             </nav>
