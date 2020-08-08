@@ -15,11 +15,12 @@ class CreatePaginaPrincipalsTable extends Migration
     {
         Schema::create('pagina_principals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('historia');
-            $table->string('mision');
-            $table->string('vision');
+            $table->mediumText('historia');
+            $table->mediumText('mision');
+            $table->mediumText('vision');
             $table->string('direccion');
-            $table->string('telefono');
+            $table->string('telefono1');
+            $table->string('telefono2');
             $table->string('correo_contacto');
             // $table->timestamps();
         });
