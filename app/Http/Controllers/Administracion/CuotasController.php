@@ -22,6 +22,7 @@ class CuotasController extends Controller
      */
     public function mostrar(Request $request)
     {
+        Log::info($request);
         $x = $request->all();
         if (request()->ajax()) {
             $fecha = Cuota::with('users')

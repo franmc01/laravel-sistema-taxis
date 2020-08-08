@@ -5,6 +5,9 @@
  */
 
 import $ from 'jquery';
+import 'datatables.net'
+import 'select2'
+import 'datatables.net-dt'
 import 'jquery-ui';
 import 'jquery-ui/themes/base/core.css';
 import 'jquery-ui/themes/base/theme.css';
@@ -29,11 +32,182 @@ $.datepicker.regional['es'] = {
     showMonthAfterYear: false,
     yearSuffix: ''
 };
+var table = $('#tablacuotas').dataTable({
+    destroy: true,
+    paging: false,
+    searching: false,
+    language: {
+      "emptyTable":			"No hay datos disponibles en la tabla.",
+      "info":		   			"Del _START_ al _END_ de _TOTAL_ ",
+      "infoEmpty":			"Mostrando 0 registros de un total de 0.",
+      "infoFiltered":			"(filtrados de un total de _MAX_ registros)",
+      "infoPostFix":			"(actualizados)",
+      "lengthMenu":			"Ver _MENU_ registros",
+      "loadingRecords":		"Cargando...",
+      "processing":			"Procesando...",
+      "search":				"Buscar:",
+      "searchPlaceholder":	"",
+      "zeroRecords":			"No se han encontrado coincidencias.",
+      "paginate": {
+        "first":			"Primera",
+        "last":				"Última",
+        "next":				"Siguiente",
+        "previous":			"Anterior"
+      },
+      "aria": {
+        "sortAscending":	"Ordenación ascendente",
+        "sortDescending":	"Ordenación descendente"
+      }
+    },
+//                      data: Response.data,
+    columns:[
+        {
+            data: 'id',
+            name: 'id',
+        },
+        {
+            data: 'fecha',
+            name: 'fecha'
+        },
+        {
+            data: 'users.nombres',
+            name: 'nombres'
+        },
+        {
+            data: 'users.apellidos',
+            name: 'apellidos'
+        },
+        {
+            data: 'pago',
+            name: 'pago'
+        },
+        {
+            data: 'monto',
+            name: 'monto'
+        },
+        {
+            data: 'observacion',
+            name: 'observacion'
+        },
+    ],
+    "lengthMenu":				[[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
+    "iDisplayLength":			10,
+
+});
+
+$('#mostrar').submit(function(event){
+      var route = $('#mostrar').data('route');
+      var formData = document.getElementById('datepicker');
+      var fecha = formData.value;
+      $.ajax({
+          type: 'POST',
+          url: route,
+          data: {fecha:fecha},
+          success: function(Response)
+          {
+            $('#tablacuotas').dataTable().fnClearTable();
+            $('#tablacuotas').dataTable().fnAddData(Response.data);
+            $('button[name=pago]').on('click', function () {
+                var id = $(this).attr('id');
+                botones(id);
+            });
+          }
+      });
+      event.preventDefault();
+  });
+
+  $('#consultar').submit(function(event){
+      var route = $('#consultar').data('route');
+      var fecha1 = $('input[name=fecha1]').val();
+      var fecha2 = $('input[name=fecha2]').val();
+      var user = $('select[name=user]').val();
+      $.ajax({
+          type: 'POST',
+          url: route,
+          data: {
+            fecha1:fecha1,
+            fecha2:fecha2,
+            user:user,
+          },
+          success: function(Response)
+          {
+            $('#tablacuotas').dataTable().fnClearTable();
+            $('#tablacuotas').dataTable().fnAddData(Response.data);
+            $('button[name=pago]').on('click', function () {
+                var id = $(this).attr('id');
+                botones(id);
+            });
+          }
+      });
+      event.preventDefault();
+  });
+
+  var botones = function(id) {
+    if ($('input[name=pago][id='+id+']').val() === "1") {
+        $('input[name=monto][id='+id+']').val("0.00");
+        $('input[name=pago][id='+id+']').val("0");
+        $('button[name=pago][id='+id+']').text("No pagado");
+    } else {
+        $('input[name=monto][id='+id+']').val("2.00");                        
+        $('input[name=pago][id='+id+']').val("1");
+        $('button[name=pago][id='+id+']').text("Pagado");
+    }
+  };
+
+  $('#formGuardar').on('submit', function(e){
+    var myRows = { myRows: [] };
+    var pagos = table.$('input[name=pago]').serializeArray();
+    var monto = table.$('input[name=monto]').serializeArray();          
+    var $th = $('#tablacuotas th');
+    $('#tablacuotas tbody tr').each(function(i, tr){
+      var obj = {}, $tds = $(tr).find('td');
+      $th.each(function(index, th){
+          obj[$(th).text()] = $tds.eq(index).text();
+          if ($(th).text()=="Pago") {
+            obj[$(th).text()] = pagos[i].value;
+          }
+          if ($(th).text()=="Monto") {
+            obj[$(th).text()] = monto[i].value;
+          }
+      });
+      myRows.myRows.push(obj);
+    });
+    var url = $('#formGuardar').data('route');
+    $.ajax({
+      type: 'POST',
+      url: url,
+      data: myRows,
+      success: function(res) {
+        console.log(res.data);
+      }
+    });
+    event.preventDefault();  
+  });
+$.ajaxSetup({
+    headers:
+    { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+});
+
 $.datepicker.setDefaults($.datepicker.regional['es']);
 $('#datepicker').datepicker({
     onSelect: function(dateText) {
-//        $("#datepicker2").datepicker();
-//        $('#datepicker2').datepicker("setDate", $(this).datepicker("getDate"));
+        var route = $('#mostrar').data('route');
+        var formData = document.getElementById('datepicker');
+        var fecha = formData.value;
+        $.ajax({
+            type: 'POST',
+            url: route,
+            data: {fecha:fecha},
+            success: function(Response)
+            {
+              $('#tablacuotas').dataTable().fnClearTable();
+              $('#tablacuotas').dataTable().fnAddData(Response.data);
+              $('button[name=pago]').on('click', function () {
+                  var id = $(this).attr('id');
+                  botones(id);
+              });
+            }
+        });
     }
 });
 
