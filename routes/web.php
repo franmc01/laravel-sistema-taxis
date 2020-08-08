@@ -65,4 +65,4 @@ Route::view('welcome', 'welcome');
 Route::get('mail', function () {return new App\Mail\LoginCredentials(App\User::first(), 'aldjad');});
 
 //No tocar
-Route::get('actualizar-informacion', 'PaginaPrincipalController@create')->name('Paginaprincipal.crud.edit');
+Route::get('actualizar-informacion', 'PaginaPrincipalController@edit')->name('Paginaprincipal.crud.edit');

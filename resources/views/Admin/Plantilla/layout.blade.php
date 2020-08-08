@@ -52,13 +52,13 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <img src="{{ auth()->user()->foto_perfil ? '/img/user.jpg' : '/storage/auth()->user()->foto_perfil'}}" class="user-image img-circle elevation-2" alt="User Image">
+                        <img src="{{ auth()->user()->foto_perfil ? '/storage/auth()->user()->foto_perfil' : '/img/user.jpg'}}" class="user-image img-circle elevation-2" alt="User Image">
                         <span class="d-none d-md-inline">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
                         <li class="user-header bg-dark">
-                            <img src="{{ auth()->user()->foto_perfil ? '/img/user.jpg' : '/storage/auth()->user()->foto_perfil'}}" class="img-circle elevation-2" alt="User Image">
+                            <img src="{{ auth()->user()->foto_perfil ? '/storage/auth()->user()->foto_perfil' : '/img/user.jpg'}}" class="img-circle elevation-2" alt="User Image">
                             <p> {{ auth()->user()->nombres."".auth()->user()->apelllidos }} - Web Developer <small>Member since Nov. 2020</small>
                             </p>
                         </li>
@@ -90,7 +90,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ auth()->user()->foto_perfil ? '/img/user.jpg' : '/storage/auth()->user()->foto_perfil'}}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ auth()->user()->foto_perfil ? '/storage/auth()->user()->foto_perfil' : '/img/user.jpg'}}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</a>
@@ -126,7 +126,7 @@
         <!-- Main Footer -->
         <footer class="main-footer text-sm">
             <!-- To the right -->
-            <div class="float-right d-none d-sm-inline"> Version 1.0.1 </div>
+            <div class="float-right d-none d-sm-inline"> Version 1.2.1 </div>
             <!-- Default to the left -->
             <strong>Copyright &copy; 2019-2020 <a href="">Computación Espam Mfl</a>.</strong>Todos los derechos reservados.
         </footer>

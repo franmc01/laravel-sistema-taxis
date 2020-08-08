@@ -38,33 +38,39 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="historia">Historia</label>
-                                    <textarea type="text" class="form-control" value="#" name="historia" id="" cols="30" rows="5"></textarea>
+                                    <textarea type="text" class="form-control" name="historia" cols="30" rows="5">
+                                        {{ old('historia', $info_pagina[0]->historia) }}
+                                    </textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="mision">Misión</label>
-                                    <textarea type="text" class="form-control" value="#" name="mision" id="" cols="30" rows="5"></textarea>
+                                    <textarea type="text" class="form-control"  name="mision" cols="30" rows="5">
+                                        {{ old('mision', $info_pagina[0]->mision) }}
+                                    </textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="historia">Visión</label>
-                                    <textarea type="text" class="form-control" value="#" name="historia" id="" cols="30" rows="5"></textarea>
+                                    <textarea type="text" class="form-control"  name="vision" cols="30" rows="5">
+                                        {{ old('vision', $info_pagina[0]->vision) }}
+                                    </textarea>
                                 </div>
                             </div>
                             <div class="col-md-6" style="margin-top:100px;">
                                 <div class="form-group">
                                     <label for="">Dirección</label>
-                                    <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                    <input type="text"  class="form-control" value="{{ old('direccion',$info_pagina[0]->direccion) }}" name="direccion"  placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Teléfono 1:</label>
-                                    <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                    <input type="text"  class="form-control" value="{{ old('telefono1',$info_pagina[0]->telefono1) }}" name="telefono1"  placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Teléfono 2:</label>
-                                    <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                    <input type="text"  class="form-control" value="{{ old('telefono2',$info_pagina[0]->telefono2) }}" name="telefono2"  placeholder="" aria-describedby="helpId">
                                 </div>
                                 <div class="form-group">
                                     <label for="">Correo de contacto</label>
-                                    <input type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                                    <input type="text"  class="form-control" value="{{ old('correo_contacto',$info_pagina[0]->correo_contacto) }}" name="correo_contacto"  placeholder="" aria-describedby="helpId">
                                 </div>
                             </div>
                         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\PaginaPrincipal;
 use Illuminate\Http\Request;
 
 class PaginaPrincipalController extends Controller
@@ -21,43 +22,11 @@ class PaginaPrincipalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function edit()
     {
-        return view('Paginaprincipal.crud.edit');
+        $info_pagina = PaginaPrincipal::all();
+        return view('Paginaprincipal.crud.edit', compact('info_pagina'));
 
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
     }
 
     /**
@@ -68,17 +37,6 @@ class PaginaPrincipalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
     {
         //
     }
