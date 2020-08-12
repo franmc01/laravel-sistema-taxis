@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('correo', 'Correos\ContactController');
 Route::get('/', 'PaginaPrincipalController@index');
-Route::get('inicio', 'HomeController@index')->name('administracion');
+Route::get('/home', 'HomeController@index')->name('administracion');
 
 Route::group(
     [
