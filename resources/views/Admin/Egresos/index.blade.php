@@ -15,5 +15,20 @@
 @endsection
 
 @section('content')
-<h1>Hola desde egresos</h1>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-outline card-gray">
+            <div class="card-header">
+                <h4 class="card-title">
+                    Egresos
+                </h4>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="mb-0">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

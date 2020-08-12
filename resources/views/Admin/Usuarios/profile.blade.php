@@ -1,6 +1,6 @@
-@extends('Admin.Plantilla.layout') 
+@extends('Admin.Plantilla.layout')
 
-@section('header') 
+@section('header')
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
@@ -13,15 +13,25 @@
             </ol>
         </div><!-- /.col -->
     </div><!-- /.row -->
-</div><!-- /.container-fluid --> 
-@endsection 
+</div><!-- /.container-fluid -->
+@endsection
 
 
 @section('content')
-    <div class="row">
-        <div class="col-md-12 text-center">
-            No se poner &#x1F602;
-            ando mal con la creatividad
+<div class="row">
+    <div class="col-md-12">
+        <div class="card card-outline card-gray">
+            <div class="card-header">
+                <h4 class="card-title">
+                    Perfil
+                </h4>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="mb-0">
+                </div>
+            </div>
         </div>
     </div>
+</div>
 @endsection
