@@ -127,8 +127,31 @@
 
               <li class="nav-item">
                   <a href="{{ route('Paginaprincipal.crud.edit') }}" class="nav-link">
-                    <i class="fa fa-info nav-icon" aria-hidden="true"></i>
+                      <i class="fa fa-info nav-icon" aria-hidden="true"></i>
                       <p>Administrar información</p>
+                  </a>
+              </li>
+          </ul>
+      </li>
+
+      <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+              <i class="nav-icon  fa fa-calculator"></i>
+              <p>Ingresos y egresos<i class="right fas fa-angle-left"></i></p>
+          </a>
+          <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                  <a href="#" class="nav-link">
+                      <i class="fa fa-caret-square-down nav-icon" aria-hidden="true"></i>
+                      <p>Ingresos</p>
+                  </a>
+              </li>
+
+              <li class="nav-item">
+                  <a href="#" class="nav-link">
+                      <i class="fa fa-caret-square-up nav-icon" aria-hidden="true"></i>
+                      <p>Egresos</p>
                   </a>
               </li>
           </ul>

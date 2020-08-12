@@ -3,47 +3,37 @@
 use Illuminate\Support\Facades\Route;
 
 Route::resource('correo', 'Correos\ContactController');
-Route::get('/', 'PaginaPrincipalController@index');
+Route::get('/', 'PaginaPrincipalController@index')->name('principal');
 Route::get('/home', 'HomeController@index')->name('administracion');
 
-Route::group(
-    [
-        'namespace' => 'Administracion',
-        'middleware' => ['role:Administrador'],
-    ],
-    function () {
+Route::group(['namespace' => 'Administracion', 'middleware' => ['role:Administrador']], function () {
 
-        //rutas de usuario
-        Route::resource('usuarios', 'UsuariosController');
-        Route::get('inactivos', 'UsuariosController@eliminados')->name('usuarios.eliminados');
-        Route::get('restaurar/{user}', 'UsuariosController@user_restore')->name('usuarios.restore');
-        Route::get('eliminar/{user}', 'UsuariosController@user_force')->name('usuarios.forceDelete');
+    //rutas de usuario
+    Route::resource('usuarios', 'UsuariosController');
+    Route::get('inactivos', 'UsuariosController@eliminados')->name('usuarios.eliminados');
+    Route::get('restaurar/{user}', 'UsuariosController@user_restore')->name('usuarios.restore');
+    Route::get('eliminar/{user}', 'UsuariosController@user_force')->name('usuarios.forceDelete');
 
-        //rutas de vehiculo
-        Route::resource('vehiculos', 'VehiculosController');
-        Route::post('vehiculos/update', 'VehiculosController@update')->name('vehiculos.update');
-        Route::get('vehiculos/destroy/{id}', 'VehiculosController@destroy');
+    //rutas de vehiculo
+    Route::resource('vehiculos', 'VehiculosController');
+    Route::post('vehiculos/update', 'VehiculosController@update')->name('vehiculos.update');
+    Route::get('vehiculos/destroy/{id}', 'VehiculosController@destroy');
 
-        //rutas de cuotas
-        Route::resource('cuotas', 'CuotasController');
-        Route::post('cuotas/mostrar', 'CuotasController@mostrar')->name('cuotas.mostrar');
-        Route::post('cuotas/consultar', 'CuotasController@consultar')->name('cuotas.consultar');
-        Route::post('cuotas/guardar', 'CuotasController@guardar')->name('cuotas.guardar');
-        Route::post('cuotas/socios/fetch', 'CuotasController@fetch')->name('cuotas.socios.fetch');
+    //rutas de cuotas
+    Route::resource('cuotas', 'CuotasController');
+    Route::post('cuotas/mostrar', 'CuotasController@mostrar')->name('cuotas.mostrar');
+    Route::post('cuotas/consultar', 'CuotasController@consultar')->name('cuotas.consultar');
+    Route::post('cuotas/guardar', 'CuotasController@guardar')->name('cuotas.guardar');
+    Route::post('cuotas/socios/fetch', 'CuotasController@fetch')->name('cuotas.socios.fetch');
 
-    }
+}
 );
 
-Route::group(
-    [
-        'namespace' => 'Usuarios',
-        'middleware' => ['role:Administrador'],
-        // 'middleware' => ['role:Socio']
-    ], function () {
-        Route::get('mi-perfil', 'PerfilController@index')->name('perfil.info');
-        Route::get('mi-perfil/nueva-contraseña', 'PerfilController@contrasena')->name('perfil.cambio');
-        Route::patch('mi-perfil/contrasena/{id}', 'PerfilController@Cambiocontrasena')->name('perfil.nueva');
-    });
+Route::group(['namespace' => 'Usuarios', 'middleware' => ['role:Administrador']], function () {
+    Route::get('mi-perfil', 'PerfilController@index')->name('perfil.info');
+    Route::get('mi-perfil/nueva-contraseña', 'PerfilController@contrasena')->name('perfil.cambio');
+    Route::patch('mi-perfil/contrasena/{id}', 'PerfilController@Cambiocontrasena')->name('perfil.nueva');
+});
 
 Route::group(['middleware' => ['role:Moderador']], function () {
     //Here your routes
