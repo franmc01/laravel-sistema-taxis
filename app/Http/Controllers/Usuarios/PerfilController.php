@@ -2,26 +2,24 @@
 
 namespace App\Http\Controllers\Usuarios;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class PerfilController extends Controller
 {
 
-    public function index(){
-        return view('Admin\Usuarios\profile');
+    public function index()
+    {
+        $logeado = User::find(auth()->id());
+        return view('Admin\Usuarios\profile', compact('logeado'));
     }
 
-
-
-
-
-
-    public function contrasena(){
-        $info=User::find(auth()->user()->id);
+    public function contrasena()
+    {
+        $info = User::find(auth()->user()->id);
         return view('Admin\Usuarios\password', compact('info'));
     }
 
@@ -32,14 +30,15 @@ class PerfilController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function Cambiocontrasena(Request $request, $id){
-        if(request()->ajax()){
-                $datos = User::find($id);
-                if ($request->filled('password')) {
-                    $datos->password = Hash::make($request->password);
-                }
-                $datos->save();
-            return response()->json(['success'=>'Contraseña actualizada correctamente']);
+    public function Cambiocontrasena(Request $request, $id)
+    {
+        if (request()->ajax()) {
+            $datos = User::find($id);
+            if ($request->filled('password')) {
+                $datos->password = Hash::make($request->password);
+            }
+            $datos->save();
+            return response()->json(['success' => 'Contraseña actualizada correctamente']);
 
         }
     }
