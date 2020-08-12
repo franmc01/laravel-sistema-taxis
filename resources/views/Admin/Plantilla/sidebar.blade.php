@@ -142,14 +142,14 @@
           <ul class="nav nav-treeview">
 
               <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="{{ route('ingresos.index') }}" class="nav-link">
                       <i class="fa fa-caret-square-down nav-icon" aria-hidden="true"></i>
                       <p>Ingresos</p>
                   </a>
               </li>
 
               <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="{{ route('egresos.index') }}" class="nav-link">
                       <i class="fa fa-caret-square-up nav-icon" aria-hidden="true"></i>
                       <p>Egresos</p>
                   </a>

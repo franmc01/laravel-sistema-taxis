@@ -14,7 +14,7 @@ class EgresoController extends Controller
      */
     public function index()
     {
-        //
+        return view('Admin.Egresos.index');
     }
 
     /**

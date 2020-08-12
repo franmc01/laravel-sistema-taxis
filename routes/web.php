@@ -57,3 +57,6 @@ Route::get('mail', function () {return new App\Mail\LoginCredentials(App\User::f
 //No tocar
 Route::get('actualizar-informacion', 'PaginaPrincipalController@edit')->name('Paginaprincipal.crud.edit');
 Route::patch('confirmar-informacion/{id}', 'PaginaPrincipalController@update')->name('pagina_principal.info.update');
+
+Route::resource('ingresos', 'IngresoController');
+Route::resource('egresos', 'EgresoController');
