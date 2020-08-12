@@ -49,7 +49,7 @@
                                                             <div class="text-center text-sm-left mb-2 mb-sm-0">
                                                                 <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{ $logeado->nombres }} {{ $logeado->apellidos }}</h4>
                                                                 <p class="mb-0"><span class="badge badge-success">Activo</span></p>
-                                                                <div class="text-muted"><small>{{ Carbon\Carbon::parse($logeado->last_login)->diffForHumans() }}</small></div>
+                                                                <div class="text-muted"><small>{{ $logeado->last_login }}</small></div>
                                                                 <div class="mt-2">
                                                                     <button class="btn btn-primary" type="button">
                                                                         <i class="fa fa-fw fa-camera"></i>

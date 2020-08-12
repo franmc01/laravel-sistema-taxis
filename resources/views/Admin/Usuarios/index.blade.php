@@ -33,6 +33,7 @@
                             <th>Cedula</th>
                             <th>Email</th>
                             <th>Rol</th>
+                            <th>Última conexión</th>
                             <th>Accion 1</th>
                             <th>Accion 2</th>
                             <th>Accion 3</th>
@@ -48,44 +49,64 @@
 <script>
     $(document).ready(function() {
         $('#tablausuarios').DataTable({
-			language: {
-				"emptyTable":			"No hay datos disponibles en la tabla.",
-				"info":		   			"Del _START_ al _END_ de _TOTAL_ ",
-				"infoEmpty":			"Mostrando 0 registros de un total de 0.",
-				"infoFiltered":			"(filtrados de un total de _MAX_ registros)",
-				"infoPostFix":			"(actualizados)",
-				"lengthMenu":			"Ver _MENU_ registros",
-				"loadingRecords":		"Cargando...",
-				"processing":			"Procesando...",
-				"search":				"Buscar:",
-				"searchPlaceholder":	"",
-				"zeroRecords":			"No se han encontrado coincidencias.",
-				"paginate": {
-					"first":			"Primera",
-					"last":				"Última",
-					"next":				"Siguiente",
-					"previous":			"Anterior"
-				},
-				"aria": {
-					"sortAscending":	"Ordenación ascendente",
-					"sortDescending":	"Ordenación descendente"
-				}
-			},
-            processing:true,
-            serverSide:true,
-            ajax:"{{ route('usuarios.index') }}",
-            columns:[
-                {data: 'nombres'},
-                {data: 'apellidos'},
-                {data: 'cedula'},
-                {data: 'email'},
-                {data: 'role'},
-                {data: 'btnshow'},
-                {data: 'btnedit'},
-                {data: 'btndelete'}
-            ],
-            "lengthMenu":				[[5, 10, 20, 25, 50, -1], [5, 10, 20, 25, 50, "Todos"]],
-            "iDisplayLength":			10,
+            language: {
+                "emptyTable": "No hay datos disponibles en la tabla."
+                , "info": "Del _START_ al _END_ de _TOTAL_ "
+                , "infoEmpty": "Mostrando 0 registros de un total de 0."
+                , "infoFiltered": "(filtrados de un total de _MAX_ registros)"
+                , "infoPostFix": "(actualizados)"
+                , "lengthMenu": "Ver _MENU_ registros"
+                , "loadingRecords": "Cargando..."
+                , "processing": "Procesando..."
+                , "search": "Buscar:"
+                , "searchPlaceholder": ""
+                , "zeroRecords": "No se han encontrado coincidencias."
+                , "paginate": {
+                    "first": "Primera"
+                    , "last": "Última"
+                    , "next": "Siguiente"
+                    , "previous": "Anterior"
+                }
+                , "aria": {
+                    "sortAscending": "Ordenación ascendente"
+                    , "sortDescending": "Ordenación descendente"
+                }
+            }
+            , processing: true
+            , serverSide: true
+            , ajax: "{{ route('usuarios.index') }}"
+            , columns: [{
+                    data: 'nombres'
+                }
+                , {
+                    data: 'apellidos'
+                }
+                , {
+                    data: 'cedula'
+                }
+                , {
+                    data: 'email'
+                }
+                , {
+                    data: 'role'
+                }, {
+                    data: 'last_login'
+                }
+                , {
+                    data: 'btnshow'
+                }
+                , {
+                    data: 'btnedit'
+                }
+                , {
+                    data: 'btndelete'
+                }
+            ]
+            , "lengthMenu": [
+                [5, 10, 20, 25, 50, -1]
+                , [5, 10, 20, 25, 50, "Todos"]
+            ]
+            , "iDisplayLength": 10,
 
         });
     });

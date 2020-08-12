@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -38,4 +39,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function getLastLoginAttribute($date)
+    {
+        return $date=Carbon::parse($date)->diffForHumans();
+    }
 }
