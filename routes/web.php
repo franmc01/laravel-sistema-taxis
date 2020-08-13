@@ -29,9 +29,11 @@ Route::group(['namespace' => 'Administracion', 'middleware' => ['role:Administra
 }
 );
 
-Route::group(['namespace' => 'Usuarios', 'middleware' => ['role:Administrador']], function () {
+Route::group(['namespace' => 'Usuarios', 'middleware' => ['role:Socio']], function () {
     Route::get('mi-perfil', 'PerfilController@index')->name('perfil.info');
     Route::get('mi-perfil/nueva-contraseña', 'PerfilController@contrasena')->name('perfil.cambio');
+    Route::get('mi-perfil/consulta-cuota-socio', 'PerfilController@cuotasocio')->name('perfil.cuota.socio');
+    Route::post('mi-perfil/consulta-socio-cuota-fecha', 'PerfilController@consultarCuota')->name('perfil.consultar.cuota');
     Route::patch('mi-perfil/contrasena/{id}', 'PerfilController@Cambiocontrasena')->name('perfil.nueva');
 });
 

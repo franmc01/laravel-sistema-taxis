@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Usuarios;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use App\Cuota;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 
 class PerfilController extends Controller
 {
@@ -15,6 +18,27 @@ class PerfilController extends Controller
     {
         $logeado = User::find(auth()->id());
         return view('Admin\Usuarios\profile', compact('logeado'));
+    }
+
+    public function cuotasocio()
+    {
+        return view('Admin\Usuarios\cuotas');
+    }
+    public function consultarCuota(Request $request)
+    {
+        $fecha1 = $request->get('fecha1');
+        $fecha2 = $request->get('fecha2');
+        $info = User::find(auth()->id());
+        $user = $info->id;
+        if (request()->ajax()) {
+            $fecha = Cuota::with('users')
+                ->Fecha1($fecha1)
+                ->Fecha2($fecha2)
+                ->User($user)
+                ->get();
+            return datatables()->of($fecha)
+                ->toJson();
+        }
     }
 
     public function contrasena()

@@ -59,10 +59,10 @@ class CuotasController extends Controller
                 ->get();
             return datatables()->of($fecha)
                 ->addColumn('pago', 'Snnipets.selectpago')
+                ->addColumn('monto', 'Snnipets.inputmonto')
                 ->addColumn('observacion', 'Snnipets.inputobservacion')
                 ->rawColumns(['pago', 'monto', 'observacion'])
                 ->toJson();
-            //            return response()->json(['data'=>$fecha]);
         }
     }
     public function index()

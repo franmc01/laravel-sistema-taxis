@@ -5,7 +5,6 @@
  */
 
 import $ from 'jquery';
-import * as bootstrap from "bootstrap";
 import 'datatables.net'
 import 'select2'
 import 'datatables.net-dt'
@@ -183,9 +182,7 @@ $('#mostrar').submit(function(event){
       url: url,
       data: myRows,
       success: function(res) {
-        if (true) {
-          $('#exito').modal("show");
-        }
+          window.$("#exito").modal("show");
       }
     });
     event.preventDefault();  

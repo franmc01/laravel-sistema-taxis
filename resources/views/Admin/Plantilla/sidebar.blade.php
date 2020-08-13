@@ -114,6 +114,14 @@
                       <p>Cambiar contraseña</p>
                   </a>
               </li>
+              @role('Socio')
+              <li class="nav-item">
+                    <a href="{{ route('perfil.cuota.socio') }}" class="nav-link">
+                        <i class="fa fa-dollar-sign nav-icon"></i>
+                        <p>Consulta de cuotas</p>
+                    </a>
+              </li>
+              @endrole
 
           </ul>
       </li>
