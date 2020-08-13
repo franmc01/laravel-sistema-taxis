@@ -31,7 +31,8 @@ class CuotasController extends Controller
             return datatables()->of($fecha)
                 ->addColumn('pago', 'Snnipets.selectpago')
                 ->addColumn('monto', 'Snnipets.inputmonto')
-                ->rawColumns(['pago', 'monto'])
+                ->addColumn('observacion', 'Snnipets.inputobservacion')
+                ->rawColumns(['pago', 'monto', 'observacion'])
                 ->toJson();
         }
     }
@@ -58,8 +59,8 @@ class CuotasController extends Controller
                 ->get();
             return datatables()->of($fecha)
                 ->addColumn('pago', 'Snnipets.selectpago')
-                ->addColumn('monto', 'Snnipets.inputmonto')
-                ->rawColumns(['pago', 'monto'])
+                ->addColumn('observacion', 'Snnipets.inputobservacion')
+                ->rawColumns(['pago', 'monto', 'observacion'])
                 ->toJson();
             //            return response()->json(['data'=>$fecha]);
         }
@@ -124,11 +125,10 @@ class CuotasController extends Controller
     {
         $params_array = $request->myRows;
         foreach ($params_array as $param => $paramdata) {
-            /* Cuota::where('id', $paramdata['ID'])
-            ->update(['pago'=>$paramdata['Pago'],'monto'=>$paramdata['Monto']]); */
             $datos = Cuota::find($paramdata['ID']);
             $datos->monto = $paramdata['Monto'];
             $datos->pago = $paramdata['Pago'];
+            $datos->observacion = $paramdata['Observacion'];
             $datos->save();
         }
         return response()->json(['data' => 'Datos Agregados exitosamente']);

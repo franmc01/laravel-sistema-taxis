@@ -47,19 +47,18 @@ class CrearCuotas extends Command
     public function handle()
     {
         $dt = Carbon::now();
-        $diasMes= $dt->daysInMonth;
-        $users = User::whereHas('roles', function($q){
+        $diasMes = $dt->daysInMonth;
+        $users = User::whereHas('roles', function ($q) {
             $q->where('name', 'Socio');
         })->select('users.id as id')->get();
-        for ($i=0; $i < $diasMes; $i++) { 
-            $fecha = $dt->copy()->addDays($i);
+        for ($i = 0; $i < $diasMes; $i++) {
+            $fecha = $dt->copy()->addDays($i)->toDateString();
             foreach ($users as $user) {
-                Cuota::create([
+                $var=Cuota::updateOrCreate(['user_id' =>  $user->id, 'fecha' => $fecha],
+                [
                     'pago' => '0',
                     'monto' => '0',
-                    'observacion' => 'ninguna',
-                    'user_id' => $user->id, 
-                    'fecha' => $fecha
+                    'observacion' => 'ninguna'
                 ]);
             }
         }

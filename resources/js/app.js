@@ -5,6 +5,7 @@
  */
 
 import $ from 'jquery';
+import * as bootstrap from "bootstrap";
 import 'datatables.net'
 import 'select2'
 import 'datatables.net-dt'
@@ -34,7 +35,7 @@ $.datepicker.regional['es'] = {
 };
 var table = $('#tablacuotas').dataTable({
     destroy: true,
-    paging: false,
+    paging: true,
     searching: false,
     language: {
       "emptyTable":			"No hay datos disponibles en la tabla.",
@@ -158,6 +159,7 @@ $('#mostrar').submit(function(event){
     var myRows = { myRows: [] };
     var pagos = table.$('input[name=pago]').serializeArray();
     var monto = table.$('input[name=monto]').serializeArray();          
+    var observacion = table.$('input[name=observacion]').serializeArray();          
     var $th = $('#tablacuotas th');
     $('#tablacuotas tbody tr').each(function(i, tr){
       var obj = {}, $tds = $(tr).find('td');
@@ -169,6 +171,9 @@ $('#mostrar').submit(function(event){
           if ($(th).text()=="Monto") {
             obj[$(th).text()] = monto[i].value;
           }
+          if ($(th).text()=="Observacion") {
+            obj[$(th).text()] = observacion[i].value;
+          }
       });
       myRows.myRows.push(obj);
     });
@@ -178,7 +183,9 @@ $('#mostrar').submit(function(event){
       url: url,
       data: myRows,
       success: function(res) {
-        console.log(res.data);
+        if (true) {
+          $('#exito').modal("show");
+        }
       }
     });
     event.preventDefault();  

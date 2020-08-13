@@ -1,0 +1,1 @@
+<input type="text" name="observacion" id="{{ $id }}" class="observacion" value="{{ $observacion }}">

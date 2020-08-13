@@ -17,7 +17,28 @@
 @section('content')
 
 
-<div class="row">
+<div class="modal modal-success fade" id="exito">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Datos Guardados!</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        <p>Los datos han sido actualizados con éxito!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+
+<div class="row">  
   <div class="col-md-12">
     <div class="card card-outline card-gray">
       <div class="card-header">
