@@ -32,6 +32,6 @@ class LoginCredentials extends Mailable
      */
     public function build()
     {
-        return $this->markdown('CorreoCredenciales')->subject('Envio de credenciales de acceso')->from('translasimpar@gmail.com');
+        return $this->markdown('CorreoCredenciales')->subject('Envio de credenciales de acceso')->from('esneider_98@outlook.com');
     }
 }

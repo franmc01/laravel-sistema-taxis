@@ -15,6 +15,7 @@
         "laravel/tinker": "^1.0",
         "nesbot/carbon": "^2.33",
         "spatie/laravel-permission": "^3.9",
+        "s-ichikawa/laravel-sendgrid-driver": "~2.0",
         "yajra/laravel-datatables-oracle": "^9.9"
     },
     "require-dev": {
