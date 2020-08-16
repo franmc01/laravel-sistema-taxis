@@ -72,15 +72,21 @@
                                 <img id="blah" src="http://placehold.it/100" alt="your image" width="100" height="100" />
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Rol de usuario:</label>
                                     @foreach ($roles as $item)
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="roles[]" value="{{ $item->id }}" unchecked>
+                                        <input class="form-check-input" type="radio" name="roles[]" value="{{ $item->id }}" unchecked id="role">
                                         <label class="form-check-label" style="text-transform:capitalize">{{ $item->name }}</label>
                                     </div>
                                     @endforeach
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group" id="out" style="display: none">
+                                    <label for="">Licencia</label>
+                                    <input type="text" name="licencia" id="" class="form-control" placeholder="Ingrese el numero de su licencia">
                                 </div>
                             </div>
 
@@ -156,6 +162,25 @@
     $('.custom-file-input').on('change', function() {
         var fileName = $(this).val().split('\\').pop();
         $(this).next('.custom-file-label').addClass("selected").html(fileName);
+    });
+
+    $('.form-check').on('change', '#role', function() {
+        var check = $('input:radio[id=role]:checked').val()
+        if (check == 2) {
+            Swal.fire({
+                text: "¿El socio a registrar dispone de un conductor particular para su vehículo?"
+                , icon: 'question'
+                , showCancelButton: true
+                , confirmButtonColor: '#3085d6'
+                , cancelButtonColor: '#d33'
+                , confirmButtonText: 'Si, el tiene un chofer'
+                , cancelButtonText: 'No, el será el chofer'
+            }).then((result) => {
+                if (result.value) {
+                    $('#out').show(100);
+                }
+            })
+        }
     });
 </script>
 

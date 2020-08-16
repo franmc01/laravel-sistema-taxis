@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('cedula', 10)->unique();
             $table->string('email');
             $table->string('password');
+            $table->string('licencia')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
