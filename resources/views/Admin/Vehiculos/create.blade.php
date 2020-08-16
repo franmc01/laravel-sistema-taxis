@@ -22,22 +22,22 @@
 @section('content')
 
 @if($errors->any())
-    <div class="alert alert-danger alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h4> Atención:</h4>
-        <ul>
-            @foreach( $errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
+<div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4> Atención:</h4>
+    <ul>
+        @foreach( $errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
 @endif
 
 @if(Session::has('creado'))
-    <div class="alert alert-success alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-        <h4> Atención:</h4> El Vehículo se ha registrado con exito
-    </div>
+<div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4> Atención:</h4> El Vehículo se ha registrado con exito
+</div>
 @endif
 
 <div class="row">
@@ -49,8 +49,7 @@
             <!-- /.card-header -->
             <div class="card-body">
                 <div class="mb-0">
-                    <form method="POST" action="{{ route('vehiculos.store') }}" accept-charset="UTF-8"
-                        enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('vehiculos.store') }}" accept-charset="UTF-8" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-6">
@@ -127,6 +126,5 @@
         }
         });
     });
-
 </script>
 @endsection

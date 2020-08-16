@@ -32,8 +32,7 @@
     <!--========== Theme Fonts ==========-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,400i,600,700,800" rel="stylesheet">
     <!--Font Awesome css-->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!--Bootstrap css-->
     <link rel="stylesheet" href="/principal/css/bootstrap.min.css">
     <!--Animated headline css-->
@@ -47,18 +46,14 @@
     <link rel="stylesheet" href="/principal/css/line-icons.min.css">
     <!--Theme css-->
     <link rel="stylesheet" href="/principal/css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.0/noty.min.css">
 </head>
-<style>
-    /* After notie styles are applied to DOM: */
-.notie-container {
-  box-shadow: none;
-}
-</style>
 <body style="overflow-x:hidden;">
 
     <!--Start Loader-->
-    <div class="loader_bg"><div class="loader"></div></div>
+    <div class="loader_bg">
+        <div class="loader"></div>
+    </div>
     <!--Start Navbar-->
     @include('Paginaprincipal.partials.home')
     <!--Start About-->
@@ -112,7 +107,7 @@
     <!--Main js-->
     <script src="/principal/js/main.js"></script>
     <!--Notify js-->
-    <script src="https://unpkg.com/notie"></script>
+    <script src="/principal/js/notify.min.js"></script>
 
 
 </body>

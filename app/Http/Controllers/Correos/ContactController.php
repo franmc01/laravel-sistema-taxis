@@ -2,16 +2,12 @@
 
 namespace App\Http\Controllers\Correos;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Mail\MensajeContacto;
-use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Http\Request;
 use Mail;
 
-
-
-
-class ContactController extends Controller implements ShouldQueue
+class ContactController extends Controller
 {
 
     /**
@@ -20,9 +16,9 @@ class ContactController extends Controller implements ShouldQueue
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        $correo=request();
+        $correo = request();
         Mail::to('francmarinc@gmail.com')->send(new MensajeContacto($correo));
     }
 
