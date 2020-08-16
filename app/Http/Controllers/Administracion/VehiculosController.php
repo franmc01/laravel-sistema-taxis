@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Vehiculo;
 use App\User;
+use Illuminate\Support\Facades\Log;
 use Validator;
 
 class VehiculosController extends Controller
@@ -75,21 +76,16 @@ class VehiculosController extends Controller
             'placa.unique' => 'El número de placa debe ser único',
             'anio.required' => 'Debe ingresar el año de fabricación del vehículo',
             'user_id.required' => 'Debe ingresar el nombre del socio dueño del vehículo',
+            'user_id.unique' => 'Debe ingresar un nombre de socio que no esté asociado a otro vehículo',
         ];
         $rules = array(
             'marca'    =>  'required',
             'tipoVehiculo'     =>  'required',
             'placa'         =>  'required|unique:vehiculos,placa',
             'anio'         =>  'required',
-            'user_id'         =>  'required'
+            'user_id'         =>  'required|unique:vehiculos,user_id'
         );
         $this->validate($request, $rules, $messages);
-//        $error = Validator::make($request->all(), $rules);
-
-//        if($error->fails())
-//        {
-//            return response()->json(['errors'=>$error->errors()->all()]);
-//        }
 
         $vehiculo = array(
             'marca'=>$request->marca,
@@ -99,7 +95,6 @@ class VehiculosController extends Controller
             'user_id'=>$request->user_id,
         );
         Vehiculo::create($vehiculo);
-//        return response()->json(['success'=>'Data added successfully. ']);
         return redirect('vehiculos/create')->with('creado','El uso de tierra ha sido creado');
     }
 
@@ -142,15 +137,26 @@ class VehiculosController extends Controller
      */
     public function update(Request $request)
     {
-
+        $aux= Vehiculo::find($request->hidden_id);
+        $placa=(string)$aux->placa;
+        Log::info($placa);
+        $messages = [
+            'marca.required' => 'Debe ingresar el nombre de la marca',
+            'tipoVehiculo.required' => 'Debe ingresar el tipo de vehículo',
+            'placa.required' => 'Debe ingresar el número de placa',
+            'placa.unique' => 'El número de placa debe ser único',
+            'anio.required' => 'Debe ingresar el año de fabricación del vehículo',
+            'user_id.required' => 'Debe ingresar el nombre del socio dueño del vehículo',
+            'user_id.unique' => 'Debe ingresar un nombre de socio que no esté asociado a otro vehículo',
+        ];
         $rules = array(
             'marca'    =>  'required',
             'tipoVehiculo'     =>  'required',
-            'placa'         =>  'required',
+            'placa'         =>  'required|unique:vehiculos,placa,'.$request->hidden_id,
             'anio'         =>  'required',
-            'user_id'         =>  'required'
+            'user_id'         =>  'required|unique:vehiculos,user_id,'.$request->hidden_id
         );
-        $error = Validator::make($request->all(), $rules);
+        $error = Validator::make($request->all(), $rules, $messages);
 
         if($error->fails())
         {
