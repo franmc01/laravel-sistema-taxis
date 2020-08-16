@@ -64,10 +64,21 @@
                                                         </div>
                                                     </div>
                                                     <ul class="nav nav-tabs">
-                                                        <li class="nav-item"><a href="" class="active nav-link">Mi información</a></li>
+                                                        <li class="nav-item">
+                                                            <a href="" data-target="#personal" data-toggle="tab" class="active nav-link">Información personal</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="" data-target="#vehiculo" data-toggle="tab" class="nav-link">Información del vehiculo</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="" data-target="#chofer" data-toggle="tab" class="nav-link">Información del chofer</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a href="" data-target="#cuotas" data-toggle="tab" class="nav-link">Información de las cuotas</a>
+                                                        </li>
                                                     </ul>
-                                                    <div class="tab-content pt-3">
-                                                        <div class="tab-pane active">
+                                                    <div class="tab-content py-4">
+                                                        <div class="tab-pane active" id="personal">
                                                             <form class="form">
                                                                 <div class="row">
                                                                     <div class="col">
@@ -108,7 +119,17 @@
                                                                 </div>
                                                             </form>
                                                         </div>
+                                                        <div class="tab-pane" id="vehiculo">
+                                                            <h3>Hola de vehiculos</h3>
+                                                        </div>
+                                                        <div class="tab-pane" id="chofer">
+                                                            <h3>Hola de chofer</h3>
+                                                        </div>
+                                                        <div class="tab-pane" id="cuotas">
+                                                            <h3>Hola de cuotas</h3>
+                                                        </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
