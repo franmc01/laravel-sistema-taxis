@@ -59,7 +59,7 @@
                         <!-- User image -->
                         <li class="user-header bg-dark">
                             <img src="{{ auth()->user()->foto_perfil ? '/storage/auth()->user()->foto_perfil' : '/img/user.jpg'}}" class="img-circle elevation-2" alt="User Image">
-                            <p> {{ auth()->user()->nombres."".auth()->user()->apelllidos }} - Web Developer <small>Member since Nov. 2020</small>
+                            <p> {{ auth()->user()->nombres }} - {{ auth()->user()->getRoleNames()->implode(',') }} <small>Miembro desde {{ auth()->user()->created_at->isoFormat('YYYY')}}</small>
                             </p>
                         </li>
 
