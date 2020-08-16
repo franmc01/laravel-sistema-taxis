@@ -29,9 +29,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input class="form-control" data-error="Fullname is required." id="form_name"
-                                        name="name" placeholder="Escriba sus nombres completos *" required="required"
-                                        type="text">
+                                    <input class="form-control" data-error="Fullname is required." id="form_name" name="name" placeholder="Escriba sus nombres completos *" required="required" type="text">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -39,9 +37,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <input class="form-control" data-error="Valid email is required."
-                                        id="form_email" name="email" placeholder="Escriba su email personal*"
-                                        required="required" type="email">
+                                    <input class="form-control" data-error="Valid email is required." id="form_email" name="email" placeholder="Escriba su email personal*" required="required" type="email">
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
@@ -49,14 +45,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" data-error="Leave a message for me"
-                                        id="form_message" name="message" placeholder="Escriba su mensaje *"
-                                        required="required" rows="4"></textarea>
+                                    <textarea class="form-control" data-error="Leave a message for me" id="form_message" name="message" placeholder="Escriba su mensaje *" required="required" rows="4"></textarea>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="button" class="btn btn-send custom-button-4 btn-submit">Enviar mensaje</button>
+                                <button type="button" class="btn btn-send custom-button-4 btn-submit" id="btn">Enviar mensaje</button>
                             </div>
                         </div>
                     </div>

@@ -4,14 +4,14 @@
 
 <div class="container-fluid">
     <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Dashboard</h1>
-      </div><!-- /.col -->
-      <div class="col-sm-6">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item active">Home</li>
-        </ol>
-      </div><!-- /.col -->
+        <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Panel de control</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item active">Inicio</li>
+            </ol>
+        </div><!-- /.col -->
     </div><!-- /.row -->
 </div><!-- /.container-fluid -->
 
@@ -67,28 +67,28 @@
             </div>
         </div>
 
-                <!-- ./col -->
-                <div class="col-lg-3 col-6">
-                    <!-- small box -->
-                    <div class="small-box bg-purple">
-                        <div class="inner">
-                            <h3>44</h3>
-                            <p>Para el futuro</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fab fa-mailchimp"></i>
-                        </div>
-                        <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
-                    </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-6">
+            <!-- small box -->
+            <div class="small-box bg-purple">
+                <div class="inner">
+                    <h3>44</h3>
+                    <p>Para el futuro</p>
                 </div>
-                <!-- ./col -->
+                <div class="icon">
+                    <i class="fab fa-mailchimp"></i>
+                </div>
+                <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        <!-- ./col -->
     </div>
 </div>
 
-<div class="container-fluid">
+{{-- <div class="container-fluid">
     <p><strong>Usuario autenticado:</strong> {{ auth()->user()->nombres ." ".auth()->user()->apellidos  }}</p>
-    <p><strong>Cedula:</strong> {{ auth()->user()->cedula}}</p>
-    <p><strong>Correo:</strong> {{ auth()->user()->email}}</p>
-</div>
+<p><strong>Cedula:</strong> {{ auth()->user()->cedula}}</p>
+<p><strong>Correo:</strong> {{ auth()->user()->email}}</p>
+</div> --}}
 
 @endsection
