@@ -55,35 +55,40 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="marca">Marca de Vehículo: </label>
-                                    <input type="text" class="form-control" name="marca" value="{{ old('marca') }}" placeholder="Ingrese la marca del vehículo " required>
+                                    <input type="text" class="form-control" name="marca" autocomplete="off"
+                                        value="{{ old('marca') }}"
+                                        placeholder="Ingrese la marca del vehículo " required>
                                 </div>
                                 <br>
                                 <div class="form-group">
                                     <label for="tipoVehiculo">Tipo de Vehículo: </label>
-                                    <input type="text" class="form-control" name="tipoVehiculo" value="{{ old('tipoVehiculo') }}" placeholder="Ingrese el tipo de vehículo " required>
+                                    <input type="text" class="form-control" name="tipoVehiculo" autocomplete="off"
+                                        value="{{ old('tipoVehiculo') }}"
+                                        placeholder="Ingrese el tipo de vehículo " required>
                                 </div>
                                 <br>
                                 <div class="form-group">
                                     <label for="id_user">Listado de socios: </label>
-                                    <select class="form-control select2" name="user_id" id="user_id" style="width:100%; height:100%">
+                                    <select class="form-control autocompleteNombre" name="user_id" id="user_id"
+                                        style="width:100%; height:100%">
                                         <option style="color:gray;" value="{{ old('user_id') }}">
                                             Seleccione a un socio</option>
-                                        @foreach($users as $item)
-                                        <option value="{{ $item->id }}">{{ $item->nombres }}
-                                            {{ $item->apellidos }}</option>
-                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="placa">Placa: </label>
-                                    <input type="text" class="form-control" name="placa" value="{{ old('placa') }}" placeholder="Ingrese la placa del vehículo " required>
+                                    <input type="text" class="form-control" name="placa" autocomplete="off"
+                                        value="{{ old('placa') }}"
+                                        placeholder="Ingrese la placa del vehículo " required>
                                 </div>
                                 <br>
                                 <div class="form-group">
                                     <label for="anio">Año de Fabricación: </label>
-                                    <input type="text" class="form-control" name="anio" value="{{ old('anio') }}" placeholder="Ingrese el año de fabricación" required>
+                                    <input type="number" min="0" class="form-control" name="anio" autocomplete="off"
+                                        value="{{ old('anio') }}"
+                                        placeholder="Ingrese el año de fabricación" required>
                                 </div>
                             </div>
                         </div>
@@ -99,7 +104,27 @@
 <script>
     //Initialize Select2 Elements
     $(function() {
-        $('.select2').select2();
+        $('.autocompleteNombre').select2({
+        placeholder: 'Nombre',
+        minimumInputLength: 1,
+        ajax: {
+            url: "{{url('cuotas/socios/fetch')}}",
+            dataType: 'json',
+            method:'POST',
+            delay: 250,
+            processResults: function (data) {
+            return {
+                results:  $.map(data, function (item) {
+                    return {
+                        text: item.nombres + ' '+ item.apellidos,
+                        id: item.id
+                    }
+                })
+            };
+            },
+            cache: true
+        }
+        });
     });
 </script>
 @endsection

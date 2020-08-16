@@ -223,13 +223,34 @@
                         $('#user_id').val(html.data.user_id);
                         //                  $('#store_image').html("<img src= {{ URL::to('/') }}/images/" + html.data.image + " width='70' class='img-thumbnail' />");
                         $('#hidden_id').val(html.data.id);
-                        $('.modal-title').text("Edit New Record");
                         $('#action_button').val("Edit");
                         $('#action').val("Edit");
                         $('#formModal').modal('show');
                     }
                 })
             });
+            $('#user_id').select2({
+            placeholder: 'Nombre',
+            minimumInputLength: 1,
+            ajax: {
+                url: "{{url('cuotas/socios/fetch')}}",
+                dataType: 'json',
+                method:'POST',
+                delay: 250,
+                processResults: function (data) {
+                return {
+                    results:  $.map(data, function (item) {
+                        return {
+                            text: item.nombres + ' '+ item.apellidos,
+                            id: item.id
+                        }
+                    })
+                };
+                },
+                cache: true
+            }
+            });
+
             //inicia el desmadre
             $(document).on('click', '.view', function() {
                 var id = $(this).attr('id');
@@ -242,10 +263,9 @@
                         $('#vtipoVehiculo').text(html.data.tipoVehiculo);
                         $('#vplaca').text(html.data.placa);
                         $('#vanio').text(html.data.anio);
-                        $('#vuser_id').text(html.data.user_id);
                         $('#vusernombres').text(html.data.users.nombres);
                         $('#vuserapellidos').text(html.data.users.apellidos);
-                        $('#vstore_image').html("<img src= {{ URL::to('storage') }}/" + html.data.users.foto_perfil + " style='padding:0px' class='img-fluid text-center' height='220' width='220'/>");
+//                        $('#vstore_image').html("<img src= {{ URL::to('storage') }}/" + html.data.users.foto_perfil + " style='padding:0px' class='img-fluid text-center' height='220' width='220'/>");
                         $('#exampleModal').modal('show');
                     }
                 })

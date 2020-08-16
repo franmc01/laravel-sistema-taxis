@@ -3,8 +3,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
+                <h4 class="modal-title">Editar Vehículo</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Add New Record</h4>
             </div>
             <div class="modal-body">
                 <span id="form_result"></span>
@@ -12,50 +12,46 @@
                     @csrf
                     <div class="form-group">
                         <label class="control-label col-md-4">Marca : </label>
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <input type="text" name="marca" id="marca" class="form-control" />
                         </div>
                     </div>
                     <br>
                     <div class="form-group">
                         <label class="control-label col-md-4">Tipo de Vehículo : </label>
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <input type="text" name="tipoVehiculo" id="tipoVehiculo" class="form-control" />
                         </div>
                     </div>
                     <br />
                     <div class="form-group">
                         <label class="control-label col-md-4">Placa : </label>
-                        <div class="col-md-8">
+                        <div class="col-md-12">
                             <input type="text" name="placa" id="placa" class="form-control" />
                         </div>
                     </div>
                     <br />
                     <div class="form-group">
                         <label class="control-label col-md-4">Año : </label>
-                        <div class="col-md-8">
-                            <input type="text" name="anio" id="anio" class="form-control" />
+                        <div class="col-md-12">
+                            <input type="number" name="anio" id="anio" class="form-control" />
                         </div>
                     </div>
                     <br />
                     <div class="form-group">
                         <label class="control-label col-md-4">Socio : </label>
-                        <div class="col-md-8">
-                            <select name="user_id" id="user_id" class="form-control">
+                        <div class="col-md-12">
+                            <select name="user_id" id="user_id" class="form-control"
+                            style="width:100%; height:100%">
                                 <option>Seleccione a un socio</option>
-                                @foreach ($users as $item)
-                                <option value="{{ $item->id }}">{{ $item->nombres }} {{ $item->apellidos }}</option>
-                                @endforeach
                             </select>
-
-                            <span id="store_image"></span>
                         </div>
                     </div>
                     <br />
-                    <div class="form-group" align="center">
+                    <div class="form-group" align="right">
                         <input type="hidden" name="action" id="action" />
                         <input type="hidden" name="hidden_id" id="hidden_id" />
-                        <input type="submit" name="action_button" id="action_button" class="btn btn-warning"
+                        <input type="submit" name="action_button" id="action_button" class="btn btn-warning" style="width: 30%"
                             value="Add" />
                     </div>
                 </form>
@@ -133,28 +129,25 @@
         </div>
         <div class="modal-body">
             <div class="row">
-                <div id="vstore_image" class="col-md-8">
-                </div>
-
-                    <div class="col-md-4">
-                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Marca:</h6>
-                        <h5 style="font-size: 10px; " name="vmarca" id="vmarca"></h5>
-                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Tipo de Vehículo:</h6>
-                        <h5 style="font-size: 10px; " name="vtipoVehiculo" id="vtipoVehiculo"></h5>
-                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Placa:</h6>
-                        <h5 style="font-size: 10px; " name="vplaca" id="vplaca"></h5>
-                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Año de Fabricación:</h6>
-                        <h5 style="font-size: 10px; " name="vanio" id="vanio"></h5>
-                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">User Id:</h6>
-                        <h5 style="font-size: 10px; " name="vuser_id" id="vuser_id"></h5>
-                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Nombre de Socio:</h6>
-                        <h5 style="font-size: 10px; " name="vusernombres" id="vusernombres"></h5>
-                        <h6 style="font-size: 14px; text-transform:uppercase; font-weight:bold">Apellidos de Socio:</h6>
-                        <h5 style="font-size: 10px; " name="vuserapellidos" id="vuserapellidos"></h5>
+                    <div class="col-md-6">
+                        <h6 style="font-size: 18px; text-transform:uppercase; font-weight:bold">Marca:</h6>
+                        <h5 style="font-size: 17px; font-weight:normal;" name="vmarca" id="vmarca"></h5>
+                        <h6 style="font-size: 18px; text-transform:uppercase; font-weight:bold">Tipo de Vehículo:</h6>
+                        <h5 style="font-size: 17px; font-weight:normal;" name="vtipoVehiculo" id="vtipoVehiculo"></h5>
+                        <h6 style="font-size: 18px; text-transform:uppercase; font-weight:bold">Placa:</h6>
+                        <h5 style="font-size: 17px; font-weight:normal;" name="vplaca" id="vplaca"></h5>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 style="font-size: 18px; text-transform:uppercase; font-weight:bold">Año de Fabricación:</h6>
+                        <h5 style="font-size: 17px; font-weight:normal;" name="vanio" id="vanio"></h5>
+                        <h6 style="font-size: 18px; text-transform:uppercase; font-weight:bold">Nombre de Socio:</h6>
+                        <h5 style="font-size: 17px; font-weight:normal;" name="vusernombres" id="vusernombres"></h5>
+                        <h6 style="font-size: 18px; text-transform:uppercase; font-weight:bold">Apellidos de Socio:</h6>
+                        <h5 style="font-size: 17px; font-weight:normal;" name="vuserapellidos" id="vuserapellidos"></h5>
                     </div>
             </div>
         </div>
-        <div class="modal-footer justify-content-between">
+        <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
@@ -163,3 +156,7 @@
     <!-- /.modal-dialog -->
   </div>
   <!-- /.modal -->
+  <script>
+    //Initialize Select2 Elements
+
+</script>

@@ -22,7 +22,6 @@ class CuotasController extends Controller
      */
     public function mostrar(Request $request)
     {
-        Log::info($request);
         $x = $request->all();
         if (request()->ajax()) {
             $fecha = Cuota::with('users')
@@ -39,10 +38,12 @@ class CuotasController extends Controller
     public function fetch(Request $request)
     {
         $search = strtoupper($request->term);
-        $data = User::select('id', 'nombres', 'apellidos')
+        $data = User::whereHas('roles', function ($q) {
+                $q->where('name', 'Socio');
+            })
+            ->select('id', 'nombres', 'apellidos')
             ->where([[DB::raw("UPPER(nombres)"), 'like', "%$search%"]])
             ->get()->take(10);
-            Log::info($data);
         return response($data);
     }
 
