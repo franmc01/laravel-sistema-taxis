@@ -86,7 +86,7 @@
                             <div class="col-md-4">
                                 <div class="form-group" id="out" style="display: none">
                                     <label for="">Licencia</label>
-                                    <input type="text" name="licencia" id="" class="form-control" placeholder="Ingrese el numero de su licencia">
+                                    <input type="text" name="licencia" class="form-control" placeholder="Ingrese el numero de su licencia">
                                 </div>
                             </div>
 
@@ -164,8 +164,15 @@
         $(this).next('.custom-file-label').addClass("selected").html(fileName);
     });
 
+
+    //Jquery para lo de la licencia
     $('.form-check').on('change', '#role', function() {
         var check = $('input:radio[id=role]:checked').val()
+
+        if (check == 1) {
+            $('#out').hide();
+        }
+
         if (check == 2) {
             Swal.fire({
                 text: "¿El socio a registrar dispone de un conductor particular para su vehículo?"

@@ -58,6 +58,7 @@ class UsuariosController extends Controller
             $data->foto_perfil = $request->file('imagen')->store('perfiles', 'public');
             $data->cedula = $request->cedula;
             $data->email = $request->correo;
+            $data->licencia = $request->licencia;
             $contraseña = str_random(8);
             $data->password = Hash::make($contraseña);
             $data->save();
@@ -113,6 +114,7 @@ class UsuariosController extends Controller
                 $datos->cedula = $request->cedula;
                 $datos->email = $request->email;
                 $datos->syncRoles($request->roles);
+                $datos->licencia = $request->licencia;
             } else {
                 $datos->nombres = $request->nombres;
                 $datos->apellidos = $request->apellidos;
@@ -120,6 +122,7 @@ class UsuariosController extends Controller
                 $datos->email = $request->email;
                 $datos->foto_perfil = $datos->foto_perfil;
                 $datos->syncRoles($request->roles);
+                $datos->licencia = $request->licencia;
             }
 
             if ($request->filled('password')) {
