@@ -41,8 +41,7 @@
                     <div class="form-group">
                         <label class="control-label col-md-4">Socio : </label>
                         <div class="col-md-12">
-                            <select name="user_id" id="user_id" class="form-control"
-                            style="width:100%; height:100%">
+                            <select name="user_id" id="user_id" class="form-control" style="width:100%; height:100%">
                                 <option>Seleccione a un socio</option>
                             </select>
                         </div>
@@ -51,8 +50,8 @@
                     <div class="form-group" align="right">
                         <input type="hidden" name="action" id="action" />
                         <input type="hidden" name="hidden_id" id="hidden_id" />
-                        <input type="submit" name="action_button" id="action_button" class="btn btn-warning" style="width: 30%"
-                            value="Add" />
+                        <input type="submit" name="action_button" id="action_button" class="btn btn-warning"
+                            style="width: 30%" value="Add" />
                     </div>
                 </form>
             </div>
@@ -120,15 +119,15 @@
 
 <div class="modal fade" id="exampleModal">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Información del vehículo</h4>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="row">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Información del vehículo</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
                     <div class="col-md-6">
                         <h6 style="font-size: 18px; text-transform:uppercase; font-weight:bold">Marca:</h6>
                         <h5 style="font-size: 17px; font-weight:normal;" name="vmarca" id="vmarca"></h5>
@@ -145,18 +144,18 @@
                         <h6 style="font-size: 18px; text-transform:uppercase; font-weight:bold">Apellidos de Socio:</h6>
                         <h5 style="font-size: 17px; font-weight:normal;" name="vuserapellidos" id="vuserapellidos"></h5>
                     </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-      <!-- /.modal-content -->
+        <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
-  </div>
-  <!-- /.modal -->
-  <script>
+</div>
+<!-- /.modal -->
+<script>
     //Initialize Select2 Elements
 
 </script>

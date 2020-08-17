@@ -19,6 +19,11 @@ Route::group(['namespace' => 'Administracion', 'middleware' => ['role:Administra
     Route::post('vehiculos/update', 'VehiculosController@update')->name('vehiculos.update');
     Route::get('vehiculos/destroy/{id}', 'VehiculosController@destroy');
 
+    //rutas de choferes
+    Route::resource('choferes', 'ChoferesController');
+//    Route::post('vehiculos/update', 'VehiculosController@update')->name('vehiculos.update');
+//    Route::get('vehiculos/destroy/{id}', 'VehiculosController@destroy');
+
     //rutas de cuotas
     Route::resource('cuotas', 'CuotasController');
     Route::post('cuotas/mostrar', 'CuotasController@mostrar')->name('cuotas.mostrar');

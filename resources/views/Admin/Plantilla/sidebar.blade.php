@@ -37,6 +37,18 @@
                       <p>Usuarios inactivos</p>
                   </a>
               </li>
+              <li class="nav-item">
+                  <a href="{{ route('choferes.create') }}" class="nav-link">
+                    <i class="fas fa-drum-steelpan nav-icon"></i>
+                      <p>Registrar Chofer</p>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a href="{{ route('choferes.index') }}" class="nav-link">
+                    <i class="fas fa-drum-steelpan nav-icon"></i>
+                      <p>Choferes</p>
+                  </a>
+              </li>
 
           </ul>
       </li>

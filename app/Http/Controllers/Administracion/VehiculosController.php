@@ -24,7 +24,6 @@ class VehiculosController extends Controller
         if(request()->ajax())
         {
             $data=Vehiculo::with('users')->latest()->get();
-
             return datatables()->of($data)
             ->addColumn('action', function($data){
                 $button = '<button type="button"
@@ -95,7 +94,7 @@ class VehiculosController extends Controller
             'user_id'=>$request->user_id,
         );
         Vehiculo::create($vehiculo);
-        return redirect('vehiculos/create')->with('creado','El uso de tierra ha sido creado');
+        return redirect('vehiculos/create')->with('creado','El vehículo ha sido creado con éxito');
     }
 
     /**

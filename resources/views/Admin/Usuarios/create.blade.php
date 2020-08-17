@@ -38,21 +38,25 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="nombres">Nombres completos: </label>
-                                    <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese los nombres " required>
+                                    <input type="text" class="form-control" id="nombres" name="nombres"
+                                        placeholder="Ingrese los nombres " required>
                                 </div>
                                 <div class="form-group">
                                     <label for="apellidos">Cedula: </label>
-                                    <input type="text" min="1" minlength="10" maxlength="10" class="form-control" id="cedula" name="cedula" placeholder="Ingrese el numero de cédula " required>
+                                    <input type="text" min="1" minlength="10" maxlength="10" class="form-control"
+                                        id="cedula" name="cedula" placeholder="Ingrese el numero de cédula " required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="apellidos">Apellidos completos: </label>
-                                    <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese los apellidos " required>
+                                    <input type="text" class="form-control" id="apellidos" name="apellidos"
+                                        placeholder="Ingrese los apellidos " required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Correo: </label>
-                                    <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese el correo" required>
+                                    <input type="email" class="form-control" id="correo" name="correo"
+                                        placeholder="Ingrese el correo" required>
                                 </div>
                             </div>
                         </div>
@@ -62,14 +66,17 @@
                                     <label for="exampleInputFile">Foto de perfil</label>
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input style="padding:10px;" type="file" name="imagen" class="custom-file-input" id="exampleInputFile" onchange="readURL(this);">
+                                            <input style="padding:10px;" type="file" name="imagen"
+                                                class="custom-file-input" id="exampleInputFile"
+                                                onchange="readURL(this);">
                                             <label class="custom-file-label" for="exampleInputFile"></label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <img id="blah" src="http://placehold.it/100" alt="your image" width="100" height="100" />
+                                <img id="blah" src="http://placehold.it/100" alt="your image" width="100"
+                                    height="100" />
                             </div>
 
                             <div class="col-md-2">
@@ -77,8 +84,10 @@
                                     <label>Rol de usuario:</label>
                                     @foreach ($roles as $item)
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="roles[]" value="{{ $item->id }}" unchecked id="role">
-                                        <label class="form-check-label" style="text-transform:capitalize">{{ $item->name }}</label>
+                                        <input class="form-check-input" type="radio" name="roles[]"
+                                            value="{{ $item->id }}" unchecked id="role">
+                                        <label class="form-check-label"
+                                            style="text-transform:capitalize">{{ $item->name }}</label>
                                     </div>
                                     @endforeach
                                 </div>
@@ -86,12 +95,14 @@
                             <div class="col-md-4">
                                 <div class="form-group" id="out" style="display: none">
                                     <label for="">Licencia</label>
-                                    <input type="text" name="licencia" class="form-control" placeholder="Ingrese el numero de su licencia">
+                                    <input type="text" name="licencia" class="form-control"
+                                        placeholder="Ingrese el numero de su licencia">
                                 </div>
                             </div>
 
                             <span class="text-muted">
-                                La contraseña será generada y enviada via email al nuevo usuario registrado en el sistema.
+                                La contraseña será generada y enviada via email al nuevo usuario registrado en el
+                                sistema.
                             </span>
 
                         </div>
