@@ -81,7 +81,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-2">
-                                        <img id="blah" src="/storage/{{ $chofer->foto_perfil }}" alt="your image" width="100" height="100" />
+                                        <img id="blah" src="/storage/{{ $chofer->foto_perfil }}" alt="your image" width="100%" height="100%" />
                                     </div>
                                 </div>
                                 <br>

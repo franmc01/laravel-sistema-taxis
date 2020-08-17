@@ -99,7 +99,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-2">
-                                        <img id="blah" src="http://placehold.it/100" alt="your image" width="100%"
+                                        <img id="blah" src="http://placehold.it/100" alt="your image" width="100%" height="100%" 
                                              />
                                     </div>
                                 </div>
