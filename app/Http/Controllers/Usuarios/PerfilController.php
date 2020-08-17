@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Usuarios;
 
+use App\Chofer;
+use App\Cuota;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Cuota;
-use Illuminate\Support\Facades\DB;
+use App\Vehiculo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Log;
 
 class PerfilController extends Controller
 {
@@ -17,7 +17,10 @@ class PerfilController extends Controller
     public function index()
     {
         $logeado = User::find(auth()->id());
-        return view('Admin\Usuarios\profile', compact('logeado'));
+        $vehiculo = Vehiculo::where('user_id', $logeado->id)->get();
+        $chofer = Chofer::where('user_id', $logeado->id)->get();
+        // return $chofer;
+        return view('Admin.Usuarios.profile', compact('logeado', 'vehiculo', 'chofer'));
     }
 
     public function cuotasocio()

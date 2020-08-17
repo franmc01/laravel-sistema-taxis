@@ -34,6 +34,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic" rel="stylesheet" />
     <!-- jQuery -->
     <script src="/plugins/jquery/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.css">
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 </head>
@@ -230,25 +231,25 @@
                 })
             });
             $('#user_id').select2({
-            placeholder: 'Nombre',
-            minimumInputLength: 1,
-            ajax: {
-                url: "{{url('cuotas/socios/fetch')}}",
-                dataType: 'json',
-                method:'POST',
-                delay: 250,
-                processResults: function (data) {
-                return {
-                    results:  $.map(data, function (item) {
+                placeholder: 'Nombre'
+                , minimumInputLength: 1
+                , ajax: {
+                    url: "{{url('cuotas/socios/fetch')}}"
+                    , dataType: 'json'
+                    , method: 'POST'
+                    , delay: 250
+                    , processResults: function(data) {
                         return {
-                            text: item.nombres + ' '+ item.apellidos,
-                            id: item.id
-                        }
-                    })
-                };
-                },
-                cache: true
-            }
+                            results: $.map(data, function(item) {
+                                return {
+                                    text: item.nombres + ' ' + item.apellidos
+                                    , id: item.id
+                                }
+                            })
+                        };
+                    }
+                    , cache: true
+                }
             });
 
             //inicia el desmadre
@@ -265,7 +266,7 @@
                         $('#vanio').text(html.data.anio);
                         $('#vusernombres').text(html.data.users.nombres);
                         $('#vuserapellidos').text(html.data.users.apellidos);
-//                        $('#vstore_image').html("<img src= {{ URL::to('storage') }}/" + html.data.users.foto_perfil + " style='padding:0px' class='img-fluid text-center' height='220' width='220'/>");
+                        //                        $('#vstore_image').html("<img src= {{ URL::to('storage') }}/" + html.data.users.foto_perfil + " style='padding:0px' class='img-fluid text-center' height='220' width='220'/>");
                         $('#exampleModal').modal('show');
                     }
                 })
@@ -330,6 +331,7 @@
     <!-- DataTables -->
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.js"></script>
 
 
 

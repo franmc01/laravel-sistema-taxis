@@ -47,14 +47,15 @@
                                                         </div>
                                                         <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                                                             <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                                                <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{ $logeado->nombres }} {{ $logeado->apellidos }}</h4>
+                                                                <h5 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{ $logeado->nombres }} {{ $logeado->apellidos }}</h5>
                                                                 <p class="mb-0"><span class="badge badge-success">Activo</span></p>
                                                                 <div class="text-muted"><small>{{ $logeado->last_login }}</small></div>
                                                                 <div class="mt-2">
-                                                                    <button class="btn btn-primary" type="button">
+                                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                                                                         <i class="fa fa-fw fa-camera"></i>
                                                                         <span>Cambiar foto</span>
                                                                     </button>
+                                                                    @include('Snnipets\profile-change-photo')
                                                                 </div>
                                                             </div>
                                                             <div class="text-center text-sm-right">
@@ -70,9 +71,11 @@
                                                         <li class="nav-item">
                                                             <a href="" data-target="#vehiculo" data-toggle="tab" class="nav-link">Información del vehiculo</a>
                                                         </li>
+
                                                         <li class="nav-item">
                                                             <a href="" data-target="#chofer" data-toggle="tab" class="nav-link">Información del chofer</a>
                                                         </li>
+
                                                     </ul>
                                                     <div class="tab-content py-4">
                                                         <div class="tab-pane active" id="personal">
@@ -100,4 +103,5 @@
         </div>
     </div>
 </div>
+
 @endsection
