@@ -35,9 +35,7 @@
     </div>
     <div class="row">
         <div class="col d-flex justify-content-end">
-            @can('usuarios.update')
             <button class="btn btn-primary" type="submit">Guardar cambios</button>
-            @endcan
         </div>
     </div>
 </form>

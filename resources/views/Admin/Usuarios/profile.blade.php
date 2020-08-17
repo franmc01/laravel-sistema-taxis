@@ -73,60 +73,16 @@
                                                         <li class="nav-item">
                                                             <a href="" data-target="#chofer" data-toggle="tab" class="nav-link">Información del chofer</a>
                                                         </li>
-                                                        <li class="nav-item">
-                                                            <a href="" data-target="#cuotas" data-toggle="tab" class="nav-link">Información de las cuotas</a>
-                                                        </li>
                                                     </ul>
                                                     <div class="tab-content py-4">
                                                         <div class="tab-pane active" id="personal">
-                                                            <form class="form">
-                                                                <div class="row">
-                                                                    <div class="col">
-                                                                        <div class="row">
-                                                                            <div class="col">
-                                                                                <div class="form-group">
-                                                                                    <label>Nombres:</label>
-                                                                                    <input class="form-control" type="text" name="name" value="{{ $logeado->nombres }}">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <div class="form-group">
-                                                                                    <label>Apellidos:</label>
-                                                                                    <input class="form-control" type="text" name="username" value="{{ $logeado->apellidos }}">
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="row">
-                                                                            <div class="col">
-                                                                                <div class="form-group">
-                                                                                    <label>Cédula:</label>
-                                                                                    <input class="form-control" type="text" value="{{ $logeado->cedula }}">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col">
-                                                                                <div class="form-group">
-                                                                                    <label>Correo personal:</label>
-                                                                                    <input class="form-control" type="text" value="{{ $logeado->email }}">
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row">
-                                                                    <div class="col d-flex justify-content-end">
-                                                                        <button class="btn btn-primary" type="submit">Guardar cambios</button>
-                                                                    </div>
-                                                                </div>
-                                                            </form>
+                                                            @include('Snnipets.profile-info-socio')
                                                         </div>
                                                         <div class="tab-pane" id="vehiculo">
-                                                            <h3>Hola de vehiculos</h3>
+                                                            @include('Snnipets.profile-info-vehiculo')
                                                         </div>
                                                         <div class="tab-pane" id="chofer">
-                                                            <h3>Hola de chofer</h3>
-                                                        </div>
-                                                        <div class="tab-pane" id="cuotas">
-                                                            <h3>Hola de cuotas</h3>
+                                                            @include('Snnipets.profile-info-chofer')
                                                         </div>
                                                     </div>
 
