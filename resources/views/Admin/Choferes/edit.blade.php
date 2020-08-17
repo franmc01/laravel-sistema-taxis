@@ -75,17 +75,13 @@
                                             <label for="exampleInputFile">Foto de perfil</label>
                                             <div class="input-group">
                                                 <div class="custom-file">
-                                                    <input style="padding:10px;" type="file" name="imagen"
-                                                        class="custom-file-input" id="exampleInputFile"
-                                                        onchange="readURL(this);">
-                                                    <label class="custom-file-label" for="exampleInputFile"></label>
-                                                </div>
+                                                    <input style="padding:10px;" type="file" onchange="readURL(this);" name="foto_perfil" class="custom-file-input" id="exampleInputFile" value="{{ old('foto_perfil',$chofer->foto_perfil) }}">
+                                                    <label class="custom-file-label" for="exampleInputFile"></label>                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
-                                        <img id="blah" src="http://placehold.it/100" alt="your image" width="100"
-                                            height="100" />
+                                        <img id="blah" src="/storage/{{ $chofer->foto_perfil }}" alt="your image" width="100" height="100" />
                                     </div>
                                 </div>
                                 <br>

@@ -52,11 +52,11 @@
             </div>
             <div class="modal-body">
                 <center>
-                    <div id="image"></div>
+                    <div id="imageChofer"></div>
                     <h4 class="media-heading" id="nombreChofer"></h4>
                     <h4 id="apellidoChofer"></h4>
-                    <span><strong>Status: </strong></span>
-                    <span class="badge bg-success">Activo</span>
+{{--                     <span><strong>Status: </strong></span>
+                    <span class="badge bg-success">Activo</span> --}}
                 </center>
             </div>
             <div class="modal-footer justify-content-left">
@@ -159,7 +159,11 @@
                 url: "/choferes/" + id
                 , dataType: "json"
                 , success: function(html) {
-//                    $('#imageChofer').html("<img src= {{ URL::to('/storage') }}/" + html.data.foto_perfil + " style='text-align:center' class='img-rounded' height='220' width='220'/>");
+                    if (html.data.foto_perfil != null) {
+                        $('#imageChofer').html("<img src= {{ URL::to('/storage') }}/" + html.data.foto_perfil + " style='text-align:center' class='img-rounded' height='220' width='220'/>");
+                    }else{
+                        $('#imageChofer').html("<img src='img/user.jpg' style='text-align:center' class='img-rounded' height='220' width='220'/>");
+                    }
                     $('#nombreChofer').text(html.data.nombres);
                     $('#apellidoChofer').text(html.data.apellidos);
                     $('#ChoferModal').modal('show');

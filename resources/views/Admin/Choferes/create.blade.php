@@ -99,8 +99,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-2">
-                                        <img id="blah" src="http://placehold.it/100" alt="your image" width="100"
-                                            height="100" />
+                                        <img id="blah" src="http://placehold.it/100" alt="your image" width="100%"
+                                             />
                                     </div>
                                 </div>
                                 <br>
@@ -160,6 +160,18 @@
 </div>
 <script>
     //Initialize Select2 Elements
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    $('#blah').attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
     $(function() {
         var fileName;
 
@@ -190,17 +202,6 @@
         }
         });
         
-        function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    $('#blah').attr('src', e.target.result);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
 
         $('.custom-file-input').on('change', function() {
             var fileName = $(this).val().split('\\').pop();
