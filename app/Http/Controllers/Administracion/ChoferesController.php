@@ -46,8 +46,11 @@ class ChoferesController extends Controller
      */
     public function store(Request $request)
     {
+        Log::info($request);
         if (request()->ajax()) {
             $messages = [
+                'fecha_inicio.date' => 'Debe ingresar una fecha de inicio válida',
+                'fecha_fin.date' => 'Debe ingresar una fecha de finalización válida',
                 'cedula.required' => 'Debe ingresar un número de cédula al chofer',
                 'nombres.required' => 'Debe ingresar los nombres del chofer',
                 'apellidos.required' => 'Debe ingresar los apellidos del chofer',
@@ -59,16 +62,20 @@ class ChoferesController extends Controller
                 'user_id.unique' => 'Debe ingresar un nombre de socio que no esté asociado a otro chofer',
             ];
             $rules = array(
-                'cedula'    =>  'required|unique:choferes,cedula',
+                'cedula'    =>  'required',
                 'nombres'     =>  'required',
                 'apellidos'         =>  'required',
                 'email'         =>  'required|email',
                 'licencia'         =>  'required',
                 'telefono'         =>  'required',
-                'user_id'         =>  'required|unique:choferes,user_id'
+                'fecha_inicio'         =>  'date|nullable',
+                'fecha_fin'         =>  'date|nullable',
+                'user_id'         =>  'required'
             );
             $this->validate($request, $rules, $messages);
             $chofer = array(
+                'fecha_inicio' => $request->fecha_inicio,
+                'fecha_fin' => $request->fecha_fin,
                 'cedula' => $request->cedula,
                 'nombres' => $request->nombres,
                 'apellidos' => $request->apellidos,
@@ -119,6 +126,8 @@ class ChoferesController extends Controller
     {
         if (request()->ajax()) {
             $messages = [
+                'fecha_inicio.date' => 'Debe ingresar una fecha de inicio válida',
+                'fecha_fin.date' => 'Debe ingresar una fecha de finalización válida',
                 'cedula.required' => 'Debe ingresar un número de cédula al chofer',
                 'nombres.required' => 'Debe ingresar los nombres del chofer',
                 'apellidos.required' => 'Debe ingresar los apellidos del chofer',
@@ -130,16 +139,20 @@ class ChoferesController extends Controller
                 'user_id.unique' => 'Debe ingresar un nombre de socio que no esté asociado a otro chofer',
             ];
             $rules = array(
-                'cedula'    =>  'required|unique:choferes,cedula,'.$request->chofer_id,
+                'cedula'    =>  'required',
                 'nombres'     =>  'required',
                 'apellidos'         =>  'required',
                 'email'         =>  'required|email',
                 'licencia'         =>  'required',
                 'telefono'         =>  'required',
-                'user_id'         =>  'required|unique:choferes,user_id,'.$request->chofer_id
+                'fecha_inicio'         =>  'date|nullable',
+                'fecha_fin'         =>  'date|nullable',
+                'user_id'         =>  'required'
             );
             $this->validate($request, $rules, $messages);
             $chofer = Chofer::find($id);
+            $chofer->fecha_inicio = $request->fecha_inicio;
+            $chofer->fecha_fin = $request->fecha_fin;
             $chofer->cedula = $request->cedula;
             $chofer->nombres = $request->nombres;
             $chofer->apellidos = $request->apellidos;

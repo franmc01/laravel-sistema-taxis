@@ -54,6 +54,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-4 control-label"
+                                        style="text-align: left;">Desde: </label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i
+                                                    class="fas fa-calendar"></i></span>
+                                        </div>
+                                        <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
                                     <label for="apellidos">Cedula: </label>
                                     <input type="text" min="1" minlength="10" maxlength="10" class="form-control"
                                         value="{{ old('cedula') }}" id="cedula" name="cedula"
@@ -95,6 +107,18 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-4 control-label"
+                                        style="text-align: left;">Hasta: </label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i
+                                                    class="fas fa-calendar"></i></span>
+                                        </div>
+                                        <input type="date" class="form-control" id="fecha_fin" name="fecha_fin">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
                                     <label for="email">Correo electrónico: </label>
                                     <input type="email" class="form-control" id="email" name="email"
                                         value="{{ old('email') }}" placeholder="Ingrese el correo" required>
@@ -102,8 +126,9 @@
                                 <br>
                                 <div class="form-group">
                                     <label for="email">Número telefónico: </label>
-                                    <input type="email" class="form-control" id="telefono" name="telefono"
-                                        value="{{ old('telefono') }}" placeholder="Ingrese el número telefónico" required>
+                                    <input type="text" class="form-control" id="telefono" name="telefono"
+                                        value="{{ old('telefono') }}" placeholder="Ingrese el número telefónico"
+                                        required>
                                 </div>
                                 <br>
                                 <div class="form-group">

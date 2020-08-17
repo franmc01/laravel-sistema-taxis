@@ -16,6 +16,7 @@ class Chofer extends Model
     protected $fillable = [
         'foto_perfil', 'nombres',
         'apellidos', 'cedula','licencia',
-        'email', 'password','telefono','user_id'
+        'email', 'password','telefono','user_id',
+        'fecha_inicio', 'fecha_fin'
     ];
 }

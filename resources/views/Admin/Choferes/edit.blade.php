@@ -38,6 +38,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-4 control-label"
+                                        style="text-align: left;">Desde: </label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i
+                                                    class="fas fa-calendar"></i></span>
+                                        </div>
+                                        <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio"  value="{{ old('fecha_inicio',$chofer->fecha_inicio) }}">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
                                     <label for="apellidos">Cedula: </label>
                                     <input type="hidden" name="chofer_id" value="{{ $chofer->id }}">
                                     <input type="text" min="1" minlength="10" maxlength="10" class="form-control"
@@ -80,6 +92,18 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-4 control-label"
+                                        style="text-align: left;">Hasta: </label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><i
+                                                    class="fas fa-calendar"></i></span>
+                                        </div>
+                                        <input type="date" class="form-control" id="fecha_fin" name="fecha_fin"   value="{{ old('fecha_fin',$chofer->fecha_fin) }}">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="form-group">
                                     <label for="email">Correo electrónico: </label>
                                     <input type="email" class="form-control" id="email" name="email"
                                     value="{{ old('email',$chofer->email) }}"  placeholder="Ingrese el correo" required>
@@ -87,7 +111,7 @@
                                 <br>
                                 <div class="form-group">
                                     <label for="email">Número telefónico: </label>
-                                    <input type="email" class="form-control" id="telefono" name="telefono"
+                                    <input type="text" class="form-control" id="telefono" name="telefono"
                                     value="{{ old('telefono',$chofer->telefono) }}"  placeholder="Ingrese el número telefónico"
                                         required>
                                 </div>

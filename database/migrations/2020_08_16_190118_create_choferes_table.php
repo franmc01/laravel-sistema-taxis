@@ -22,6 +22,8 @@ class CreateChoferesTable extends Migration
             $table->string('email');
             $table->string('telefono');
             $table->string('licencia');
+            $table->string('fecha_inicio');
+            $table->string('fecha_fin')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

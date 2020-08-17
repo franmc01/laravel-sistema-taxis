@@ -26,7 +26,8 @@
                             <th>Nombres</th>
                             <th>Apellidos</th>
                             <th>Cedula Chofer</th>
-                            <th>Email</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Fin</th>
                             <th>Cédula Socio</th>
                             <th>Editar</th>
                             <th>Ver</th>
@@ -124,7 +125,10 @@
                     data: 'cedula'
                 }
                 , {
-                    data: 'email'
+                    data: 'fecha_inicio'
+                }
+                , {
+                    data: 'fecha_fin'
                 }
                 , {
                     data: 'users.cedula'
