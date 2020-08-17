@@ -5,12 +5,12 @@
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Vehiculos <small> - Formulario registro</small></h1>
+            <h1 class="m-0 text-dark">Choferes <small> - Formulario registro</small></h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ route('administracion') }}">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('usuarios.index') }}">Vehiculos</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('usuarios.index') }}">Choferes</a></li>
                 <li class="breadcrumb-item active">Crear</li>
             </ol>
         </div><!-- /.col -->
@@ -36,7 +36,7 @@
 @if(Session::has('creado'))
 <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <h4> Atención:</h4> El Vehículo se ha registrado con exito
+    <h4> Atención:</h4> El chofer se ha registrado con exito
 </div>
 @endif
 
@@ -44,7 +44,7 @@
     <div class="col-md-12">
         <div class="card card-outline card-gray">
             <div class="card-header">
-                <h4 class="card-title"> Información del vehiculo </h4>
+                <h4 class="card-title"> Información del chofer </h4>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
