@@ -14,6 +14,11 @@
         </div><!-- /.col -->
     </div><!-- /.row -->
 </div><!-- /.container-fluid -->
+
+
+<style>
+
+</style>
 @endsection
 
 
@@ -47,7 +52,7 @@
                                                         </div>
                                                         <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                                                             <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                                                <h5 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{ $logeado->nombres }} {{ $logeado->apellidos }}</h5>
+                                                                <h5 class="pt-sm-2 pb-1 mb-0 text-nowrap">{{ $logeado->nombres }}</h5>
                                                                 <p class="mb-0"><span class="badge badge-success">Activo</span></p>
                                                                 <div class="text-muted"><small>{{ $logeado->last_login }}</small></div>
                                                                 <div class="mt-2">
