@@ -56,11 +56,8 @@
                                                                 <p class="mb-0"><span class="badge badge-success">Activo</span></p>
                                                                 <div class="text-muted"><small>{{ $logeado->last_login }}</small></div>
                                                                 <div class="mt-2">
-                                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                                                                        <i class="fa fa-fw fa-camera"></i>
-                                                                        <span>Cambiar foto</span>
-                                                                    </button>
-                                                                    @include('Snnipets\profile-change-photo')
+                                                                    <input type="file" class="filestyle" data-input="false">
+                                                                    {{--  @include('Snnipets\profile-change-photo')  --}}
                                                                 </div>
                                                             </div>
                                                             <div class="text-center text-sm-right">
@@ -89,9 +86,11 @@
                                                         <div class="tab-pane" id="vehiculo">
                                                             @include('Snnipets.profile-info-vehiculo')
                                                         </div>
+
                                                         <div class="tab-pane" id="chofer">
                                                             @include('Snnipets.profile-info-chofer')
                                                         </div>
+
                                                     </div>
 
                                                 </div>
@@ -108,5 +107,6 @@
         </div>
     </div>
 </div>
+
 
 @endsection

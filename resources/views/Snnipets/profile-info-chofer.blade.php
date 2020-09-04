@@ -1,3 +1,7 @@
+
+
+
+
 <form class="form" method="POST" id="socio">
     <div class="row">
             <div class="col-md-4">
@@ -38,3 +42,4 @@
         </div>
 
 </form>
+

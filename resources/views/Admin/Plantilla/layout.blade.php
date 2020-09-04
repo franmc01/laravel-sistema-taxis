@@ -307,6 +307,7 @@
     {{-- Scripts nuestros --}}
     <script src="{{ asset('/js/app.js') }}"></script>
     <script src="{{ asset('js/user.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-filestyle.min.js') }}"></script>
     <!-- Bootstrap 4 -->
     <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Select2 -->
@@ -334,6 +335,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.2/dropzone.min.js"></script>
 
 
+    <script>
+        $(":file").filestyle({
+            input: false
+            , text: 'Cambiar foto'
+            , btnClass: 'btn-primary'
+            , htmlIcon: '<span style="padding-right:5px;"><i class="fa fa-camera" aria-hidden="true"></i></span>'
+        });
+    </script>
 
 
 </body>
