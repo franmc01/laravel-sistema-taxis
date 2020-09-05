@@ -55,7 +55,10 @@ class PerfilController extends Controller
     public function actualizarEmail(Request $request, $id){
         if (request()->ajax()) {
             $datos = User::find($id);
-           return $datos;
+            Storage::delete($datos->foto_perfil);
+            $datos->foto_perfil = $request->file('foto_perfil')->store('perfiles', 'public');
+            $datos->save();
+            return response()->json(['success' => 'Foto actualizada correctamente']);
         }
     }
 

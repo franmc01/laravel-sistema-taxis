@@ -1,3 +1,6 @@
+<form id="upfoto"  enctype="multipart/form-data">
+    @csrf
+    @method('PATCH')
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -8,12 +11,21 @@
                 </button>
             </div>
             <div class="modal-body">
-                Aqui va el input
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="preview" class="text-center"></div>
+                        <br>
+                    </div>
+                        <input id="file" type="file" class="filestyle" name="foto_perfil" accept="image/*" style="justify-content:center;">
+
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                <button type="submit" class="btn btn-primary">Guardar cambios</button>
             </div>
         </div>
     </div>
 </div>
+
+</form>

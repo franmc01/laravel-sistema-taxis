@@ -45,8 +45,8 @@
                                                     <div class="row">
                                                         <div class="col-12 col-sm-auto mb-3">
                                                             <div class="mx-auto" style="width: 140px;">
-                                                                <div class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                                                                    <span><img src="{{ auth()->user()->foto_perfil ? '/storage/auth()->user()->foto_perfil' : '/img/user.jpg'}}" alt="" height="140px" width="140px"></span>
+                                                                <div  id="perfil2" class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
+                                                                    <span><img src="storage/{{ auth()->user()->foto_perfil }}" alt="" height="140px" width="140px"></span>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -56,8 +56,11 @@
                                                                 <p class="mb-0"><span class="badge badge-success">Activo</span></p>
                                                                 <div class="text-muted"><small>{{ $logeado->last_login }}</small></div>
                                                                 <div class="mt-2">
-                                                                    <input type="file" class="filestyle" data-input="false">
-                                                                    {{--  @include('Snnipets\profile-change-photo')  --}}
+                                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                                                        <i class="fa fa-fw fa-camera"></i>
+                                                                        <span>Cambiar foto</span>
+                                                                    </button>
+                                                                    @include('Snnipets\profile-change-photo')
                                                                 </div>
                                                             </div>
                                                             <div class="text-center text-sm-right">
@@ -70,14 +73,17 @@
                                                         <li class="nav-item">
                                                             <a href="" data-target="#personal" data-toggle="tab" class="active nav-link">Información personal</a>
                                                         </li>
+                                                        @if ($vehiculo->isNotEmpty())
                                                         <li class="nav-item">
                                                             <a href="" data-target="#vehiculo" data-toggle="tab" class="nav-link">Información del vehiculo</a>
                                                         </li>
+                                                        @endif
 
+                                                        @if ($chofer->isNotEmpty())
                                                         <li class="nav-item">
                                                             <a href="" data-target="#chofer" data-toggle="tab" class="nav-link">Información del chofer</a>
                                                         </li>
-
+                                                        @endif
                                                     </ul>
                                                     <div class="tab-content py-4">
                                                         <div class="tab-pane active" id="personal">
@@ -107,6 +113,58 @@
         </div>
     </div>
 </div>
+
+
+
+<script>
+document.getElementById("file").onchange = function(e) {
+  // Creamos el objeto de la clase FileReader
+  let reader = new FileReader();
+
+  // Leemos el archivo subido y se lo pasamos a nuestro fileReader
+  reader.readAsDataURL(e.target.files[0]);
+
+  // Le decimos que cuando este listo ejecute el código interno
+  reader.onload = function(){
+    let preview = document.getElementById('preview'),
+            image = document.createElement('img');
+
+            image.style.height = "300px";
+            image.style.width = "250px";
+    image.src = reader.result;
+
+    preview.innerHTML = '';
+    preview.append(image);
+  };
+}
+
+
+$("#upfoto").on('submit', function(e) {
+        var url = "{{ route('perfil.correo', $logeado->id) }}";
+        var formData = new FormData(this);
+        e.preventDefault();
+        $.ajax({
+            type: 'POST'
+            , url: url
+            , cache: false
+            , data: formData
+            , dataType: "json"
+            , contentType: false
+            , processData: false
+            , enctype: 'multipart/form-data'
+            , success: function(response) {
+                Swal.fire('Genial', 'La información ha sido actualizada correctamente', 'success');
+                // $("#perfil").load(" #perfil");
+                $("#perfil2").load(" #perfil2");
+            }
+        });
+    });
+
+
+
+
+</script>
+
 
 
 @endsection
