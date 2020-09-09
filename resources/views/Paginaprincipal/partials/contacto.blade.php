@@ -20,6 +20,7 @@
                     <p><b><i class="fa fa-envelope"></i></b>{{ $info_pagina[0]->correo_contacto }}</p>
                 </div>
             </div>
+
             <div class="col-sm-6 col-md-6 contact-left">
                 <h2>No dudes en escribirnos</h2>
                 <form id="contact-form" method="POST" name="contact-form">
@@ -56,6 +57,8 @@
                     </div>
                 </form><!-- contact form ends-->
             </div>
+
         </div>
     </div>
 </div>
+

@@ -48,6 +48,7 @@
     <!--Theme css-->
     <link rel="stylesheet" href="/principal/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.0/noty.min.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body style="overflow-x:hidden;">
 
@@ -67,6 +68,8 @@
     @include('Paginaprincipal.partials.personal')
     <!--Start Testimonial-->
     @include('Paginaprincipal.partials.testimonios')
+    <!--Start Map-->
+    @include('Paginaprincipal.partials.mapa')
     <!--Start Contact-->
     @include('Paginaprincipal.partials.contacto')
 
@@ -110,6 +113,8 @@
     <!--Notify js-->
     <script src="/principal/js/notify.min.js"></script>
 
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <script src="/js/mapa.js"></script>
 
 </body>
 
