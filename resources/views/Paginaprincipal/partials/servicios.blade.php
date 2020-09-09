@@ -8,51 +8,35 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-3 col-sm-6">
                 <div class="single-service">
-                    <i class="icon icon-aperture"></i>
-                    <h4>UI/UX Design</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                    <i class="fa fa-taxi"></i>
+                    <h4>EJECUTIVO</h4>
+                    <p>Servicio ejecutivo de taxis puerta a puerta dentro y fuera de la ciudad de Calceta.
                     </p>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-3 col-sm-6">
                 <div class="single-service">
-                    <i class="icon icon-bike"></i>
-                    <h4>Web Design</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                    <i class="fa fa-route"></i>
+                    <h4>VIAJES</h4>
+                    <p>Servicio de viajes a distintos puntos del país con vehículos equipados y confiables.
                     </p>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-3 col-sm-6">
                 <div class="single-service">
-                    <i class="icon icon-flag"></i>
-                    <h4>Web Development</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                    <i class="fa fa-flag-checkered"></i>
+                    <h4>CARRERAS</h4>
+                    <p>Servicio de carreras previamente programadas indicando el día y la hora.
                     </p>
                 </div>
             </div>
-            <div class="col-md-4 col-sm-6">
+            <div class="col-md-3 col-sm-6">
                 <div class="single-service">
-                    <i class="icon icon-circle-compass"></i>
-                    <h4>Graphics Design</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="single-service">
-                    <i class="icon icon-anchor"></i>
-                    <h4>SEO Marketing</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <div class="single-service">
-                    <i class="icon icon-paintbrush"></i>
-                    <h4>Photography</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                    <i class="fa fa-phone-volume"></i>
+                    <h4>Atención 24/7</h4>
+                    <p>Para su beneficio trabajamos las 24 horas del día y los 365 días del año.
                     </p>
                 </div>
             </div>

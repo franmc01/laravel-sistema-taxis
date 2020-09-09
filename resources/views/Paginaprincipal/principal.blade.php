@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="/principal/css/magnific-popup.css">
     <!--line icon css-->
     <link rel="stylesheet" href="/principal/css/line-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" />
     <!--Theme css-->
     <link rel="stylesheet" href="/principal/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.0/noty.min.css">
@@ -75,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-                    <p>&copy; All Right Reserved By <a href="#">Computación ESPAM MFL</a></p>
+                    <p>&copy; Todos los derechos reservados a: <a href="#">Computación ESPAM MFL</a></p>
                 </div>
             </div>
         </div>

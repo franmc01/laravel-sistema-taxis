@@ -43,7 +43,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <section class="intro animate-scale">
-                                <h3>COMPAÑIA DE TAXIS CONVENCIONAL TRANS LASIMPAR</h3>
+                                <h3>COMPAÑIA DE TAXIS CONVENCIONAL TRANS LASINPAR S.A</h3>
                                 <h1 class="ah-headline">
                                     <span class="ah-words-wrapper">
                                         <b class="is-visible">COMODIDAD</b>
