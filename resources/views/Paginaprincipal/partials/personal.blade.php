@@ -24,10 +24,10 @@
                                 <a class="img-filter" data-filter=".photography">Gerente</a>
                             </li>
                             <li>
-                                <a class="img-filter" data-filter=".packaging">Secretarias</a>
+                                <a class="img-filter" data-filter=".packaging">Secretaria</a>
                             </li>
                             <li>
-                                <a class="img-filter" data-filter=".video">Socios</a>
+                                <a class="img-filter" data-filter=".video">Recepcionista</a>
                             </li>
                         </ul>
                     </div>
@@ -36,7 +36,7 @@
         </div>
         <div class="container">
             <div class="row port-items" id="img-filter" style="position: relative; height: 570px;">
-                <div class="col-md-4 col-sm-6 col-xs-12 single-port design"
+                <div class="col-md-3 col-sm-6 col-xs-12 single-port design"
                     style="position: absolute; left: 0px; top: 0px;">
                     <div class="project-item">
                         <a class="zoom1" href="/principal/images/portfolio/1.jpg"><img alt="portfolio image"
@@ -53,7 +53,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 single-port photography"
+                <div class="col-md-3 col-sm-6 col-xs-12 single-port photography"
                     style="position: absolute; left: 380px; top: 0px;">
                     <div class="project-item">
                         <a class="zoom1" href="/principal/images/portfolio/4.jpg"><img alt="portfolio image"
@@ -70,7 +70,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 single-port packaging"
+                <div class="col-md-3 col-sm-6 col-xs-12 single-port packaging"
                     style="position: absolute; left: 0px; top: 285px;">
                     <div class="project-item">
                         <a class="zoom1" href="/principal/images/portfolio/3.jpg"><img alt="portfolio image"
@@ -87,7 +87,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 single-port web packaging"
+                <div class="col-md-3 col-sm-6 col-xs-12 single-port web video"
                     style="position: absolute; left: 380px; top: 285px;">
                     <div class="project-item">
                         <a class="zoom1" href="/principal/images/portfolio/2.jpg"><img alt="portfolio image"
@@ -95,7 +95,7 @@
                             <div class="overlay">
                                 <div class="overlay-inner">
                                     <h4>Recepcionista </h4>
-                                    <p>Estrella del Carmen Zambrano García</p>
+                                    <p>Estrella Zambrano García</p>
                                     <i class="fa fa-facebook-square"></i>
                                     <i class="fa fa-instagram"></i>
                                     <i class="fa fa-whatsapp"></i>
