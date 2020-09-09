@@ -44,7 +44,7 @@
                             <div class="overlay">
                                 <div class="overlay-inner">
                                     <h4>Presidente</h4>
-                                    <p>Francisco Marin</p>
+                                    <p>Ramón Zambrano Álava</p>
                                     <i class="fa fa-facebook-square"></i>
                                     <i class="fa fa-instagram"></i>
                                     <i class="fa fa-whatsapp"></i>
@@ -56,29 +56,12 @@
                 <div class="col-md-4 col-sm-6 col-xs-12 single-port photography"
                     style="position: absolute; left: 380px; top: 0px;">
                     <div class="project-item">
-                        <a class="zoom1" href="/principal/images/portfolio/6.jpg"><img alt="portfolio image"
-                                src="/principal/images/portfolio/6.jpg">
-                            <div class="overlay">
-                                <div class="overlay-inner">
-                                    <h4>Gerente</h4>
-                                    <p>Esneider Santander</p>
-                                    <i class="fa fa-facebook-square"></i>
-                                    <i class="fa fa-instagram"></i>
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 single-port video"
-                    style="position: absolute; left: 760px; top: 0px;">
-                    <div class="project-item">
                         <a class="zoom1" href="/principal/images/portfolio/4.jpg"><img alt="portfolio image"
                                 src="/principal/images/portfolio/4.jpg">
                             <div class="overlay">
                                 <div class="overlay-inner">
-                                    <h4>Socio</h4>
-                                    <p>Daniel Phillips</p>
+                                    <h4>Gerente</h4>
+                                    <p>Manuel Velásquez Velásquez</p>
                                     <i class="fa fa-facebook-square"></i>
                                     <i class="fa fa-instagram"></i>
                                     <i class="fa fa-whatsapp"></i>
@@ -95,7 +78,7 @@
                             <div class="overlay">
                                 <div class="overlay-inner">
                                     <h4>Secretaria</h4>
-                                    <p>Gema Zambrano</p>
+                                    <p>Martha Velásquez Zambrano</p>
                                     <i class="fa fa-facebook-square"></i>
                                     <i class="fa fa-instagram"></i>
                                     <i class="fa fa-whatsapp"></i>
@@ -107,80 +90,12 @@
                 <div class="col-md-4 col-sm-6 col-xs-12 single-port web packaging"
                     style="position: absolute; left: 380px; top: 285px;">
                     <div class="project-item">
-                        <a class="zoom1" href="/principal/images/portfolio/5.jpg"><img alt="portfolio image"
-                                src="/principal/images/portfolio/5.jpg">
-                            <div class="overlay">
-                                <div class="overlay-inner">
-                                    <h4>Secretaria</h4>
-                                    <p>Natalia Jimenez</p>
-                                    <i class="fa fa-facebook-square"></i>
-                                    <i class="fa fa-instagram"></i>
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 single-port branding packaging"
-                    style="position: absolute; left: 760px; top: 285px;">
-                    <div class="project-item">
                         <a class="zoom1" href="/principal/images/portfolio/2.jpg"><img alt="portfolio image"
                                 src="/principal/images/portfolio/2.jpg">
                             <div class="overlay">
                                 <div class="overlay-inner">
-                                    <h4>Secretaria</h4>
-                                    <p>Kendall Jenner</p>
-                                    <i class="fa fa-facebook-square"></i>
-                                    <i class="fa fa-instagram"></i>
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 single-port branding video"
-                    style="position: absolute; left: 760px; top: 285px;">
-                    <div class="project-item">
-                        <a class="zoom1" href="/principal/images/portfolio/8.jpg"><img alt="portfolio image"
-                                src="/principal/images/portfolio/8.jpg">
-                            <div class="overlay">
-                                <div class="overlay-inner">
-                                    <h4>Socio</h4>
-                                    <p>Roberto Loaiza</p>
-                                    <i class="fa fa-facebook-square"></i>
-                                    <i class="fa fa-instagram"></i>
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 single-port branding video"
-                    style="position: absolute; left: 760px; top: 285px;">
-                    <div class="project-item">
-                        <a class="zoom1" href="/principal/images/portfolio/7.jpg"><img alt="portfolio image"
-                                src="/principal/images/portfolio/7.jpg">
-                            <div class="overlay">
-                                <div class="overlay-inner">
-                                    <h4>Socio</h4>
-                                    <p>Orley Zambrano</p>
-                                    <i class="fa fa-facebook-square"></i>
-                                    <i class="fa fa-instagram"></i>
-                                    <i class="fa fa-whatsapp"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 col-xs-12 single-port branding video"
-                    style="position: absolute; left: 760px; top: 285px;">
-                    <div class="project-item">
-                        <a class="zoom1" href="/principal/images/portfolio/9.jpg"><img alt="portfolio image"
-                                src="/principal/images/portfolio/9.jpg">
-                            <div class="overlay">
-                                <div class="overlay-inner">
-                                    <h4>Socio</h4>
-                                    <p>Lider Mero</p>
+                                    <h4>Recepcionista </h4>
+                                    <p>Estrella del Carmen Zambrano García</p>
                                     <i class="fa fa-facebook-square"></i>
                                     <i class="fa fa-instagram"></i>
                                     <i class="fa fa-whatsapp"></i>
