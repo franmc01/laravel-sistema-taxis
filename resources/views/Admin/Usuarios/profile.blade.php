@@ -46,7 +46,7 @@
                                                         <div class="col-12 col-sm-auto mb-3">
                                                             <div class="mx-auto" style="width: 140px;">
                                                                 <div  id="perfil2" class="d-flex justify-content-center align-items-center rounded" style="height: 140px; background-color: rgb(233, 236, 239);">
-                                                                    <span><img src="storage/{{ auth()->user()->foto_perfil }}" alt="" height="140px" width="140px"></span>
+                                                                    <span><img src="{{ auth()->user()->foto_perfil }}" alt="" height="140px" width="140px"></span>
                                                                 </div>
                                                             </div>
                                                         </div>

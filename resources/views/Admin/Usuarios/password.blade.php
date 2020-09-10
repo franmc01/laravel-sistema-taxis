@@ -1,6 +1,5 @@
-@extends('Admin.Plantilla.layout') 
-
-@section('header') 
+@extends('Admin.Plantilla.layout')
+@section('header')
 <div class="container-fluid">
     <div class="row mb-2">
         <div class="col-sm-6">
@@ -13,11 +12,11 @@
             </ol>
         </div><!-- /.col -->
     </div><!-- /.row -->
-</div><!-- /.container-fluid --> 
-@endsection 
+</div><!-- /.container-fluid -->
+@endsection
 
 
-@section('content') 
+@section('content')
 
 <div class="row">
     <div class="col-md-12">
@@ -26,12 +25,12 @@
                 <h4 class="card-title"> Formulario </h4>
             </div>
             <div class="card-body">
-                <form id="actualiza2"> 
-                    @csrf 
-                    @method('PATCH') 
+                <form id="actualiza2">
+                    @csrf
+                    @method('PATCH')
                     <div class="row">
-                        <div class="col-md-12"> 
-                            @include('Snnipets.password_change') 
+                        <div class="col-md-12">
+                            @include('Snnipets.password_change')
                         </div>
                     </div>
                     <div class="card-footer">
@@ -64,5 +63,5 @@
         });
     });
 
-</script> 
+</script>
 @endsection

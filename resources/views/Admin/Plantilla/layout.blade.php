@@ -53,13 +53,13 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                        <img src="storage/{{ auth()->user()->foto_perfil }}" class="user-image img-circle elevation-2" alt="User Image">
+                        <img src="/{{ auth()->user()->foto_perfil }}" class="user-image img-circle elevation-2" alt="User Image">
                         <span class="d-none d-md-inline">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <!-- User image -->
                         <li class="user-header bg-dark">
-                            <img src="storage/{{ auth()->user()->foto_perfil }}" class="img-circle elevation-2" alt="User Image">
+                            <img src="/{{ auth()->user()->foto_perfil }}" class="img-circle elevation-2" alt="User Image">
                             <p> {{ auth()->user()->nombres }} - {{ auth()->user()->getRoleNames()->implode(',') }} <small>Miembro desde {{ auth()->user()->created_at->isoFormat('YYYY')}}</small>
                             </p>
                         </li>
@@ -91,7 +91,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="storage/{{ auth()->user()->foto_perfil }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="/{{ auth()->user()->foto_perfil }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="#" class="d-block">{{ auth()->user()->nombres."".auth()->user()->apelllidos }}</a>

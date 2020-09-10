@@ -24,9 +24,9 @@ class UsuariosController extends Controller
             return datatables()
                 ->eloquent(User::query())
                 ->addColumn('role', function ($query) {$user = User::find($query->id);return $user->getRoleNames()->implode(',');})
-                ->addColumn('btnshow', function (User $user) {return view('Snnipets\show_user', compact('user'));})
+                ->addColumn('btnshow', function (User $user) {return view('Snnipets.show_user', compact('user'));})
                 ->addColumn('btnedit', 'Snnipets.edit_user')
-                ->addColumn('btndelete', function (User $user) {return view('Snnipets\delete_user', compact('user'));})
+                ->addColumn('btndelete', function (User $user) {return view('Snnipets.delete_user', compact('user'));})
                 ->rawColumns(['btnshow', 'btnedit', 'btndelete'])
                 ->toJson();
         }
@@ -55,7 +55,7 @@ class UsuariosController extends Controller
             $data = new User();
             $data->nombres = $request->nombres;
             $data->apellidos = $request->apellidos;
-            $data->foto_perfil = $request->file('imagen')->store('perfiles', 'public');
+            $data->foto_perfil =  "storage/".$request->file('imagen')->store('perfiles', 'public');
             $data->cedula = $request->cedula;
             $data->email = $request->correo;
             $data->licencia = $request->licencia;
@@ -108,7 +108,7 @@ class UsuariosController extends Controller
             $datos = User::find($id);
             if ($request->hasFile('foto_perfil')) {
                 Storage::delete($datos->foto_perfil);
-                $datos->foto_perfil = $request->file('foto_perfil')->store('perfiles', 'public');
+                $datos->foto_perfil = "storage/".$request->file('foto_perfil')->store('perfiles', 'public');
                 $datos->nombres = $request->nombres;
                 $datos->apellidos = $request->apellidos;
                 $datos->cedula = $request->cedula;
