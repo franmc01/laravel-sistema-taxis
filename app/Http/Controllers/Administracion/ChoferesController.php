@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Administracion;
 
 use App\Chofer;
+use App\Exports\ChoferesExport;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ChoferesController extends Controller
 {
@@ -16,7 +18,7 @@ class ChoferesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
+    {
         if (request()->ajax()) {
             $data=Chofer::with('users')->latest()->get();
             return datatables()->of($data)
@@ -163,8 +165,8 @@ class ChoferesController extends Controller
                     'user_id'         =>  'required',
                     'foto_perfil'         =>  'image|mimes:jpeg,jpg,png,gif|nullable|max:10000',
                 );
-    
-                $this->validate($request, $rules, $messages);  
+
+                $this->validate($request, $rules, $messages);
                 Storage::delete($chofer->foto_perfil);
                 $chofer->foto_perfil = $request->file('foto_perfil')->store('choferes', 'public');
                 $chofer->fecha_inicio = $request->fecha_inicio;
@@ -201,8 +203,8 @@ class ChoferesController extends Controller
                     'fecha_fin'         =>  'date|nullable',
                     'user_id'         =>  'required'
                 );
-    
-                $this->validate($request, $rules, $messages);    
+
+                $this->validate($request, $rules, $messages);
                 $chofer->fecha_inicio = $request->fecha_inicio;
                 $chofer->fecha_fin = $request->fecha_fin;
                 $chofer->cedula = $request->cedula;
@@ -232,5 +234,11 @@ class ChoferesController extends Controller
             'success' => 'Record deleted successfully!',
         ]);
 
+    }
+
+
+    public function reporteChoferes()
+    {
+        return Excel::download(new ChoferesExport, 'choferes.xlsx');
     }
 }

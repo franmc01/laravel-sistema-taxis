@@ -17,6 +17,14 @@
 @section('content')
 <div class="col-md-12">
     <div class="card card-outline card-gray">
+        <div class="card-header text-center">
+            <a class="btn btn-primary pull-right" href="{{ route('choferes.create') }}">
+                <span style="padding-right:5px"><i class="fa fa-user-plus" aria-hidden="true"></i></span> Registrar chofer
+            </a>
+            <a class="btn btn-info pull-right" href="{{ route('choferes.excel') }}">
+                <span style="padding-right:5px"><i class="fa fa-file-alt" aria-hidden="true"></i></span>Descargar excel
+            </a>
+        </div>
         <!-- /.box-header -->
         <div class="card-body">
             <div class="table-responsive">

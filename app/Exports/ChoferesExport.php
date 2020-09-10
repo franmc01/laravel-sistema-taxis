@@ -2,20 +2,19 @@
 
 namespace App\Exports;
 
-use App\User;
-
+use App\Chofer;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 
-class UsersExport implements FromView
-{
 
+class ChoferesExport implements FromView
+{
     /**
      * @return View
      */
     public function view(): View{
-        return view('exports.user',[
-            'users' =>User::get()
+        return view('exports.chofer',[
+            'choferes' =>Chofer::with('users')->where('fecha_fin', '=', null)->get()
         ]);
     }
 }
