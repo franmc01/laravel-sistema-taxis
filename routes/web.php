@@ -31,6 +31,7 @@ Route::group(['namespace' => 'Administracion', 'middleware' => ['role:Administra
     Route::resource('cuotas', 'CuotasController');
     Route::post('cuotas/mostrar', 'CuotasController@mostrar')->name('cuotas.mostrar');
     Route::post('cuotas/consultar', 'CuotasController@consultar')->name('cuotas.consultar');
+    Route::get('socio/exports/', 'CuotasController@reporteSocioCuotas')->name('generar.reporte.socio');
     Route::post('cuotas/guardar', 'CuotasController@guardar')->name('cuotas.guardar');
     Route::post('cuotas/socios/fetch', 'CuotasController@fetch')->name('cuotas.socios.fetch');
 

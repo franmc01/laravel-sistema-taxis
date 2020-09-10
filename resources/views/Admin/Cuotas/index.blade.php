@@ -107,8 +107,8 @@
                   <div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block"> Consultar&nbsp; <i
                         class="fa fa-search"></i></button>
-                    <button type="submit" class="btn btn-info btn-lg btn-block"> Generar reporte de cuotas&nbsp; <i
-                        class="fa fa-file"></i></button>
+                        <button  id="pdf" type="button" class="btn btn-info btn-lg btn-block"> Generar reporte de cuotas&nbsp; <i
+                            class="fa fa-file"></i></button>
                   </div>
                 </div>
               </form>
@@ -179,6 +179,11 @@
       cache: true
   }
   });
+
+  const boton = document.querySelector("#pdf");
+  boton.addEventListener("click", function(e){
+        window.location= "{{ route('generar.reporte.socio') }}";
+    });
 
   });
 </script>
