@@ -2,8 +2,8 @@ mapboxgl.accessToken='pk.eyJ1IjoiaW1mcmFuY2lzOTgiLCJhIjoiY2tkbjkzb2E0MWc5NDJxczJ
 var map=new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    zoom: 15,
-    center: [-80.164659,-0.846857]
+    zoom: 16,
+    center: [-80.165149,-0.847334]
 });
 
 map.on('load',function() {
@@ -23,44 +23,44 @@ map.on('load',function() {
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<strong>Base 1: </strong><p>Esta es nuestra base principal, aqui encontrará nuestras oficinas 12:00-6:00 p.m.</p>'
+                                    '<strong>Base 1: </strong><p>Esta es nuestra base principal, aqui encontrará nuestras oficinas centrales</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
-                                'coordinates': [-80.164659,-0.846857]
+                                'coordinates': [-80.165149,-0.847334]
                             }
                         },
                         {
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<strong>Base 2: </strong><p>Esta es nuestra base principal, aqui encontrará nuestras oficinas 12:00-6:00 p.m.</p>'
+                                    '<strong>Base 2: </strong><p>Esta es nuestra segunda base de taxi, aqui dispondra de nuestro servicio taxis</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
-                                'coordinates': [-80.164659,-0.846577]
+                                'coordinates': [-80.165396, -0.846353]
                             }
                         },
                         {
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<strong>Base 3: </strong><p>Esta es nuestra base principal, aqui encontrará nuestras oficinas 12:00-6:00 p.m.</p>'
+                                    '<strong>Base 3: </strong><p>Esta es nuestra tercera base de taxis, aqui dispondra de nuestro servicio taxis</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
-                                'coordinates': [-80.164659,-0.845477]
+                                'coordinates': [-80.164190,-0.846002]
                             }
                         },
                         {
                             'type': 'Feature',
                             'properties': {
                                 'description':
-                                    '<strong>Base 4: </strong><p>Esta es nuestra base principal, aqui encontrará nuestras oficinas 12:00-6:00 p.m.</p>'
+                                '<strong>Base 4: </strong><p>Esta es nuestra cuarta base de taxis, aqui dispondra de nuestro servicio taxis</p>'
                             },
                             'geometry': {
                                 'type': 'Point',
-                                'coordinates': [-80.164659,-0.845177]
+                                'coordinates': [-80.163237,-0.847626]
                             }
                         }
                     ]
