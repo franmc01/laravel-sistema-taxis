@@ -9,7 +9,7 @@
                 <div class="section-title-2">
                     <h2>HISTORIA</h2>
                 </div>
-                <div class="about-text-right">
+                <div class="about-text-right"  style="text-align: justify">
                     <p>{{ $info_pagina[0]->historia }}</p>
                     <div id="skills">
                         <div class="row">
