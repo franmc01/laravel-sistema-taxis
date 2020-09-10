@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers\Administracion;
+
+use App\Exports\VehiculosExport;
 use \Yajra\Datatables\Datatables;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Vehiculo;
 use App\User;
 use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Facades\Excel;
 use Validator;
 
 class VehiculosController extends Controller
@@ -184,5 +187,10 @@ class VehiculosController extends Controller
     {
         $data = Vehiculo::findOrFail($id);
         $data->delete();
+    }
+
+    public function reporteVehiculos()
+    {
+        return Excel::download(new VehiculosExport, 'vehiculos.xlsx');
     }
 }

@@ -21,6 +21,9 @@
     <div class="card card-outline card-gray">
         <div class="card-header text-center">
             <a class="btn btn-primary pull-left" href="{{ route('vehiculos.create') }}"><span style="padding-right:5px">              <i class="fa fa-plus" aria-hidden="true"></i></span> Registrar vehiculo</a>
+            <a class="btn btn-info pull-right" href="{{ route('vehiculos.excel') }}">
+                <span style="padding-right:5px"><i class="fa fa-file-alt" aria-hidden="true"></i></span>Descargar excel
+            </a>
         </div>
         <!-- /.box-header -->
         <div class="card-body">

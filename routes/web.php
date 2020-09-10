@@ -8,6 +8,7 @@ Route::get('/home', 'HomeController@index')->name('administracion');
 
 Route::group(['namespace' => 'Administracion', 'middleware' => ['role:Administrador']], function () {
     Route::get('usuarios/export/', 'UsuariosController@reporteSocios')->name('usuarios.excel');
+    Route::get('vehiculos/export/', 'VehiculosController@reporteVehiculos')->name('vehiculos.excel');
 
     //rutas de usuario
     Route::resource('usuarios', 'UsuariosController');
