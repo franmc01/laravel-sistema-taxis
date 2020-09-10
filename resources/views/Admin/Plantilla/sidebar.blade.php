@@ -12,7 +12,7 @@
       <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
               <i class="nav-icon fa fa-users"></i>
-              <p> Usuarios <i class="right fas fa-angle-left"></i> </p>
+              <p> Socios <i class="right fas fa-angle-left"></i> </p>
           </a>
 
           <ul class="nav nav-treeview">
@@ -27,29 +27,16 @@
               <li class="nav-item">
                   <a href="{{ route('usuarios.index') }}" class="nav-link">
                       <i class="fa fa-address-book nav-icon" style="regular"></i>
-                      <p>Usuarios activos</p>
+                      <p>Socios activos</p>
                   </a>
               </li>
 
               <li class="nav-item">
                   <a href="{{ route('usuarios.eliminados') }}" class="nav-link">
                       <i class="fa fa-book-dead nav-icon"></i>
-                      <p>Usuarios inactivos</p>
+                      <p>Socios inactivos</p>
                   </a>
               </li>
-              <li class="nav-item">
-                  <a href="{{ route('choferes.create') }}" class="nav-link">
-                    <i class="fas fa-drum-steelpan nav-icon"></i>
-                      <p>Registrar Chofer</p>
-                  </a>
-              </li>
-              <li class="nav-item">
-                  <a href="{{ route('choferes.index') }}" class="nav-link">
-                    <i class="fas fa-drum-steelpan nav-icon"></i>
-                      <p>Choferes</p>
-                  </a>
-              </li>
-
           </ul>
       </li>
 
@@ -83,6 +70,28 @@
               </li>
 
           </ul>
+      </li>
+
+      <li class="nav-item has-treeview">
+        <a href="#" class="nav-link">
+            <i class="nav-icon  fa fa-id-card-alt"></i>
+            <p>Choferes<i class="right fas fa-angle-left"></i></p>
+        </a>
+        <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="{{ route('choferes.create') }}" class="nav-link">
+                  <i class="fas fa-drum-steelpan nav-icon"></i>
+                    <p>Registrar Chofer</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{ route('choferes.index') }}" class="nav-link">
+                  <i class="fas fa-drum-steelpan nav-icon"></i>
+                    <p>Choferes registrados</p>
+                </a>
+            </li>
+
+        </ul>
       </li>
 
       <li class="nav-item has-treeview">
