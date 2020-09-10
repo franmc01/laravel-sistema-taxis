@@ -3,8 +3,7 @@
         <div class="row">
             <div class="section-title">
                 <h2>SERVICIOS</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, temporibus consequuntur dicta
-                    ullam illo facere.</p>
+                <p>Nuestro servicio de transporte está a disposición de la toda la ciudad de Calceta.</p>
             </div>
         </div>
         <div class="row">

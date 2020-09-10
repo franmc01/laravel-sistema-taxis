@@ -2,8 +2,7 @@
     <div class="row">
         <div class="section-title">
             <h2>Encuentranos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, temporibus consequuntur dicta
-                ullam illo facere.</p>
+            <p>Contamos con cuatro bases de trabajo y 35 vechículos disponibles en toda la ciudad de Calceta.</p>
         </div>
     </div>
 </div>

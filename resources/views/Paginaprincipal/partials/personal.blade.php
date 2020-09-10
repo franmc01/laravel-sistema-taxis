@@ -3,8 +3,7 @@
         <div class="row">
             <div class="section-title">
                 <h2>PERSONAL</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, temporibus consequuntur dicta
-                    ullam illo facere.</p>
+                <p>Contamos con personal calificado para atenderte y poder seguir creciendo para brindarte el mejor servicio.</p>
             </div>
         </div>
     </div>

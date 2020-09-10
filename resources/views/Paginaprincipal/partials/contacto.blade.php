@@ -4,16 +4,14 @@
             <div class="col-md-12">
                 <div class="section-title text-center">
                     <h2>CONTACTO</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, temporibus consequuntur dicta
-                        ullam illo facere.</p>
+                    <p>Déjanos tu comentario o consulta a través de los siguientes medios, estamos atentos a siempre responder las dudas que tengas sobre nuestro servicio.</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-6 col-md-6 contact-right">
-                <h2>Get In Touch</h2>
-                <p class="r-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim ipsa officia in, at
-                    inventore. Iste.</p>
+                <h2>Contáctanos!!</h2>
+                <p class="r-text">Puedes acercarte a las oficinas o llamar desde las 7 AM hasta las 7 PM. </p>
                 <div class="connn-right xs-mb-30">
                     <p><b><i class="fa fa-home"></i></b>{{ $info_pagina[0]->direccion }}</p>
                     <p><b><i class="fa fa-phone"></i></b>+{{ $info_pagina[0]->telefono1 }} , +{{ $info_pagina[0]->telefono2 }}</p>
