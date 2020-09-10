@@ -34,7 +34,7 @@ Route::group(['namespace' => 'Administracion', 'middleware' => ['role:Administra
 }
 );
 
-Route::group(['namespace' => 'Usuarios', 'middleware' => ['role:Administrador']], function () {
+Route::group(['namespace' => 'Usuarios', 'middleware' => ['role:Socio']], function () {
     Route::patch('actualizar-correo/{id}', 'PerfilController@actualizarFoto')->name('perfil.correo');
     Route::get('mi-perfil', 'PerfilController@index')->name('perfil.info');
     Route::get('mi-perfil/nueva-contraseña', 'PerfilController@contrasena')->name('perfil.cambio');

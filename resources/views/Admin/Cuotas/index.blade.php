@@ -38,7 +38,7 @@
   <!-- /.modal-dialog -->
 </div>
 
-<div class="row">  
+<div class="row">
   <div class="col-md-12">
     <div class="card card-outline card-gray">
       <div class="card-header">
@@ -106,6 +106,8 @@
                 <div class="form-group">
                   <div>
                     <button type="submit" class="btn btn-primary btn-lg btn-block"> Consultar&nbsp; <i
+                        class="fa fa-search"></i></button>
+                    <button type="submit" class="btn btn-info btn-lg btn-block"> Generar reporte de cuotas&nbsp; <i
                         class="fa fa-file"></i></button>
                   </div>
                 </div>
