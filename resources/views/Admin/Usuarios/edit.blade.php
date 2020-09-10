@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <img id="blah" src="/storage/{{ $datos->foto_perfil }}" alt="your image" width="100" height="100" />
+                                <img id="blah" src="/{{ $datos->foto_perfil }}" alt="your image" width="100" height="100" />
                             </div>
 
                             <div class="col-md-2">

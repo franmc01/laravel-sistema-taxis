@@ -7,6 +7,7 @@ Route::get('/', 'PaginaPrincipalController@index')->name('principal');
 Route::get('/home', 'HomeController@index')->name('administracion');
 
 Route::group(['namespace' => 'Administracion', 'middleware' => ['role:Administrador']], function () {
+    Route::get('users/export/', 'UsuariosController@reporteSocios');
 
     //rutas de usuario
     Route::resource('usuarios', 'UsuariosController');
@@ -46,6 +47,7 @@ Route::group(['namespace' => 'Usuarios', 'middleware' => ['role:Socio']], functi
 Route::group(['middleware' => ['role:Moderador']], function () {
     //Here your routes
 });
+
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');

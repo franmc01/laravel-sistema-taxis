@@ -7,7 +7,7 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{ route('administracion') }}">Inicio</a></li>
-                <li class="breadcrumb-item active">Usuarios activos</li>
+                <li class="breadcrumb-item active">Socios activos</li>
             </ol>
         </div><!-- /.col -->
     </div><!-- /.row -->

@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Administracion;
 
 use App\Events\UserWasCreated;
+use App\Exports\UsersExport;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Models\Role;
 
 class UsuariosController extends Controller
@@ -178,5 +180,11 @@ class UsuariosController extends Controller
     {
         User::withTrashed()->find($id)->forceDelete();
         return redirect()->route('usuarios.eliminados');
+    }
+
+
+    public function reporteSocios()
+    {
+        return Excel::download(new UsersExport, 'user.xlsx');
     }
 }
