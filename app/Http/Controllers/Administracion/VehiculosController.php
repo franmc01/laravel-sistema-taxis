@@ -19,7 +19,7 @@ class VehiculosController extends Controller
     public function index()
     {
         $users=User::all();
-        //return $a=Vehiculo::with('users')->latest()->get();
+        // return $a=Vehiculo::with('users')->latest()->get();
 
         if(request()->ajax())
         {

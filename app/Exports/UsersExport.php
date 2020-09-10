@@ -15,7 +15,7 @@ class UsersExport implements FromView
      */
     public function view(): View{
         return view('exports.user',[
-            'users' =>User::get()
+            'users' =>User::with('vehiculos')->get()
         ]);
     }
 }
