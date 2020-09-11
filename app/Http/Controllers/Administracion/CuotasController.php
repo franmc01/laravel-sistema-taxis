@@ -8,8 +8,10 @@ use App\Http\Controllers\Controller;
 use App\Vehiculo;
 use App\User;
 use App\Cuota;
+use App\Exports\CuotasExport;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Facades\Excel;
 use SebastianBergmann\Environment\Console;
 use Validator;
 
@@ -144,5 +146,21 @@ class CuotasController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function reporteSocioCuotas(Request $request)
+    {
+        $fecha1 = $request->get('fecha1');
+        $fecha2 = $request->get('fecha2');
+        $user = $request->get('user');
+        $data = Cuota::with('users')
+                ->Fecha1($fecha1)
+                ->Fecha2($fecha2)
+                ->User($user)
+                ->get();
+        return Excel::download(new CuotasExport($data), 'cuotas.xlsx');
+
+
     }
 }
