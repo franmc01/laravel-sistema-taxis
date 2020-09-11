@@ -74,11 +74,11 @@
         </div> --}}
         @role('Socio')
         <div class="container" style="text-align: center">
-            <h1 style="padding-top: 5%;padding-bottom: 4%;">Bienvenido {{ auth()->user()->nombres."".auth()->user()->apelllidos }} !!</h1>
+            <h2 style="padding-top: 5%;padding-bottom: 4%;">Bienvenido {{ auth()->user()->nombres." ".auth()->user()->apellidos }}</h2>
         </div>
         <img src="/img/lasin.png"alt="" width="100%" style="padding-left: 20%;padding-right: 20%;">
         @endrole
-        {{-- 
+        {{--
         <!-- ./col -->
         <div class="col-lg-3 col-6">
             <!-- small box -->
