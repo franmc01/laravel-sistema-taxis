@@ -67,7 +67,7 @@
                 <a href="{{ route('choferes.index') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <img src="/img/img_taxi.png"alt="" width="100%" style="padding-left: 20%;padding-right: 20%;">
+        <img src="/img/lasin.png"alt="" width="100%" style="padding-left: 20%;padding-right: 20%;">
         @endrole
 {{--         <div class="container">
         <h1 style="padding-top: 5%;padding-bottom: 5%;">Bienvenido {{ auth()->user()->nombres."".auth()->user()->apelllidos }} !!</h1>
@@ -76,7 +76,7 @@
         <div class="container" style="text-align: center">
             <h1 style="padding-top: 5%;padding-bottom: 4%;">Bienvenido {{ auth()->user()->nombres."".auth()->user()->apelllidos }} !!</h1>
         </div>
-        <img src="/img/img_taxi.png"alt="" width="100%" style="padding-left: 20%;padding-right: 20%;">
+        <img src="/img/lasin.png"alt="" width="100%" style="padding-left: 20%;padding-right: 20%;">
         @endrole
         {{-- 
         <!-- ./col -->
