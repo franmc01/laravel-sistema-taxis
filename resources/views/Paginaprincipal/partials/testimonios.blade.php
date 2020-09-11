@@ -6,8 +6,7 @@
         <div class="row">
             <div id="testimonial" class="section-title-5">
                 <h2>NUESTROS CLIENTES</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, temporibus consequuntur dicta ullam illo
-                    facere.</p>
+                <p>A continuación puedes leer algunos de los comentarios que los usuarios de nuestros servicios nos han hecho llegar.</p>
             </div>
             <div class="col-lg-offset-3 col-lg-6">
                 <div class="testimonial_box">
@@ -18,11 +17,9 @@
                                     <div class="testimonial_content">
                                         <div class="testimonial_caption">
                                             <h6>Claire Chedd</h6>
-                                            <span>CEO, Yahoo</span>
+                                            {{-- <span>CEO, Yahoo</span> --}}
                                         </div>
-                                        <p>I am Very Satisfied with the Service Provided by Robert and I Highly
-                                            recommend this Developer to everybody. He will not disappoint you that
-                                            is for sure.</p>
+                                        <p>Estoy muy agradecida con la compañía de taxis por su excelente servicio. Siempre la recomiendo con familiares y amigos.</p>
                                     </div>
                                     <div class="images_box">
                                         <div class="testimonial_img">
@@ -34,11 +31,9 @@
                                     <div class="testimonial_content">
                                         <div class="testimonial_caption">
                                             <h6>Mark Wilson</h6>
-                                            <span>Creative Director, Google</span>
+                                            {{-- <span>Creative Director, Google</span> --}}
                                         </div>
-                                        <p>I am Very Satisfied with the Service Provided by Robert and I Highly
-                                            recommend this Developer to everybody. He will not disappoint you that
-                                            is for sure.</p>
+                                        <p>Estoy muy satisfecho con el servicio de los taxis de la compañía  Trans Lasimpar. son muy recomendados y su trato con los clientes es muy bueno.</p>
                                     </div>
                                     <div class="images_box">
                                         <div class="testimonial_img">
@@ -50,11 +45,9 @@
                                     <div class="testimonial_content">
                                         <div class="testimonial_caption">
                                             <h6>Laura Thorn</h6>
-                                            <span>HR, Facebook</span>
+                                            {{-- <span>HR, Facebook</span> --}}
                                         </div>
-                                        <p>I am Very Satisfied with the Service Provided by Robert and I Highly
-                                            recommend this Developer to everybody. He will not disappoint you that
-                                            is for sure.</p>
+                                        <p>Estoy muy satisfecho con el servicio por parte de esta compañía de taxis y muy probablemente la recomendaré.</p>
                                     </div>
                                     <div class="images_box">
                                         <div class="testimonial_img">

@@ -11,8 +11,7 @@
                     </div>
                     <br>
                     <h2>Nuestra compañia en video</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem doloribus, ipsam itaque
-                        nihil non rerum! nihil non rerum</p>
+                    <p>Disfrute de nuestro video empresarial con toda la informacion sobre nuestras actividades.</p>
                 </div>
             </div>
         </div>
