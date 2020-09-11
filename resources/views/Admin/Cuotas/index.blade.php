@@ -116,24 +116,16 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  <!-- /.col-->
-</div>
-
-<div class="box-body">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="box">
-        <div class="box-header">
-          <h3 class="box-title">Listado de Cuotas</h3>
+      <div class="card">
+        <div class="card-header">
+          <h3 class="box-title" style="text-align: center; padding-top: 30px;">Listado de Cuotas</h3>
         </div>
         <!-- /.box-header -->
-        <div class="box-body">
+        <div class="card-body">
           <div class="table-responsive">
             <form method="POST" name="formGuardar" id="formGuardar" data-route="{{ route('cuotas.guardar') }}">
               @csrf
-              <table id="tablacuotas" class="table table-bordered table-striped table-hover" cellspacing="0"
+              <table id="tablacuotas" class="table table-bordered table-hover" cellspacing="0"
                 width="100%">
                 <thead>
                   <tr>
@@ -147,7 +139,7 @@
                   </tr>
                 </thead>
               </table>
-              <button type="submit" name="guardar" id="guardar" class="btn btn-primary">Guardar</button>
+              <button type="submit" name="guardar" id="guardar" class="btn btn-primary" style="float: right; width: 15%;">Guardar</button>
             </form>
           </div>
         </div>
