@@ -24,22 +24,23 @@
 @section('content')
 <div class="container-fluid">
     <div class="row">
+        @role('Administrador')
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-danger">
                 <div class="inner">
                     <h3>{{ $u }}</h3>
-                    <p>Usuarios registrados</p>
+                    <p>Socios registrados</p>
                 </div>
                 <div class="icon">
-                    <i class="fa fa-user-friends"></i>
+                    <i class="fa fa-user"></i>
                 </div>
-                <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('usuarios.index') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
                 <div class="inner">
@@ -49,24 +50,35 @@
                 <div class="icon">
                     <i class="fa fa-car"></i>
                 </div>
-                <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('vehiculos.index') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-6">
+        <div class="col-lg-4 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
                 <div class="inner">
-                    <h3>0<sup style="font-size: 20px">%</sup></h3>
-                    <p>Cuotas de usuarios</p>
+                    <h3>{{ $c }}</h3>
+                    <p>Choferes Registrados</p>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
+                    <i class="fa fa-user-friends"></i>
                 </div>
-                <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="{{ route('choferes.index') }}" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-
+        <img src="/img/img_taxi.png"alt="" width="100%" style="padding-left: 20%;padding-right: 20%;">
+        @endrole
+{{--         <div class="container">
+        <h1 style="padding-top: 5%;padding-bottom: 5%;">Bienvenido {{ auth()->user()->nombres."".auth()->user()->apelllidos }} !!</h1>
+        </div> --}}
+        @role('Socio')
+        <div class="container" style="text-align: center">
+            <h1 style="padding-top: 5%;padding-bottom: 4%;">Bienvenido {{ auth()->user()->nombres."".auth()->user()->apelllidos }} !!</h1>
+        </div>
+        <img src="/img/img_taxi.png"alt="" width="100%" style="padding-left: 20%;padding-right: 20%;">
+        @endrole
+        {{-- 
         <!-- ./col -->
         <div class="col-lg-3 col-6">
             <!-- small box -->
@@ -81,7 +93,7 @@
                 <a href="#" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <!-- ./col -->
+        <!-- ./col --> --}}
     </div>
 </div>
 
