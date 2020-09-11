@@ -33,7 +33,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label" style="text-align: left;">Desde:
+                                <label for="inputEmail3" class="col-sm-4 control-label" style="text-align: left;">
+                                    Indique la fecha desde:
                                 </label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -46,7 +47,8 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="inputEmail3" class="col-sm-4 control-label" style="text-align: left;">Hasta:
+                                <label for="inputEmail3" class="col-sm-4 control-label" style="text-align: left;">
+                                    Indique la fecha hasta:
                                 </label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -61,44 +63,40 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <button type="submit" class="btn btn-block btn-primary btn-lg">Consulta</button>
+                        <button type="submit" class="btn btn-block btn-primary btn-lg">Consultar</button>
                     </div>
                 </form>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="box-body">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box">
-                <div class="box-header">
-                    <h3 class="box-title">Listado de Cuotas</h3>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
-                    <div class="table-responsive">
-                        <table id="tablacuotas2" class="table table-bordered table-striped table-hover" cellspacing="0"
-                            width="100%">
-                            <thead>
-                                <tr>
-                                    <th class="hidden-xs">ID</th>
-                                    <th>Fecha</th>
-                                    <th>Nombre</th>
-                                    <th>Apellido</th>
-                                    <th>Pago</th>
-                                    <th>Monto</th>
-                                    <th>Observacion</th>
-                                </tr>
-                            </thead>
-                        </table>
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <div class="box">
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="table-responsive">
+                                    <table id="tablacuotas2" class="table table-bordered table-striped table-hover" cellspacing="0"
+                                        width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th class="hidden-xs">ID</th>
+                                                <th>Fecha</th>
+                                                <th>Nombre</th>
+                                                <th>Apellido</th>
+                                                <th>Pago</th>
+                                                <th>Monto</th>
+                                                <th>Observacion</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box -->
                     </div>
                 </div>
             </div>
-            <!-- /.box -->
         </div>
     </div>
 </div>
+
 <script>
     $(document).ready(function() {
         var table = $('#tablacuotas2').dataTable({
