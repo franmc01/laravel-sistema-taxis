@@ -139,7 +139,7 @@
                   </tr>
                 </thead>
               </table>
-              <button type="submit" name="guardar" id="guardar" class="btn btn-primary" style="float: right; width: 15%;">Guardar</button>
+              <button type="submit" name="guardar" id="guardar" class="btn btn-primary" style="float: right; width: 200px;">Guardar</button>
             </form>
           </div>
         </div>
