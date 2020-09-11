@@ -36418,7 +36418,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#consultar').submit(function (eve
     success: function success(Response) {
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#tablacuotas').dataTable().fnClearTable();
       jquery__WEBPACK_IMPORTED_MODULE_0___default()('#tablacuotas').dataTable().fnAddData(Response.data);
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('button[name=pago]').on('click', function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()('#tablacuotas').on('click', 'button[name=pago]', function () {
         var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('id');
         botones(id);
       });
@@ -36498,7 +36498,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('#datepicker').datepicker({
       success: function success(Response) {
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('#tablacuotas').dataTable().fnClearTable();
         jquery__WEBPACK_IMPORTED_MODULE_0___default()('#tablacuotas').dataTable().fnAddData(Response.data);
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('button[name=pago]').on('click', function () {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('#tablacuotas').on('click', 'button[name=pago]', function () {
           var id = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('id');
           botones(id);
         });

@@ -133,7 +133,7 @@ $('#mostrar').submit(function(event){
           {
             $('#tablacuotas').dataTable().fnClearTable();
             $('#tablacuotas').dataTable().fnAddData(Response.data);
-            $('button[name=pago]').on('click', function () {
+            $('#tablacuotas').on('click','button[name=pago]', function () {
                 var id = $(this).attr('id');
                 botones(id);
             });
@@ -206,7 +206,7 @@ $('#datepicker').datepicker({
             {
               $('#tablacuotas').dataTable().fnClearTable();
               $('#tablacuotas').dataTable().fnAddData(Response.data);
-              $('button[name=pago]').on('click', function () {
+              $('#tablacuotas').on('click','button[name=pago]', function () {
                   var id = $(this).attr('id');
                   botones(id);
               });

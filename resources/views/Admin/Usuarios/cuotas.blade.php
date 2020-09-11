@@ -148,8 +148,8 @@
                     data: 'pago',
                     name: 'pago',
                     createdCell: function(td, cellData, rowData, row, col){
-                        var color = (cellData === '1') ? '#95ff82' : '#ff866e';
-                        var texto = (cellData === '1') ? 'PAGADO' : 'NO PAGADO';
+                        var color = (cellData == '1') ? '#95ff82' : '#ff866e';
+                        var texto = (cellData == '1') ? 'PAGADO' : 'NO PAGADO';
                         $(td).css('background-color', color);
                         $(td).html(texto);
                     }
