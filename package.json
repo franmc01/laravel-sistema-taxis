@@ -28,7 +28,7 @@
     },
     "dependencies": {
         "animate.css": "^3.7.2",
-        "datatables.net": "^1.10.20",
+        "datatables.net": "^1.11.3",
         "datatables.net-dt": "^1.10.20",
         "select2": "^4.0.13",
         "sweetalert2": "^9.10.7"
